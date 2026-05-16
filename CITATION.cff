@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+type: book
+title: "Quantitative Analysis with Small Samples: A Practical Guide for Students and Early-Career Researchers"
+version: 0.1.0
+doi: 10.5281/zenodo.20221929
+date-released: 2026-05-16
+url: "https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/"
+repository-code: "https://github.com/MohammedAliSharafuddin/quantitative-analysis-with-small-samples"
+license: CC-BY-4.0
+authors:
+  - family-names: Sharafuddin
+    given-names: Mohammed Ali
+    orcid: "https://orcid.org/0000-0001-5247-2964"
+    affiliation: "Qasim Ibrahim School of Business, Villa College, Maldives"
+  - family-names: Jaleel
+    given-names: Ahsan Ahmed
+    orcid: "https://orcid.org/0009-0004-5576-8700"
+    affiliation: "Qasim Ibrahim School of Business, Villa College, Maldives"
+  - family-names: Madhavan
+    given-names: Meena
+    orcid: "https://orcid.org/0000-0003-1244-5392"
+    affiliation: "International Maritime College Oman, NUST, Oman"
+abstract: >
+  A textbook covering rigorous quantitative analysis when sample sizes are
+  small. Topics include study design, measurement quality, exact and
+  resampling tests, nonparametric inference, penalised and Bayesian
+  regression, missing data, uncertainty reporting, and five worked projects
+  in R.
+keywords:
+  - small samples
+  - quantitative methods
+  - statistics
+  - R
+  - research methods

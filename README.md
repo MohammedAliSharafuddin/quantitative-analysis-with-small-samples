@@ -4,6 +4,7 @@
 
 [![CC BY 4.0](https://img.shields.io/badge/Licence-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Version](https://img.shields.io/badge/Version-0.1.0-blue.svg)](https://github.com/MohammedAliSharafuddin/quantitative-analysis-with-small-samples/releases/tag/v0.1.0)
+[![DOI](https://zenodo.org/badge/1228976868.svg)](https://doi.org/10.5281/zenodo.20221929)
 
 ## Read the book
 
@@ -33,9 +34,9 @@ This book is published under [Creative Commons Attribution 4.0 International (CC
 
 ## How to cite
 
-> Sharafuddin, M. A., Jaleel, A. A., & Madhavan, M. (2026). *Quantitative Analysis with Small Samples: A Practical Guide for Students and Early-Career Researchers*. <https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/>
+> Sharafuddin, M. A., Jaleel, A. A., & Madhavan, M. (2026). *Quantitative Analysis with Small Samples: A Practical Guide for Students and Early-Career Researchers* (v0.1.0). Zenodo. https://doi.org/10.5281/zenodo.20221929
 
-A structured citation file ([CITATION.cff](CITATION.cff)) and DOI will be added after the first formal Zenodo release.
+A structured citation file ([CITATION.cff](CITATION.cff)) is included in this repository.
 
 ## Companion resources
 
