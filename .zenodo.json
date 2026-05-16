@@ -1,0 +1,38 @@
+{
+  "title": "Quantitative Analysis with Small Samples: A Practical Guide for Students and Early-Career Researchers",
+  "description": "A textbook covering rigorous quantitative analysis when sample sizes are small. Topics include study design, measurement quality, exact and resampling tests, nonparametric inference, penalised and Bayesian regression, missing data, uncertainty reporting, and five worked projects in R.",
+  "resource_type": {
+    "type": "publication",
+    "subtype": "book"
+  },
+  "license": "cc-by-4.0",
+  "creators": [
+    {
+      "name": "Sharafuddin, Mohammed Ali",
+      "affiliation": "Qasim Ibrahim School of Business, Villa College, Maldives",
+      "orcid": "0000-0001-5247-2964"
+    },
+    {
+      "name": "Jaleel, Ahsan Ahmed",
+      "affiliation": "Qasim Ibrahim School of Business, Villa College, Maldives",
+      "orcid": "0009-0004-5576-8700"
+    },
+    {
+      "name": "Madhavan, Meena",
+      "affiliation": "International Maritime College Oman, NUST, Oman",
+      "orcid": "0000-0003-1244-5392"
+    }
+  ],
+  "keywords": [
+    "small samples",
+    "quantitative methods",
+    "statistics",
+    "R",
+    "research methods",
+    "nonparametric statistics",
+    "Bayesian regression",
+    "open textbook"
+  ],
+  "language": "eng",
+  "access_right": "open"
+}
