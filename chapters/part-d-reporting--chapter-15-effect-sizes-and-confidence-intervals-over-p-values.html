@@ -1,0 +1,2680 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.24">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Chapter 15: Effect Sizes and Confidence Intervals over P-Values – Quantitative Analysis with Small Samples</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/part-d-reporting--chapter-16-interpreting-non-significant-results.html" rel="next">
+<link href="../chapters/part-d-reporting.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-fc52e084097f5e82659c47ea4c4460c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/part-d-reporting.html">Part D: Reporting and Interpretation</a></li><li class="breadcrumb-item"><a href="../chapters/part-d-reporting--chapter-15-effect-sizes-and-confidence-intervals-over-p-values.html"><span class="chapter-title">Chapter 15: Effect Sizes and Confidence Intervals over P-Values</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Quantitative Analysis with Small Samples</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Publication Note</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/copyright-and-licence.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Copyright and Licence</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/author-contributions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Author Contributions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/how-to-cite.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">How to Cite This Book</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/reproducibility-and-data-availability.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Reproducibility and Data Availability</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/textbook-preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/part-a-foundations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Part A: Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-a-foundations--chapter-1-why-small-sample-research-matters.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 1: Why Small-Sample Research Matters</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-a-foundations--chapter-2-questions-and-outcomes-that-fit-small-n.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 2: Questions and Outcomes that Fit Small n</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-a-foundations--summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Summary of Part A</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/part-b-data-collection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Part B: Design, Sampling, and Measurement</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-b-data-collection--chapter-3-sampling-strategies-for-small-studies.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 3: Sampling Strategies for Small Studies</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-b-data-collection--chapter-4-measurement-quality-and-scale-development.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 4: Measurement Quality and Scale Development</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-b-data-collection--chapter-5-reliability-and-measurement-quality-for-short-scales.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 5: Reliability and Measurement Quality for Short Scales</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-b-data-collection--chapter-6-developing-short-scales-for-small-samples.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6: Developing Short Scales for Small Samples</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-b-data-collection--chapter-7-data-screening-and-diagnostic-checks.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 7: Data Screening and Diagnostic Checks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-b-data-collection--chapter-8-handling-missing-data-in-small-samples.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 8: Handling Missing Data in Small Samples</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-b-data-collection--chapter-9-assessing-multiple-imputation-quality.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 9: Assessing Multiple Imputation Quality</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-b-data-collection--summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Summary of Part B</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/part-c-analysis-methods-textbook.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Part C: Analysis Methods</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-c-analysis-methods--chapter-10-exact-tests-and-resampling-methods.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 10: Exact Tests and Resampling Methods</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-c-analysis-methods--chapter-11-nonparametric-rank-based-methods.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 11: Nonparametric Rank-Based Methods</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-c-analysis-methods--chapter-12-methods-for-sparse-counts-and-short-time-series.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 12: Methods for Sparse Counts and Short Time Series</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-c-analysis-methods--chapter-13-penalised-and-bayesian-regression-for-small-samples.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sparse binary example with quasi-complete separation.</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-c-analysis-methods--chapter-14-multi-criteria-decision-making-mcdm-for-small-sets-of-alternatives.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AHP criteria comparisons: Cost, Effectiveness, Feasibility.</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-c-analysis-methods--summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Summary of Part C</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/part-d-reporting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Part D: Reporting and Interpretation</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-d-reporting--chapter-15-effect-sizes-and-confidence-intervals-over-p-values.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Chapter 15: Effect Sizes and Confidence Intervals over P-Values</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-d-reporting--chapter-16-interpreting-non-significant-results.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 16: Interpreting Non-Significant Results</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-d-reporting--chapter-17-transparent-reporting-of-methods-and-limitations.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 17: Transparent Reporting of Methods and Limitations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-d-reporting--chapter-18-visualising-uncertainty-and-presenting-results.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 18: Visualising Uncertainty and Presenting Results</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-d-reporting--summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Summary of Part D</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/part-e-worked-projects.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Part E: Worked Projects</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-e-worked-projects--project-1-evaluating-a-marketing-campaign-with-ordinal-outcomes.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Project 1. Evaluating a Marketing Campaign with Ordinal Outcomes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-e-worked-projects--project-2-assessing-reliability-of-a-short-service-quality-scale.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Project 2. Assessing Reliability of a Short Service Quality Scale</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-e-worked-projects--project-3-evaluating-a-process-improvement-intervention-paired-design.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Project 3. Evaluating a Process Improvement Intervention (Paired Design)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-e-worked-projects--project-4-evaluating-a-reading-intervention-in-small-classrooms-education.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Project 4. Evaluating a Reading Intervention in Small Classrooms (Education)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-e-worked-projects--project-5-understanding-intervention-mechanisms-simple-mediation-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Project 5. Understanding Intervention Mechanisms: Simple Mediation Analysis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-e-worked-projects--summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Summary of Part E</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#why-p-values-are-not-enough" id="toc-why-p-values-are-not-enough" class="nav-link" data-scroll-target="#why-p-values-are-not-enough">Why P-Values Are Not Enough</a></li>
+  <li><a href="#common-effect-size-metrics" id="toc-common-effect-size-metrics" class="nav-link" data-scroll-target="#common-effect-size-metrics">Common Effect-Size Metrics</a></li>
+  <li><a href="#mean-differences-and-standardised-effects" id="toc-mean-differences-and-standardised-effects" class="nav-link" data-scroll-target="#mean-differences-and-standardised-effects">Mean Differences and Standardised Effects</a></li>
+  <li><a href="#binary-effects-odds-ratios-risk-differences-and-nnt" id="toc-binary-effects-odds-ratios-risk-differences-and-nnt" class="nav-link" data-scroll-target="#binary-effects-odds-ratios-risk-differences-and-nnt">Binary Effects: Odds Ratios, Risk Differences, and NNT</a></li>
+  <li><a href="#confidence-intervals-as-the-primary-summary" id="toc-confidence-intervals-as-the-primary-summary" class="nav-link" data-scroll-target="#confidence-intervals-as-the-primary-summary">Confidence Intervals as the Primary Summary</a></li>
+  <li><a href="#reporting-effect-sizes" id="toc-reporting-effect-sizes" class="nav-link" data-scroll-target="#reporting-effect-sizes">Reporting Effect Sizes</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key Takeaways</a></li>
+  <li><a href="#self-assessment-quiz" id="toc-self-assessment-quiz" class="nav-link" data-scroll-target="#self-assessment-quiz">Self-Assessment Quiz</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/part-d-reporting.html">Part D: Reporting and Interpretation</a></li><li class="breadcrumb-item"><a href="../chapters/part-d-reporting--chapter-15-effect-sizes-and-confidence-intervals-over-p-values.html"><span class="chapter-title">Chapter 15: Effect Sizes and Confidence Intervals over P-Values</span></a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-title">Chapter 15: Effect Sizes and Confidence Intervals over P-Values</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="learning-objectives" class="level3">
+<h3 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h3>
+<p>By the end of this chapter, you will be able to explain why p-values alone are insufficient for small-sample inference, compute and interpret common effect-size measures, use confidence intervals to judge magnitude and precision, and report results in language that separates statistical evidence from practical importance.</p>
+</section>
+<section id="why-p-values-are-not-enough" class="level2">
+<h2 class="anchored" data-anchor-id="why-p-values-are-not-enough">Why P-Values Are Not Enough</h2>
+<p>A p-value answers a narrow question: how unusual the data would be if the null hypothesis and modelling assumptions were true. It does not tell the reader whether an effect is large, precise, clinically important, educationally meaningful, or worth acting on. In small studies, this limitation is especially visible because even practically important effects can have p-values above 0.05 when the confidence interval is wide.</p>
+<p>Effect sizes and confidence intervals restore the missing information. The effect size describes magnitude, while the interval describes the range of values that remain compatible with the data. A transparent report should therefore make the p-value secondary to the estimate, its uncertainty, and its practical interpretation.</p>
+</section>
+<section id="common-effect-size-metrics" class="level2">
+<h2 class="anchored" data-anchor-id="common-effect-size-metrics">Common Effect-Size Metrics</h2>
+<p>Cohen’s d expresses a mean difference in pooled standard-deviation units. Odds ratios compare the odds of a binary outcome between groups. Correlations such as Pearson’s r, Spearman’s rho, and Kendall’s tau describe association. Variance-accounted-for measures such as eta-squared and epsilon-squared are useful for omnibus comparisons. These metrics are not interchangeable; the correct choice depends on the outcome scale, design, and question.</p>
+<p>For ANOVA-style summaries, eta-squared is often biased upward in small samples because it attributes sample-specific noise to the effect. Epsilon-squared and omega-squared are usually more cautious alternatives. For a Kruskal–Wallis test, a common epsilon-squared estimate is <span class="math inline">\(\epsilon^2 = (H - k + 1)/(n - k)\)</span>, where <span class="math inline">\(H\)</span> is the test statistic, <span class="math inline">\(k\)</span> is the number of groups, and <span class="math inline">\(n\)</span> is the total sample size <span class="citation" data-cites="tomczak2014">(<a href="../references.html#ref-tomczak2014" role="doc-biblioref">Tomczak and Tomczak 2014</a>)</span>.</p>
+<p>Cohen’s conventional benchmarks of d = 0.20, 0.50, and 0.80 are useful only as a starting vocabulary <span class="citation" data-cites="cohen1988">(<a href="../references.html#ref-cohen1988" role="doc-biblioref">Cohen 1988</a>)</span>. Practical importance is domain-specific. In education, effects as small as d = 0.10 can be meaningful when scaled to large populations <span class="citation" data-cites="kraft2020">(<a href="../references.html#ref-kraft2020" role="doc-biblioref">Kraft 2020</a>)</span>; in clinical trials, even d = 0.50 may be insufficient if the intervention carries substantial risk, cost, or burden.</p>
+<style>
+    .smallsamplelab-apa-table-block {
+      font-family: 'Times New Roman', Georgia, serif;
+      color: #111;
+      max-width: 52rem;
+      margin-bottom: 1rem;
+    }
+    .smallsamplelab-apa-table-number {
+      margin: 0 0 0.1rem 0;
+      font-weight: 700;
+    }
+    .smallsamplelab-apa-table-title {
+      margin: 0 0 0.55rem 0;
+      font-style: italic;
+    }
+    .smallsamplelab-apa-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.98rem;
+      line-height: 1.35;
+    }
+    .smallsamplelab-apa-table th,
+    .smallsamplelab-apa-table td {
+      padding: 0.35rem 0.5rem;
+      border-left: none !important;
+      border-right: none !important;
+      background: transparent !important;
+      vertical-align: top;
+    }
+    .smallsamplelab-apa-table thead th {
+      border-top: 2px solid #000;
+      border-bottom: 1px solid #000;
+      font-weight: 600;
+    }
+    .smallsamplelab-apa-table tbody tr:last-child td {
+      border-bottom: 2px solid #000;
+    }
+    .smallsamplelab-apa-table-note {
+      margin: 0.45rem 0 0 0;
+      font-size: 0.92rem;
+      line-height: 1.35;
+    }
+  </style>
+<div class="smallsamplelab-apa-table-block"><p class="smallsamplelab-apa-table-number">Table 15.1</p><p class="smallsamplelab-apa-table-title">Context-specific effect-size benchmarks</p>
+<table class="smallsamplelab-apa-table caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Domain</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Small benchmark</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Moderate benchmark</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Large benchmark</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Psychological interventions</td>
+<td style="text-align: left;">d = 0.20</td>
+<td style="text-align: left;">d = 0.50</td>
+<td style="text-align: left;">d = 0.80</td>
+<td style="text-align: left;">Cohen; Lipsey and Wilson</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Educational interventions</td>
+<td style="text-align: left;">d = 0.05-0.10</td>
+<td style="text-align: left;">d = 0.20-0.30</td>
+<td style="text-align: left;">d &gt;= 0.50</td>
+<td style="text-align: left;">Kraft</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Medical treatments</td>
+<td style="text-align: left;">OR = 1.20</td>
+<td style="text-align: left;">OR = 2.00</td>
+<td style="text-align: left;">OR &gt;= 4.00</td>
+<td style="text-align: left;">Chen and colleagues</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Customer satisfaction</td>
+<td style="text-align: left;">d = 0.20</td>
+<td style="text-align: left;">d = 0.50</td>
+<td style="text-align: left;">d = 0.80</td>
+<td style="text-align: left;">Domain standard</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Process improvements</td>
+<td style="text-align: left;">5% change</td>
+<td style="text-align: left;">10-20% change</td>
+<td style="text-align: left;">&gt;=25% change</td>
+<td style="text-align: left;">Domain standard</td>
+</tr>
+</tbody>
+</table>
+<p class="smallsamplelab-apa-table-note"><em>Note.</em> The values are interpretive anchors, not universal cut-offs. Use domain evidence and substantive consequences when judging magnitude.</p></div>
+<p>Educational effects are often smaller than laboratory effects but can still matter when an intervention reaches many students <span class="citation" data-cites="kraft2020">(<a href="../references.html#ref-kraft2020" role="doc-biblioref">Kraft 2020</a>)</span>. Medical odds ratios require clinical context because the same odds ratio can imply very different absolute risk changes depending on baseline risk <span class="citation" data-cites="chen2010">(<a href="../references.html#ref-chen2010" role="doc-biblioref">Chen, Cohen, and Chen 2010</a>)</span>. Meta-analytic norms, such as those reviewed by <span class="citation" data-cites="lipsey1993">Lipsey and Wilson (<a href="../references.html#ref-lipsey1993" role="doc-biblioref">1993</a>)</span>, are useful because they place a new estimate within an empirical distribution of related studies.</p>
+</section>
+<section id="mean-differences-and-standardised-effects" class="level2">
+<h2 class="anchored" data-anchor-id="mean-differences-and-standardised-effects">Mean Differences and Standardised Effects</h2>
+<p>The most interpretable effect size is often the unstandardised mean difference. In the teaching-method example below, Method A has a higher average score than Method B. The difference in original score units is the first result to report; Cohen’s d and Hedges’ g help compare the result with other studies that used different scales.</p>
+<div class="smallsamplelab-apa-table-block"><p class="smallsamplelab-apa-table-number">Table 15.2</p><p class="smallsamplelab-apa-table-title">Mean-difference and standardised effect-size summary</p>
+<table class="smallsamplelab-apa-table caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Quantity</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Estimate</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">95% CI</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Method A mean</td>
+<td style="text-align: right;">81.5</td>
+<td style="text-align: right;">--</td>
+<td style="text-align: left;">Average score under Method A</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Method B mean</td>
+<td style="text-align: right;">79.8</td>
+<td style="text-align: right;">--</td>
+<td style="text-align: left;">Average score under Method B</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mean difference (A - B)</td>
+<td style="text-align: right;">1.8</td>
+<td style="text-align: right;">-1.0 to 4.5</td>
+<td style="text-align: left;">Difference in original test-score units</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Cohen's d</td>
+<td style="text-align: right;">0.54</td>
+<td style="text-align: right;">-0.32 to 1.40</td>
+<td style="text-align: left;">Standardised difference using the pooled SD</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hedges' g</td>
+<td style="text-align: right;">0.52</td>
+<td style="text-align: right;">-0.31 to 1.35</td>
+<td style="text-align: left;">Small-sample correction to Cohen's d</td>
+</tr>
+</tbody>
+</table>
+<p class="smallsamplelab-apa-table-note"><em>Note.</em> Two independent groups with n = 12 per group. Equal-variance t test: t(22) = 1.32, p = 0.200.</p></div>
+<p>Students in Method A scored about 1.8 points higher than those in Method B, with a 95% CI from -1.0 to 4.5 points. On the standardised scale, Cohen’s d is about 0.54 and Hedges’ g is about 0.52. The reporting lesson is to give the reader both the original-unit difference and the standardised comparison, while recognising that the standardised interval remains wide with only 12 observations per group.</p>
+</section>
+<section id="binary-effects-odds-ratios-risk-differences-and-nnt" class="level2">
+<h2 class="anchored" data-anchor-id="binary-effects-odds-ratios-risk-differences-and-nnt">Binary Effects: Odds Ratios, Risk Differences, and NNT</h2>
+<p>For binary outcomes, odds ratios are common but can be difficult to interpret. Odds ratios compare odds, not risks. When baseline risk is low, roughly below 10%, the odds ratio approximates the risk ratio; when baseline risk is higher, the odds ratio can substantially overstate the apparent effect. Risk differences are often more directly useful because they describe the absolute change in event probability. The number needed to treat (NNT) is the reciprocal of the absolute risk difference and answers how many people would need the intervention for one additional success relative to control.</p>
+<div class="smallsamplelab-apa-table-block"><p class="smallsamplelab-apa-table-number">Table 15.3</p><p class="smallsamplelab-apa-table-title">Binary effect-size summaries for a small trial</p>
+<table class="smallsamplelab-apa-table caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Quantity</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Estimate</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">95% CI</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Treatment success rate</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">--</td>
+<td style="text-align: left;">15 successes among 20 treated participants</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Control success rate</td>
+<td style="text-align: right;">0.50</td>
+<td style="text-align: right;">--</td>
+<td style="text-align: left;">10 successes among 20 control participants</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Absolute risk difference</td>
+<td style="text-align: right;">0.25</td>
+<td style="text-align: right;">-0.04 to 0.54</td>
+<td style="text-align: left;">Additional success probability under treatment</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Odds ratio</td>
+<td style="text-align: right;">2.92</td>
+<td style="text-align: right;">0.66 to 14.50</td>
+<td style="text-align: left;">Odds of success in treatment relative to control</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Number needed to treat</td>
+<td style="text-align: right;">4.0</td>
+<td style="text-align: right;">Not bounded because the risk-difference CI crosses 0</td>
+<td style="text-align: left;">Approximate patients treated for one additional success</td>
+</tr>
+</tbody>
+</table>
+<p class="smallsamplelab-apa-table-note"><em>Note.</em> Fisher's exact test for the 2 x 2 table gives two-sided p = 0.191. The odds-ratio CI is exact; the odds ratio is the conditional maximum-likelihood estimate from Fisher's exact test and can differ slightly from the simple cross-product ratio. The risk-difference CI is an uncorrected large-sample interval used here for interpretation.</p></div>
+<p>The treatment group has a higher observed success rate, but the confidence interval for the risk difference crosses zero and the exact odds-ratio interval is wide. Because NNT is the reciprocal of the risk difference, an interval that includes zero crosses infinity and produces an unbounded or discontinuous NNT interval. In such cases, report the risk difference and its interval as the primary inferential summary, and present the point-estimate NNT with a cautionary note rather than as a simple bounded interval.</p>
+</section>
+<section id="confidence-intervals-as-the-primary-summary" class="level2">
+<h2 class="anchored" data-anchor-id="confidence-intervals-as-the-primary-summary">Confidence Intervals as the Primary Summary</h2>
+<p>Confidence intervals are often more informative than p-values because they communicate magnitude and precision simultaneously. An interval that excludes the null value also corresponds to a statistically significant result at the matching alpha level, but its real value is broader: it shows whether the data are compatible with effects that would matter in practice.</p>
+<div class="cell" data-layout-align="center" alt="Confidence intervals communicate both magnitude and precision.">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="part-d-reporting--chapter-15-effect-sizes-and-confidence-intervals-over-p-values_files/figure-html/qfig-ch15-ci-interpretation-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Figure 15.1: Confidence intervals communicate both magnitude and precision.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>In small-sample work, a non-significant result with a wide interval should usually be described as imprecise rather than negative. Conversely, a narrow interval that rules out practically important effects can support a more substantive conclusion even when p is above 0.05. Chapter 16 develops this distinction in detail.</p>
+</section>
+<section id="reporting-effect-sizes" class="level2">
+<h2 class="anchored" data-anchor-id="reporting-effect-sizes">Reporting Effect Sizes</h2>
+<p>A complete results sentence names the estimator, gives the point estimate, reports the confidence interval, and then interprets the magnitude in context. For the teaching-method example, a concise report would be: “Method A scores were higher than Method B scores by 1.8 points, 95% CI [-1.0, 4.5], corresponding to Hedges’ g = 0.52.” The practical interpretation should then explain whether a 1.8-point gain is educationally meaningful, not merely whether the p-value crossed a threshold.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Results Sentence Builder
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use this structure when writing small-sample results:</p>
+<p><strong>Estimator:</strong> Name the comparison or association in original units.</p>
+<p><strong>Magnitude:</strong> Report the point estimate and a suitable effect size.</p>
+<p><strong>Uncertainty:</strong> Report the confidence interval before the p-value if both are included.</p>
+<p><strong>Context:</strong> State the practical threshold, benchmark, or prior evidence used to judge importance.</p>
+<p><strong>Caution:</strong> If the interval is wide, say that the estimate is imprecise rather than over-interpreting the point estimate.</p>
+<p>Example: “The intervention group scored 4.2 points higher than the comparison group, 95% CI [0.8, 7.6], Hedges’ g = 0.62. The interval includes values from a small educational benefit to a larger practically meaningful gain, so the estimate should be treated as promising but still imprecise.”</p>
+</div>
+</div>
+<p>When adapting the code examples, record the random seed for any simulation or bootstrap step and include package versions in reproducible reports. Stochastic procedures can otherwise produce slightly different intervals across machines.</p>
+</section>
+<section id="key-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key Takeaways</h2>
+<p>P-values alone are too thin for small-sample interpretation. Effect sizes describe how large a result is, confidence intervals describe how precisely it has been estimated, and original-unit summaries often communicate practical importance better than standardised metrics. A strong report gives the estimate, its uncertainty, and the substantive benchmark used to judge whether the effect matters.</p>
+</section>
+<section id="self-assessment-quiz" class="level2">
+<h2 class="anchored" data-anchor-id="self-assessment-quiz">Self-Assessment Quiz</h2>
+<style>
+:root {
+  --incorrect: #983E82;
+  --incorrect_alpha: #edaddd;
+  --correct: #59935B;
+  --correct_alpha: #c0edc2;
+  --highlight: #467AAC;
+  --highlight_alpha: #D1E4FF;
+  --highlight_gray: #C3C3C3;
+  --background_question: #7f7f7f0d;
+  --background_input: white;
+  --text_input: black;
+  --webex-reveal-main-font-size: 1.5rem; /* 1.5 line height relative to document */
+  --webex-reveal-main-color: var(--r-main-color);
+}
+
+/* Wishlist: Adding styling for .color-theme-1 (sepia; gitbook) */
+
+/* for quarto websites when using dark theme and
+ * for bookdown::gitbook: dark theme (.color-theme-2) */
+:root .quarto-dark, :root .color-theme-2 {
+  --highlight: #5687B9;
+  --background_input: black;
+  --text_input: white;
+}
+
+/*--------------ADJUSTMENTS FOR REVEALJS-----------------*/
+
+.reveal .webex-question * {
+    font-size: var(--webex-reveal-main-font-size) !important;
+    color: var(--webex-reveal-main-color) !important;
+} 
+
+
+/*--------------------webex/exams2forms-------------------*/
+
+/* a webex-group is a div container containing multiple
+ * webex-questions. We first hide all and randomly show
+ * one of the randomizations (webex.js) */
+.webex-group .webex-question {
+  display: none;
+}
+.webex-group .webex-question.active {
+  display: block;
+}
+
+.webex-check {}
+
+.webex-box {
+  border: 2px solid var(--highlight);
+  padding: 0.5em;
+  margin: 1em 0;
+  border-radius: .25em;
+  background-color: var(--background_question);
+}
+
+.webex-filename {
+  display: block;
+  font-family: "Lucida Console", "Courier New", monospace;
+  color: gray;
+  text-align: right;
+}
+.webex-filename > p { margin: 0; }
+
+.webex-total_correct {
+  margin-left: 1em;
+}
+
+.unchecked .webex-total_correct {
+  display: none;
+}
+
+.unchecked .webex-incorrect,
+.unchecked .webex-correct {
+  border: 2px solid transparent !important;
+  background-color: transparent !important;
+}
+
+/* input elements require a visible border */
+.unchecked select.webex-incorrect,
+.unchecked select.webex-correct,
+.unchecked input.webex-incorrect,
+.unchecked input.webex-correct {
+  border: 2px solid var(--highlight) !important;
+  background-color: var(--background_input) !important;
+  color: var(--text_input) !important;
+}
+
+/* styles for webex-solveme */
+.webex-select, .webex-solveme,
+.unchecked .webex-radiogroup > .webex-incorrect,
+.unchecked .webex-radiogroup > .webex-correct{
+  border: 2px solid var(--highlight);
+  background-color: var(--background_input);
+  color: var(--text_input) !important;
+  border-radius: 0.25em;
+  width: auto;
+  max-width: 90%;
+}
+
+.webex-question .tolerance + .webex-solveme {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: none;
+  padding-left: 0.5em;
+}
+.webex-question .tolerance {
+  border-color: var(--highlight);
+  border-radius: 0.25em;
+  background-color: #CECECE;
+  color: gray;
+  text-align: right;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-style: solid;
+  border-right: none;
+  padding-right: .5em;
+  padding-left: .25em;
+}
+.webex-check:not(.unchecked) .tolerance:has(+ .webex-solveme.webex-incorrect) {
+  border-color: var(--incorrect);
+  color: var(--incorrect);
+}
+.webex-check:not(.unchecked) .tolerance:has(+ .webex-solveme.webex-correct) {
+  border-color: var(--correct);
+  color: var(--correct);
+}
+
+
+.webex-incorrect, .webex-checkboxgroup, .webex-solveme. .webex-radiogroup {
+    /* DEPRICATED color: black; */
+    border-radius: 0.25em;
+}
+.webex-checkboxgroup {
+    margin-bottom: 1em;
+}
+
+.webex-incorrect,
+.webex-checkboxgroup > .webex-incorrect,
+.webex-solveme.webex-incorrect,
+.webex-radiogroup > .webex-incorrect {
+    border: 2px solid var(--incorrect);
+    background-color: var(--incorrect_alpha);
+}
+.webex-correct,  
+.webex-checkboxgroup > .webex-correct,
+.webex-solveme.webex-correct,
+.webex-radiogroup >.webex-correct {
+    border: 2px solid var(--correct);
+    background-color: var(--correct_alpha);
+}
+
+.unchecked .webex-incorrect > span::after,
+.unchecked .webex-incorrect + .webex-icon::after,
+.unchecked .webex-correct > span::after,
+.unchecked .webex-correct + .webex-icon::after {
+  content: "";
+}
+
+/* icons specified as CSS decimal 9984-10175 unicode chars,
+ * see e.g.: https://www.w3schools.com/charsets/ref_utf_dingbats.asp */
+.webex-incorrect > span::after,
+.webex-incorrect + .webex-icon::after {
+  content: "\00a0\00a0\2715";
+}
+
+.webex-correct > span::after,
+.webex-correct + .webex-icon::after {
+  content: "\00a0\00a0\2713";
+}
+
+/* **************************** */
+/* **************************** */
+
+/* styles for hidden solutions */
+.webex-solution {
+    display: none;
+    padding: 0.5em;
+    margin-bottom: 10px;
+    border: 2px solid var(--highlight_gray);
+    border-radius: 5px;
+}
+.webex-solution.visible {
+    display: block;
+}
+.webex-solution > ul {
+    padding-left: 2em;
+}
+
+/* webex button list styling */
+ul.webex-button-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    list-style: none;
+    padding: 0 !important; /* !important for bookdown::gitbook: */
+    margin: 0 !important; /* !important for bookdown::gitbook: */
+}
+ul.webex-button-list > li {
+    padding: 0;
+}
+ul.webex-button-list > li {
+    margin-bottom: 0 !important; /* !important for bookdown */
+}
+ul.webex-button-list > li:first-child {
+    margin-right: auto;
+    margin-top: 0; /* for bookdown bs4_book */
+}
+
+.webex-solution button,
+.webex-box .webex-button {
+    border: 2px solid;
+    height: 2em;
+    min-width: 2em;
+    margin-bottom: 0;
+    margin-right: 0.25em;
+    border-radius: 0.5em;
+    background-color: transparent;
+    border-color: var(--highlight);
+    color: var(--highlight);
+    padding: 0 0.5em;
+    font-size: 1.2em;
+    white-space: nowrap;
+}
+.webex-button:hover {
+    background-color: var(--highlight_alpha);
+}
+.webex-solution pre.sourceCode {
+    border-color: var(--correct);
+}
+ul.webex-button-list > li:last-child > .webex-button { 
+    margin-right: 0;
+}
+
+/* invisible border to keep dimensions when not highlighted */
+.webex-checkboxgroup > label,
+.unchecked .webex-checkboxgroup > label,
+.webex-radiogroup label {
+  font-weight: 400;
+  display: block;
+  border: 2px solid transparent;
+  background-color: inherit;
+  border-radius: 0.25em;
+}
+
+.webex-checkboxgroup label > input[type=checkbox],
+.webex-radiogroup label > input[type=radio] {
+  margin: 0.1em 0.5em 0 0.25em;
+  position: relative;
+  top: 0.125em;
+}
+
+.webex-radiogroup {
+  margin: 1em 0;
+}
+
+
+/* ----------------------------------------------------------------
+ * CSS styling for lists (<ul>) used for multiple choice exercises
+ * with display = "dropdown". The <ul> comes from markdown and
+ * has no specific class, thus we must rely on the nesting
+ * .webex-box > ul.
+ */
+.webex-box > ul:not(.webex-button-list) {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 1em 0.25em;
+}
+.webex-box > ul:not(.webex-button-list) > li {
+    margin: 0 0 0.25em 0;
+}
+.webex-box > ul:not(.webex-button-list) > li > select {
+    margin: 0 0.5em 0 0;
+}
+
+
+/* ----------------------------------------------------------------
+ * CSS style for webex-checkboxgroup used for multiple choice
+ * when using 'display = "buttons"'.
+ *
+ * For 'checkboxgroups' (multiple choice with display = "buttons"
+ * things need to be different from e.g., single choice radiogroups.
+ * First, we do not want the icon (correct, incorrect) in front of the answers,
+ * setting span::before to no content. Second, we remove the border and
+ * background highlight used to show 'selected items' on radiogroups.
+ * --------------------------------------------------------------- */
+.webex-checkboxgroup > label {
+  display: block;
+}
+.webex-checkboxgroup > label > span {
+  font-weight: normal;
+}
+.unchecked .webex-checkboxgroup .webex-incorrect,
+.unchecked .webex-checkboxgroup .webex-correct {
+  border: 2px solid transparent !important;
+  background-color: transparent !important;
+}
+.unchecked .webex-checkboxgroup > label.webex-correct,
+.unchecked .webex-checkboxgroup > label.webex-incorrect {
+  background-color: transparent;
+}
+
+
+
+.smallsamplelab-quiz--html { margin-top: 1rem; }
+.smallsamplelab-quiz--html .webex-question + .webex-question { margin-top: 1.25rem; }
+.smallsamplelab-quiz--html .webex-box { margin: 0.75rem 0; }
+.smallsamplelab-quiz--html .webex-box p:last-child { margin-bottom: 0; }
+.smallsamplelab-quiz--html .smallsamplelab-quiz-number { display: block; font-weight: 600; margin-bottom: 0.35rem; }
+.smallsamplelab-quiz--html .webex-radiogroup label { margin-bottom: 0.5rem; }
+.smallsamplelab-quiz--html .webex-solution p:last-child { margin-bottom: 0; }
+</style>
+<script>
+
+/* definition of content for the buttons */
+const webex_buttons = {check_hidden:          "<b>&check;</b>",
+                       check_hidden_alt:      "Check answer",
+                       check_shown:           "<b>&lsh;</b>",
+                       check_shown_alt:       "Hide check",
+                       check_of_total:        "/",
+                       solution:              "<b>&quest;</b>",
+                       solution_alt:          "Correct solution",
+                       question_next:         "<b>&#8634;</b>",
+                       question_next_alt:     "Next question",
+                       question_previous:     "",
+                       question_previous_alt: ""}
+
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  document.querySelectorAll(".webex-total_correct").forEach(total => {
+    p = total.closest(".webex-box");
+    var correct = p.getElementsByClassName("webex-correct").length;
+    var solvemes = p.getElementsByClassName("webex-solveme").length;
+    var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
+    var selects = p.getElementsByClassName("webex-select").length;
+    /* no specific class on input node, thus searching via query selector */
+    var checkboxgroups = p.querySelectorAll("div[class=webex-checkboxgroup] input[type=checkbox]").length
+
+    /* show number of correct / total number of answers */
+    total.innerHTML = correct + "&nbsp;" + webex_buttons.check_of_total + "&nbsp;" + (solvemes + radiogroups + checkboxgroups + selects);
+  });
+}
+
+/* check answers */
+check_func = function() {
+  console.log("webex: check answer");
+
+  //var cl = elem.parentElement.classList;
+  var cl = this.closest(".webex-box").classList;
+  if (cl.contains("unchecked")) {
+    cl.remove("unchecked");
+    this.innerHTML = webex_buttons.check_shown; //"Hide check";
+    if (webex_buttons.check_shown_alt.length > 0) this.setAttribute("title", webex_buttons.check_shown_alt);
+  } else {
+    cl.add("unchecked");
+    this.innerHTML = webex_buttons.check_hidden; //"Check answer";
+    if (webex_buttons.check_hidden_alt.length > 0) this.setAttribute("title", webex_buttons.check_hidden_alt);
+  }
+}
+
+/* helper functions for checking the webex ID */
+const id_checker = {"fmt": new RegExp("[g-zG-Z]"),
+                    "load": function(e) { return e.getAttribute("id").match("(?<=(-)).*$")[0]; },
+                    "eval": new TextEncoder(),
+                    "dval": new TextDecoder()}
+
+/* Show/hide correct solution */
+solution_func = function() {
+  console.log("webex: show/hide solution");
+
+  var div = this.closest(".webex-question").querySelector(".webex-solution");
+  var cl = div.classList;
+
+  if (cl.contains("visible")) {
+    cl.remove("visible");
+  } else {
+    cl.add("visible");
+  }
+}
+
+/* function for checking and converting solutions/answers to numeric (float) */
+convert_to_numeric = function(x) {
+  if (typeof x == "string") {
+    /* do nothing */
+  } else if (x.length == 1) {
+    /* take first element */
+    x = x[0]
+  } else {
+    return NaN;
+  }
+
+  /* remove spaces for easier parsing */
+  x = x.replace(/\s/g, "");
+
+  /* Define patterns for different formats, note that spaces have been removed above */
+  const patterns = [
+    {regex: /^[+-]?\d+(\.\d{3})*,\d+$/, decimal: ",", thousand: "." },  // Format: "1.100.100.100,3"
+    {regex: /^[+-]?\d+(,\d{3})*\.\d+$/, decimal: ".", thousand: "," },  // Format: "1,100,100,100.3"
+    {regex: /^[+-]?\d+(\.|\.\d+)?$/, decimal: "." },                    // Format: "1100100100.5" or "1100100100."
+    {regex: /^[+-]?\d+(,|,\d+)$/, decimal: "," }                        // Format: "1100100100,5" or "1100100100,"
+  ];
+
+
+  /* testing all regular expressions, convert to float if possible */
+  for (const { regex, decimal, thousand } of patterns) {
+    if (regex.test(x)) {
+      let numeric = x;
+      if (thousand) numeric = numeric.replace(new RegExp(`\\${thousand}`, "g"), "");
+      numeric = numeric.replace(decimal, ".");
+      return parseFloat(numeric);
+    }
+  }
+
+  /* input of length 1 but none of the known formats, return NaN */
+  return NaN;
+}
+
+/* Checking webex ID, returns formalsol */
+check_id = function(e) {
+  /* loading webex ID */
+  var id = id_checker["load"](e);
+
+  /* extracting answer */
+  let answer = e.dataset.answer;
+
+  /* checking unique id, prepare and return array */
+  if (!id_checker["fmt"].test(id)) {
+    const a = id_checker["eval"].encode(atob(answer));
+    const b = id_checker["eval"].encode(id);
+    const res = a.map((byte, index) => byte^b[index % b.length]);
+    answer = id_checker["dval"].decode(res);
+    /* Replacing &amp; with ' before parsing */
+    answer = answer.replaceAll("&apos;", "'");
+  }
+
+  return JSON.parse(answer);
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  /* avoid that keyup and keychange twice execute this function within nms = 10
+   * ms, clearing inputTimer and add timeout */
+  console.log("webex: check solveme");
+
+  /* float, precision for checking numeric answers */
+  const eps = 0.00000000000001;
+
+  /* get last checked user answer */
+  const question = this.closest(".webex-question")
+
+  /* extracting classes */
+  var cl = this.classList;
+  var my_answer = this.value;
+
+  /* extracting classes */
+  var cl = this.classList;
+
+  /* empty answer? Job done */
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+    return false;
+  }
+
+  /* Find closest (parent) webex-question */
+  let formalsols = check_id(this)
+
+  /* by default we assume the users' answer is incorrect */
+  var user_answer_correct = false;
+
+  /* If a tolerance is given, formalsol is expected to
+   * be numeric (float) as is the answer given by the user.
+   * Convert formalsol/my_answer to float. If not possible,
+   * NaN is returned. If no tolerance is given, initialize
+   * num_formalsol and num_my_answer with NaN */
+  const num_formalsol = this.dataset.tol === undefined ? NaN : convert_to_numeric(formalsols);
+  const num_my_answer = this.dataset.tol === undefined ? NaN : convert_to_numeric(my_answer);
+
+  /* if the correct answer is numeric (float), the user's answer
+   * must also be numeric. If not, it is wrong. Else we can
+   * compare floating point numbers */
+  if (!isNaN(num_formalsol) && !isNaN(num_my_answer)) {
+    /* check if the real answer and the user input are numerically the same;
+     * adding 'delta' to avoid precision issues */
+    var diff = Math.abs(num_formalsol - num_my_answer);
+    if (diff < parseFloat(this.dataset.tol) + eps) { user_answer_correct = true; }
+
+  /* if the question contains regex, a regular expression is used
+   * to evaluate the users answer. Allows for multiple regular expressions */
+  } else if (cl.contains("regex")) {
+    for (let i = 0; i < formalsols.length; i++) {
+        let regex = new RegExp(formalsols[i], cl.contains("ignorecase") ? "i" : "");
+        if (regex.test(my_answer)) { user_answer_correct = true; break; }
+    }
+
+  /* else we evaluate on 'string level', considering the creators preferences
+   * regarding set options */
+  } else {
+    /* modify/prepare answer */
+    if (cl.contains("ignorecase")) { my_answer = my_answer.toLowerCase(); }
+    if (cl.contains("nospaces"))   { my_answer = my_answer.replace(/ /g, ""); }
+
+    /* if the real answer includes user input - correct */
+    if (formalsols.includes(my_answer)) {
+      user_answer_correct = true;
+  
+      // added regex bit
+      if (cl.contains("regex")) {
+        answer_regex = RegExp(formalsols.join("|"))
+        if (answer_regex.test(my_answer)) {
+          cl.add("webex-correct");
+        }
+      }
+    }
+  }
+
+  if (user_answer_correct) {
+      cl.add("webex-correct");
+      cl.remove("webex-incorrect");
+  } else {
+      cl.add("webex-incorrect");
+      cl.remove("webex-correct");
+  }
+
+  update_total_correct();
+
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var options   = [];
+  Array.from(this.querySelectorAll("option")).forEach((option, index) => {
+    if (!option.hasAttribute("value") || !option.getAttribute("value") === "blank") {
+      options.push(option);
+    }
+  });
+
+  /* get selected option */
+  function get_selected(options) { return options.findIndex(option => option.selected); }
+  var option_index = get_selected(options)
+
+  /* loading webex ID */
+  var formalsol = check_id(this)
+
+  /* add class for current selection */
+  this.classList.remove("webex-incorrect");
+  this.classList.remove("webex-correct");
+  if (option_index >= 0) {
+    this.classList.add(formalsol[option_index] === 1 ? "webex-correct" : "webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  /* get real answer (binary integer array) */
+  var id = e.target.getAttribute("name");
+  var group = document.querySelector(".webex-radiogroup[id='webex-" + id + "']");
+  var formalsol = check_id(group)
+
+  /* check which radiobuttion is selected (user answer) */
+  function get_checked(radios) {
+    return radios.findIndex(radios => radios.checked);
+  }
+  var radios = Array.from(group.querySelectorAll("input[type='radio']"))
+  var radio_index = get_checked(radios);
+
+  /* remove existing classes */
+  radios.forEach(radio => {
+    let cl = radio.closest("label").classList
+    cl.remove("webex-incorrect");
+    cl.remove("webex-correct");
+  });
+
+  /* add class for current selection */
+  let cl = radios[radio_index].closest("label").classList
+  if (formalsol[radio_index] === 1) {
+      cl.add("webex-correct");
+  } else {
+      cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+
+/* function for checking checkboxgroups answers */
+checkboxgroups_func = function(e) {
+  console.log("webex: check checkboxgroups");
+
+  /* get real answer (binary integer array) */
+  var group = document.querySelector(".webex-checkboxgroup[id='" + this.id + "']");
+  var formalsol = check_id(group);
+
+  /* check which checkbox is checked (user answer) */
+  function get_checked(group) {
+      const checkboxes = Array.from(group.querySelectorAll("input[type='checkbox']"));
+      return checkboxes.reduce((indices, checkbox, index) => {
+          if (checkbox.checked) indices.push(index);
+          return indices;
+      }, []);
+  }
+  var checks = Array.from(group.querySelectorAll("input[type='checkbox']"));
+  var check_index = get_checked(group);
+
+  checks.forEach((e, index) => {
+    var label = e.parentNode;
+    var ans = formalsol[index];
+    if ((e.checked && ans === 1) || (!e.checked && ans === 0)) {
+        label.setAttribute("class", "webex-correct")
+    } else {
+        label.setAttribute("class", "webex-incorrect")
+    }
+  });
+
+  update_total_correct();
+}
+
+/* shuffling array (thanks to stack overflow)
+ * If argument x is an integer we create an integer sequence
+ * from 0, 1, ..., (x - 1) and return a shuffled version. If
+ * the input is an array, we simply shuffle it */
+shuffle_array = function(x) {
+   if (Number.isInteger(x) && !isNaN(x)) {
+     x = Array.from({length: x}, (v, i) => i);
+   }
+   let shuffled = x.map(value => ({ value, sort: Math.random() }))
+        .sort((a, b) => a.sort - b.sort).map(({ value }) => value)
+   return shuffled;
+}
+
+/* ---------------------------------------------------------
+ * ---------------------------------------------------------
+ * --------------------------------------------------------- */
+window.addEventListener("load", function() {
+  //console.log("webex: onload");
+
+  /* setting up buttons and actions to show/hide answers */
+  document.querySelectorAll(".webex-check").forEach(section => {
+    section.classList.add("unchecked");
+
+    /* ul to take up the list items with buttons */
+    let button_ul = document.createElement("ul");
+    button_ul.setAttribute("class", "webex-button-list");
+    section.appendChild(button_ul);
+
+    /* button to _check_ if answers given are correct */
+    let li_check = document.createElement("li");
+    button_ul.appendChild(li_check); /* add list item to ul */
+    let btn_check = document.createElement("button");
+    btn_check.innerHTML = webex_buttons.check_hidden;  // "Check answer";
+    btn_check.setAttribute("class", "webex-button webex-button-check");
+    if (webex_buttons.check_hidden_alt.length > 0) btn_check.setAttribute("title", webex_buttons.check_hidden_alt);
+    btn_check.onclick = check_func;
+    li_check.appendChild(btn_check);
+
+    /* span to show current number of points (when _check_ active) */
+    let spn = document.createElement("span");
+    spn.classList.add("webex-total_correct");
+    li_check.appendChild(spn);
+
+    /* button to show the _solution_ if there is one */
+    var has_solution = section.parentNode.querySelectorAll(".webex-solution").length > 0;
+    if (has_solution) {
+      let li_solution = document.createElement("li");
+      button_ul.appendChild(li_solution); /* add list item to ul */
+      let btn_solution = document.createElement("button");
+      btn_solution.innerHTML = webex_buttons.solution; // "Correct answer";
+      btn_solution.setAttribute("class", "webex-button webex-button-solution");
+      if (webex_buttons.solution_alt.length > 0) btn_solution.setAttribute("title", webex_buttons.solution_alt);
+      btn_solution.onclick = solution_func;
+      li_solution.appendChild(btn_solution);
+    }
+
+  });
+
+  /* set up webex-solveme inputs */
+  document.querySelectorAll(".webex-solveme").forEach(solveme => {
+    solveme.setAttribute("autocomplete","off");
+    solveme.setAttribute("autocorrect", "off");
+    solveme.setAttribute("autocapitalize", "off");
+    solveme.setAttribute("spellcheck", "false");
+    solveme.value = "";
+
+    /* adjust answer for 'no spaces' (ignore spaces) */
+    if (solveme.classList.contains("nospaces")) {
+      solveme.dataset.answer = solveme.dataset.answer.replace(/ /g, "");
+    }
+
+    /* attach checking function, triggered on key up, change, and when
+     * elemnt is out of focus. Only evaluated once by tracking changes
+     * via variable solveme_last_user_answer */
+    solveme.addEventListener("keyup",  solveme_func);
+    solveme.addEventListener("change", solveme_func);
+    solveme.addEventListener("blur",   solveme_func);
+
+    /* adding span to show correct/incorrect icon */
+    solveme.insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  });
+
+  /* set up radiogroups (single choice questions with display = "buttons") */
+  document.querySelectorAll(".webex-radiogroup").forEach(radiogroup => {
+    radiogroup.onchange = radiogroups_func;
+  });
+
+  /* set up checkboxgroups (multiple choice questions with display = "buttons") */
+  document.querySelectorAll(".webex-checkboxgroup").forEach(checkboxgroup => {
+    checkboxgroup.onchange = checkboxgroups_func;
+  });
+
+  /* set up selects (dropdown menus) */
+  document.querySelectorAll(".webex-select").forEach(select => {
+    select.onchange = select_func;
+    /* append webex-icon for correct/incorrect icons */
+    var elem = document.createElement("span")
+    elem.classList.add("webex-icon")
+    select.parentNode.appendChild(elem)
+  });
+
+  /* change to next/previous question if multiple are available */
+  function handleQuestionClick(group, questions, step) {
+    return async function() {
+      /* get question order as integer vector */
+      let questionOrder = group.dataset.questionOrder.split(",").map(str => parseInt(str));
+
+      /* current question/position */
+      let currentPosition = parseInt(group.dataset.currentPosition);
+
+      /* Hide the current question */
+      questions.forEach(question => { question.classList.remove("active"); });
+
+      /* Move to the next question index */
+      currentPosition = (currentPosition + step) % questionOrder.length;
+      if (currentPosition < 0) currentPosition = currentPosition + questionOrder.length
+
+      /* Display the new question */
+      questions[questionOrder[currentPosition]].classList.add("active");
+
+      // Update the currentPosition data attribute on the group div
+      group.dataset.currentPosition = currentPosition;
+    };
+  }
+
+  document.querySelectorAll(".webex-group").forEach(group => {
+    const questions = Array.from(group.querySelectorAll(".webex-question"));
+
+    /* Create vector with question order. If the webex-group does
+     * not have class '.noshuffle' we will randomly shuffle the order */
+    let questionOrder = Array.from({length: questions.length}, (v, i) => i);
+    if (!group.classList.contains("noshuffle")) {
+      questionOrder = shuffle_array(questionOrder);
+    }
+
+    /* take start position (if set) or start at 0 */
+    const currentPosition = parseInt(group.getAttribute("data-start-position")) || 0;
+
+    /* show the default question for each group */
+    questions[questionOrder[currentPosition]].classList.add("active");
+
+    /* store random order of questions as well as current position */
+    group.dataset.questionOrder   = questionOrder;
+    group.dataset.currentPosition = currentPosition;
+
+    /* find all webex-questions, search for .webex-button-list and
+     * populate the list with necessary <li><button>...</button></li> elements */
+    questions.forEach(question => {
+        let button_ul = question.querySelector("ul.webex-button-list");
+
+        let li_next = document.createElement("li");
+        let nextButton = document.createElement("button");
+        nextButton.setAttribute("class", "webex-button webex-button-next");
+        if (webex_buttons.question_next_alt.length > 0) nextButton.setAttribute("title", webex_buttons.question_next_alt);
+        nextButton.innerHTML = webex_buttons.question_next; // "Next question";
+        nextButton.addEventListener("click", handleQuestionClick(group, questions, 1));
+        li_next.appendChild(nextButton);
+
+        let li_previous = document.createElement("li");
+        let previousButton = document.createElement("button");
+        previousButton.setAttribute("class", "webex-button webex-button-previous");
+        if (webex_buttons.question_previous_alt.length > 0) previousButton.setAttribute("title", webex_buttons.question_previous_alt);
+        previousButton.innerHTML = webex_buttons.question_previous; // "Previous question";
+        previousButton.addEventListener("click", handleQuestionClick(group, questions, -1));
+        li_previous.appendChild(previousButton);
+
+        if (webex_buttons.question_previous.length > 0) button_ul.appendChild(li_previous);
+        if (webex_buttons.question_next.length > 0) button_ul.appendChild(li_next);
+    });
+  });
+
+  /* Development options */
+  document.querySelectorAll(".webex-question.check").forEach(question => {
+      question.querySelector(".webex-button-check").click()
+  });
+  document.querySelectorAll(".webex-question.solution").forEach(question => {
+      let btn = question.querySelector(".webex-button-solution");
+      if (btn !== null) { btn.click(); }
+  });
+
+  /* Pre-filling <input> fields */
+  document.querySelectorAll(".webex-question.prefill").forEach(question => {
+      question.querySelectorAll("input.webex-solveme").forEach(solveme => {
+          let x = JSON.parse(solveme.dataset.answer);
+          solveme.value = x[0];
+          /* Trigger the on change event */
+          solveme.dispatchEvent(new Event("change"));
+      });
+
+      /* Pre-filling radiogroups, that is for schoice questions */
+      question.querySelectorAll(".webex-radiogroup").forEach(radiogroup => {
+          let x = JSON.parse(radiogroup.dataset.answer);
+          let idx = x.indexOf(1);
+          let radios = radiogroup.querySelectorAll('input[type="radio"]');
+          radios[idx].checked = true;
+          /* Trigger the on change event */
+          radios[idx].dispatchEvent(new Event("change", { bubbles: true }));
+      });
+
+      /* Pre-filling checkboxgroups, that is for schoice questions w/ dropdown menus */
+      question.querySelectorAll(".webex-select").forEach(dropdown => {
+          let x = JSON.parse(dropdown.dataset.answer);
+          let idx = x.indexOf(1) + 1; /* +1 to skip the first blank option */
+          let options = dropdown.querySelectorAll("option");
+          options[idx].selected = true;
+          /* Trigger the on change event */
+          options[idx].dispatchEvent(new Event("change", { bubbles: true }));
+      });
+
+      /* Pre-filling checkboxgroups, that is for mchoice questions */
+      question.querySelectorAll(".webex-checkboxgroup").forEach(radiogroup => {
+          let x = JSON.parse(radiogroup.dataset.answer);
+          let checkboxes = radiogroup.querySelectorAll('input[type="checkbox"]');
+          for (let i = 0; i < checkboxes.length; i++) {
+              checkboxes[i].checked = x[i];
+          }
+          /* Trigger the on change event */
+          checkboxes[0].dispatchEvent(new Event("change", { bubbles: true }));
+      });
+  });
+
+  /* Set input width when show_tolerance is used */
+  function calc_width(x, txt, offset = 20) {
+      /* We do the following:
+       * Create a new span, insert the value we need in the .tolerance
+       * input node, and calculate its offsetWidth. Then remove it
+       * again; this is just used to calculate the required width. */
+      var cwtmp = document.createElement("span");
+      x.appendChild(cwtmp);
+      cwtmp.innerHTML = txt || "";
+      var w = parseInt(cwtmp.getBoundingClientRect().width) + offset;
+      console.log("width: " + w)
+      cwtmp.remove();
+      return w;
+  }
+
+  /* If tolerance should be shown (devel option) we calculate:
+   * - the width required to properly display the solution
+   * - the width required to properly display the tolerance
+   * - add a new element to display the tolerance
+   * - reduce the width of the solution input box. */
+  document.querySelectorAll(".webex-question.tolerance").forEach(question => {
+      question.querySelectorAll("input[data-tol]").forEach(elem => {
+          var w = null;
+
+          /* Add new element showing the tolerance */
+          let tol = document.createElement("input");
+          tol.type = "text"; // <inpyt type="text">
+          tol.disabled = true; // Disable input element
+          tol.classList.add("tolerance"); // Appending class
+          tol.value = "± " + elem.getAttribute("data-tol");
+
+          /* Add new node */
+          elem.parentNode.insertBefore(tol, elem)
+
+          var body  = document.querySelector("body");
+
+          /* If n > 1 we have invisible input nodes for which we can't
+           * calculate the client's required bounding box (i.e., display
+           * size). Thus, we clone the element, copy it into the body
+           * with an of-view position, calclulate it's width, and remote
+           * it immediately. */
+          let clone = elem.cloneNode(true);
+          clone.style.position = "absolute";
+          clone.style.left = "-1000px";
+          clone.style.top = "-1000px";
+          clone.style.display = "visible";
+          body.appendChild(clone);
+          let clone_w = clone.getBoundingClientRect().width;
+          body.removeChild(clone);
+
+          /* Calculate required width of the 'tolerance' node, and the
+           * reduction of the original 'input' node */
+          w    = calc_width(body, tol.value);
+          wmin = calc_width(body, elem.value);
+          let wnew = Math.max(wmin, clone_w - w);
+
+          /* Set width */
+          tol.style.width  = w + "px";
+          elem.style.width = wnew + "px";
+      });
+  });
+
+  update_total_correct();
+});
+
+</script>
+<div class="smallsamplelab-quiz smallsamplelab-quiz--html">
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p><span class="smallsamplelab-quiz-number">Question 1.</span> Cohen’s d = 0.50 means:</p>
+<div id="webex-310a26f139a5f3660288ec2653a6a5b3" class="webex-radiogroup" data-answer="aAEcUB4GSgFu">
+<label><input type="radio" autocomplete="off" name="310a26f139a5f3660288ec2653a6a5b3"><span>The p-value is 0.50</span></label><label><input type="radio" autocomplete="off" name="310a26f139a5f3660288ec2653a6a5b3"><span>The means differ by one half of a pooled standard deviation</span></label><label><input type="radio" autocomplete="off" name="310a26f139a5f3660288ec2653a6a5b3"><span>Half of participants improved</span></label><label><input type="radio" autocomplete="off" name="310a26f139a5f3660288ec2653a6a5b3"><span>The effect explains 50% of the variance</span></label>
+</div>
+</div>
+<div class="webex-solution">
+<p><strong>Explanation.</strong></p>
+<p>Cohen’s d is a standardised mean difference. A value of 0.50 means the two group means differ by one half of the pooled standard deviation.</p>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p><span class="smallsamplelab-quiz-number">Question 2.</span> Why should effect sizes be reported alongside p-values?</p>
+<div id="webex-c43c33af5367c9f7bbd8de46f144c362" class="webex-radiogroup" data-answer="OAUfUx8DTVZo">
+<label><input type="radio" autocomplete="off" name="c43c33af5367c9f7bbd8de46f144c362"><span>Effect sizes quantify magnitude, whereas p-values mainly summarise evidence against a null value</span></label><label><input type="radio" autocomplete="off" name="c43c33af5367c9f7bbd8de46f144c362"><span>Effect sizes make confidence intervals unnecessary</span></label><label><input type="radio" autocomplete="off" name="c43c33af5367c9f7bbd8de46f144c362"><span>Effect sizes are useful only when p &lt; 0.05</span></label><label><input type="radio" autocomplete="off" name="c43c33af5367c9f7bbd8de46f144c362"><span>Effect sizes remove sampling uncertainty</span></label>
+</div>
+</div>
+<div class="webex-solution">
+<p><strong>Explanation.</strong></p>
+<p>A p-value does not tell the reader how large an effect is. The effect size supplies the magnitude, and the confidence interval supplies the uncertainty around that magnitude.</p>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p><span class="smallsamplelab-quiz-number">Question 3.</span> An odds ratio of 3.0 means:</p>
+<div id="webex-4fb314a8a83967af451cc868e1236429" class="webex-radiogroup" data-answer="b1ZOAh0ETQg8">
+<label><input type="radio" autocomplete="off" name="4fb314a8a83967af451cc868e1236429"><span>The outcome is exactly three times as common</span></label><label><input type="radio" autocomplete="off" name="4fb314a8a83967af451cc868e1236429"><span>The odds of the outcome are three times as high in one group</span></label><label><input type="radio" autocomplete="off" name="4fb314a8a83967af451cc868e1236429"><span>The risk difference is 3 percentage points</span></label><label><input type="radio" autocomplete="off" name="4fb314a8a83967af451cc868e1236429"><span>The p-value must be below 0.05</span></label>
+</div>
+</div>
+<div class="webex-solution">
+<p><strong>Explanation.</strong></p>
+<p>Odds ratios compare odds, not risks. When outcomes are common, an odds ratio can differ meaningfully from the corresponding risk ratio.</p>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p><span class="smallsamplelab-quiz-number">Question 4.</span> A confidence interval for a mean difference is -2 to 8 points. What is the best interpretation?</p>
+<div id="webex-68ef6463700cbccffdcbdbc924199d8f" class="webex-radiogroup" data-answer="bQhJVxoEGgNq">
+<label><input type="radio" autocomplete="off" name="68ef6463700cbccffdcbdbc924199d8f"><span>The null hypothesis is true</span></label><label><input type="radio" autocomplete="off" name="68ef6463700cbccffdcbdbc924199d8f"><span>The result is inconclusive because plausible values range from slightly negative to meaningfully positive</span></label><label><input type="radio" autocomplete="off" name="68ef6463700cbccffdcbdbc924199d8f"><span>The effect is definitely harmful</span></label><label><input type="radio" autocomplete="off" name="68ef6463700cbccffdcbdbc924199d8f"><span>The confidence interval is irrelevant if p &gt; 0.05</span></label>
+</div>
+</div>
+<div class="webex-solution">
+<p><strong>Explanation.</strong></p>
+<p>The interval includes zero but also includes positive values that may be practically important. That pattern indicates imprecision, not proof of no effect.</p>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p><span class="smallsamplelab-quiz-number">Question 5.</span> Why can an NNT confidence interval be difficult to report when the risk-difference interval crosses zero?</p>
+<div id="webex-4e958e50dbf151bd102110765d75a689" class="webex-radiogroup" data-answer="b1QVBRRVGQA5">
+<label><input type="radio" autocomplete="off" name="4e958e50dbf151bd102110765d75a689"><span>The NNT is undefined at zero risk difference</span></label><label><input type="radio" autocomplete="off" name="4e958e50dbf151bd102110765d75a689"><span>Fisher’s exact test cannot be used</span></label><label><input type="radio" autocomplete="off" name="4e958e50dbf151bd102110765d75a689"><span>The odds ratio must equal 1</span></label><label><input type="radio" autocomplete="off" name="4e958e50dbf151bd102110765d75a689"><span>NNT is only for continuous outcomes</span></label>
+</div>
+</div>
+<div class="webex-solution">
+<p><strong>Explanation.</strong></p>
+<p>NNT is the reciprocal of the risk difference. If the risk-difference interval includes zero, the reciprocal crosses infinity, so a simple bounded NNT interval is misleading.</p>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p><span class="smallsamplelab-quiz-number">Question 6.</span> Which statement about generic benchmarks such as d = 0.20, 0.50, and 0.80 is best?</p>
+<div id="webex-cfcf35232d92ebb0f6ed22e3d8f4d374" class="webex-radiogroup" data-answer="OFZPVx8FHgNv">
+<label><input type="radio" autocomplete="off" name="cfcf35232d92ebb0f6ed22e3d8f4d374"><span>They are universal cut-offs</span></label><label><input type="radio" autocomplete="off" name="cfcf35232d92ebb0f6ed22e3d8f4d374"><span>They are conventions that must be interpreted in context</span></label><label><input type="radio" autocomplete="off" name="cfcf35232d92ebb0f6ed22e3d8f4d374"><span>They prove clinical importance</span></label><label><input type="radio" autocomplete="off" name="cfcf35232d92ebb0f6ed22e3d8f4d374"><span>They apply only to large samples</span></label>
+</div>
+</div>
+<div class="webex-solution">
+<p><strong>Explanation.</strong></p>
+<p>Generic benchmarks are useful shorthand, but practical importance depends on the outcome, cost, risk, and prior evidence in the field.</p>
+</div>
+</div>
+</div>
+
+
+<!-- -->
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-ayre2014" class="csl-entry" role="listitem">
+Ayre, Colin, and Andrew J. Scally. 2014. <span>‘Critical Values for Lawshe’s Content Validity Ratio: Revisiting the Original Methods of Calculation’</span>. <em>Measurement and Evaluation in Counseling and Development</em> 47 (1): 79–86. <a href="https://doi.org/10.1177/0748175613513808">https://doi.org/10.1177/0748175613513808</a>.
+</div>
+<div id="ref-briggs1986" class="csl-entry" role="listitem">
+Briggs, Steven R., and Jonathan M. Cheek. 1986. <span>‘The Role of Factor Analysis in the Development and Evaluation of Personality Scales’</span>. <em>Journal of Personality</em> 54 (1): 106–48.
+</div>
+<div id="ref-vanbuuren2018" class="csl-entry" role="listitem">
+Buuren, Stef van. 2018. <em>Flexible Imputation of Missing Data</em>. 2nd ed. Boca Raton, FL: Chapman; Hall/CRC.
+</div>
+<div id="ref-cameron2013" class="csl-entry" role="listitem">
+Cameron, A. Colin, and Pravin K. Trivedi. 2013. <em>Regression Analysis of Count Data</em>. 2nd ed. Cambridge: Cambridge University Press. <a href="https://doi.org/10.1017/CBO9781139013567">https://doi.org/10.1017/CBO9781139013567</a>.
+</div>
+<div id="ref-chen2010" class="csl-entry" role="listitem">
+Chen, Henian, Patricia Cohen, and Sophie Chen. 2010. <span>‘How Big Is a Big Odds Ratio? Interpreting the Magnitudes of Odds Ratios in Epidemiological Studies’</span>. <em>Communications in Statistics - Simulation and Computation</em> 39 (4): 860–64. <a href="https://doi.org/10.1080/03610911003650383">https://doi.org/10.1080/03610911003650383</a>.
+</div>
+<div id="ref-cicchetti1994" class="csl-entry" role="listitem">
+Cicchetti, Domenic V. 1994. <span>‘Guidelines, Criteria, and Rules of Thumb for Evaluating Normed and Standardized Assessment Instruments in Psychology’</span>. <em>Psychological Assessment</em> 6 (4): 284–90. <a href="https://doi.org/10.1037/1040-3590.6.4.284">https://doi.org/10.1037/1040-3590.6.4.284</a>.
+</div>
+<div id="ref-clark1995" class="csl-entry" role="listitem">
+Clark, Lee Anna, and David Watson. 1995. <span>‘Constructing Validity: Basic Issues in Objective Scale Development’</span>. <em>Psychological Assessment</em> 7 (3): 309–19.
+</div>
+<div id="ref-cohen1988" class="csl-entry" role="listitem">
+Cohen, Jacob. 1988. <em>Statistical Power Analysis for the Behavioral Sciences</em>. 2nd ed. Hillsdale, NJ: Lawrence Erlbaum Associates.
+</div>
+<div id="ref-conover1999" class="csl-entry" role="listitem">
+Conover, W. J. 1999. <em>Practical Nonparametric Statistics</em>. 3rd ed. New York: John Wiley &amp; Sons.
+</div>
+<div id="ref-costello2005" class="csl-entry" role="listitem">
+Costello, Anna B., and Jason Osborne. 2005. <span>‘Best Practices in Exploratory Factor Analysis: Four Recommendations for Getting the Most from Your Analysis’</span>. <em>Practical Assessment, Research, and Evaluation</em> 10 (1): 1–9. <a href="https://doi.org/10.7275/jyj1-4868">https://doi.org/10.7275/jyj1-4868</a>.
+</div>
+<div id="ref-davison1997" class="csl-entry" role="listitem">
+Davison, A. C., and D. V. Hinkley. 1997. <em>Bootstrap Methods and Their Application</em>. Cambridge Series in Statistical and Probabilistic Mathematics. Cambridge: Cambridge University Press.
+</div>
+<div id="ref-devellis2021" class="csl-entry" role="listitem">
+DeVellis, Robert F., and Carolyn T. Thorpe. 2021. <em>Scale Development: Theory and Applications</em>. 5th ed. Thousand Oaks, CA: SAGE Publications.
+</div>
+<div id="ref-dienes2014" class="csl-entry" role="listitem">
+Dienes, Zoltan. 2014. <span>‘Using Bayes to Get the Most Out of Non-Significant Results’</span>. <em>Frontiers in Psychology</em> 5: 781. <a href="https://doi.org/10.3389/fpsyg.2014.00781">https://doi.org/10.3389/fpsyg.2014.00781</a>.
+</div>
+<div id="ref-efron1993" class="csl-entry" role="listitem">
+Efron, Bradley, and Robert J. Tibshirani. 1993. <em>An Introduction to the Bootstrap</em>. New York, NY: Chapman; Hall/CRC.
+</div>
+<div id="ref-vonelm2007" class="csl-entry" role="listitem">
+Elm, Erik von, Douglas G. Altman, Matthias Egger, Stuart J. Pocock, Peter C. Gøtzsche, and Jan P. Vandenbroucke. 2007. <span>‘The Strengthening the Reporting of Observational Studies in Epidemiology (<span>STROBE</span>) Statement: Guidelines for Reporting Observational Studies’</span>. <em>PLoS Medicine</em> 4 (10): e296. <a href="https://doi.org/10.1371/journal.pmed.0040296">https://doi.org/10.1371/journal.pmed.0040296</a>.
+</div>
+<div id="ref-fay2010" class="csl-entry" role="listitem">
+Fay, Michael P. 2010. <span>‘Confidence Intervals That Match Fisher’s Exact or Blaker’s Exact Tests’</span>. <em>Biostatistics</em> 11 (2): 373–74. <a href="https://doi.org/10.1093/biostatistics/kxp050">https://doi.org/10.1093/biostatistics/kxp050</a>.
+</div>
+<div id="ref-firth1993" class="csl-entry" role="listitem">
+Firth, David. 1993. <span>‘Bias Reduction of Maximum Likelihood Estimates’</span>. <em>Biometrika</em> 80 (1): 27–38. <a href="https://doi.org/10.1093/biomet/80.1.27">https://doi.org/10.1093/biomet/80.1.27</a>.
+</div>
+<div id="ref-gelman2017" class="csl-entry" role="listitem">
+Gelman, Andrew, Daniel Simpson, and Michael Betancourt. 2017. <span>‘The Prior Can Often Only Be Understood in the Context of the Likelihood’</span>. <em>Entropy</em> 19 (10): 555. <a href="https://doi.org/10.3390/e19100555">https://doi.org/10.3390/e19100555</a>.
+</div>
+<div id="ref-good2005" class="csl-entry" role="listitem">
+Good, Phillip I. 2005. <em>Permutation, Parametric, and Bootstrap Tests of Hypotheses</em>. 3rd ed. New York: Springer.
+</div>
+<div id="ref-graham2009" class="csl-entry" role="listitem">
+Graham, John W. 2009. <span>‘Missing Data Analysis: Making It Work in the Real World’</span>. <em>Annual Review of Psychology</em> 60: 549–76. <a href="https://doi.org/10.1146/annurev.psych.58.110405.085530">https://doi.org/10.1146/annurev.psych.58.110405.085530</a>.
+</div>
+<div id="ref-hair2017" class="csl-entry" role="listitem">
+Hair, Joseph F., G. Tomas M. Hult, Christian M. Ringle, and Marko Sarstedt. 2017. <em>A Primer on Partial Least Squares Structural Equation Modeling (<span>PLS-SEM</span>)</em>. 2nd ed. Thousand Oaks, CA: SAGE Publications.
+</div>
+<div id="ref-harrell2015" class="csl-entry" role="listitem">
+Harrell, Frank E. 2015. <em>Regression Modeling Strategies: With Applications to Linear Models, Logistic and Ordinal Regression, and Survival Analysis</em>. 2nd ed. Springer Series in Statistics. New York: Springer. <a href="https://doi.org/10.1007/978-3-319-19425-7">https://doi.org/10.1007/978-3-319-19425-7</a>.
+</div>
+<div id="ref-heinze2002" class="csl-entry" role="listitem">
+Heinze, Georg, and Michael Schemper. 2002. <span>‘A Solution to the Problem of Separation in Logistic Regression’</span>. <em>Statistics in Medicine</em> 21 (16): 2409–19. <a href="https://doi.org/10.1002/sim.1047">https://doi.org/10.1002/sim.1047</a>.
+</div>
+<div id="ref-hodges1963" class="csl-entry" role="listitem">
+Hodges, Jr., J. L., and E. L. Lehmann. 1963. <span>‘Estimates of Location Based on Rank Tests’</span>. <em>The Annals of Mathematical Statistics</em> 34 (2): 598–611. <a href="https://doi.org/10.1214/aoms/1177704172">https://doi.org/10.1214/aoms/1177704172</a>.
+</div>
+<div id="ref-hoenig2001" class="csl-entry" role="listitem">
+Hoenig, John M., and Dennis M. Heisey. 2001. <span>‘The Abuse of Power: The Pervasive Fallacy of Power Calculations for Data Analysis’</span>. <em>The American Statistician</em> 55 (1): 19–24.
+</div>
+<div id="ref-hosmer2013" class="csl-entry" role="listitem">
+Hosmer, David W., Stanley Lemeshow, and Rodney X. Sturdivant. 2013. <em>Applied Logistic Regression</em>. 3rd ed. Wiley Series in Probability and Statistics. Hoboken, NJ: John Wiley &amp; Sons. <a href="https://doi.org/10.1002/9781118548387">https://doi.org/10.1002/9781118548387</a>.
+</div>
+<div id="ref-hu1999" class="csl-entry" role="listitem">
+Hu, Li-tze, and Peter M. Bentler. 1999. <span>‘Cutoff Criteria for Fit Indexes in Covariance Structure Analysis: Conventional Criteria Versus New Alternatives’</span>. <em>Structural Equation Modeling</em> 6 (1): 1–55. <a href="https://doi.org/10.1080/10705519909540118">https://doi.org/10.1080/10705519909540118</a>.
+</div>
+<div id="ref-huberty2006" class="csl-entry" role="listitem">
+Huberty, Carl J., and Stephen Olejnik. 2006. <em>Applied MANOVA and Discriminant Analysis</em>. 2nd ed. Hoboken, NJ: Wiley. <a href="https://doi.org/10.1002/047178947X">https://doi.org/10.1002/047178947X</a>.
+</div>
+<div id="ref-hwang1981" class="csl-entry" role="listitem">
+Hwang, Ching-Lai, and Kwangsun Yoon. 1981. <em>Multiple Attribute Decision Making: Methods and Applications</em>. Berlin: Springer. <a href="https://doi.org/10.1007/978-3-642-48318-9">https://doi.org/10.1007/978-3-642-48318-9</a>.
+</div>
+<div id="ref-hyndman2021" class="csl-entry" role="listitem">
+Hyndman, Rob J., and George Athanasopoulos. 2021. <em>Forecasting: Principles and Practice</em>. 3rd ed. Melbourne, Australia: OTexts. <a href="https://otexts.com/fpp3/">https://otexts.com/fpp3/</a>.
+</div>
+<div id="ref-koo2016" class="csl-entry" role="listitem">
+Koo, Terry K., and Mae Y. Li. 2016. <span>‘A Guideline of Selecting and Reporting Intraclass Correlation Coefficients for Reliability Research’</span>. <em>Journal of Chiropractic Medicine</em> 15 (2): 155–63. <a href="https://doi.org/10.1016/j.jcm.2016.02.012">https://doi.org/10.1016/j.jcm.2016.02.012</a>.
+</div>
+<div id="ref-kraft2020" class="csl-entry" role="listitem">
+Kraft, Matthew A. 2020. <span>‘Interpreting Effect Sizes of Education Interventions’</span>. <em>Educational Researcher</em> 49 (4): 241–53. <a href="https://doi.org/10.3102/0013189X20912798">https://doi.org/10.3102/0013189X20912798</a>.
+</div>
+<div id="ref-lakens2013" class="csl-entry" role="listitem">
+Lakens, Daniël. 2013. <span>‘Calculating and Reporting Effect Sizes to Facilitate Cumulative Science: A Practical Primer for t-Tests and <span>ANOVAs</span>’</span>. <em>Frontiers in Psychology</em> 4: 863. <a href="https://doi.org/10.3389/fpsyg.2013.00863">https://doi.org/10.3389/fpsyg.2013.00863</a>.
+</div>
+<div id="ref-lakens2018" class="csl-entry" role="listitem">
+Lakens, Daniël, Anne M. Scheel, and Peder M. Isager. 2018. <span>‘Equivalence Testing for Psychological Research: A Tutorial’</span>. <em>Advances in Methods and Practices in Psychological Science</em> 1 (2): 259–69. <a href="https://doi.org/10.1177/2515245918770963">https://doi.org/10.1177/2515245918770963</a>.
+</div>
+<div id="ref-lawshe1975" class="csl-entry" role="listitem">
+Lawshe, Charles H. 1975. <span>‘A Quantitative Approach to Content Validity’</span>. <em>Personnel Psychology</em> 28 (4): 563–75. <a href="https://doi.org/10.1111/j.1744-6570.1975.tb01393.x">https://doi.org/10.1111/j.1744-6570.1975.tb01393.x</a>.
+</div>
+<div id="ref-lipsey1993" class="csl-entry" role="listitem">
+Lipsey, Mark W., and David B. Wilson. 1993. <span>‘The Efficacy of Psychological, Educational, and Behavioural Treatment: Confirmation from Meta-Analysis’</span>. <em>American Psychologist</em> 48 (12): 1181–1209. <a href="https://doi.org/10.1037/0003-066X.48.12.1181">https://doi.org/10.1037/0003-066X.48.12.1181</a>.
+</div>
+<div id="ref-little1988" class="csl-entry" role="listitem">
+Little, Roderick J. A. 1988. <span>‘A Test of Missing Completely at Random for Multivariate Data with Missing Values’</span>. <em>Journal of the American Statistical Association</em> 83 (404): 1198–1202. <a href="https://doi.org/10.1080/01621459.1988.10478722">https://doi.org/10.1080/01621459.1988.10478722</a>.
+</div>
+<div id="ref-mackinnon2000" class="csl-entry" role="listitem">
+MacKinnon, David P., Jennifer L. Krull, and Chondra M. Lockwood. 2000. <span>‘Equivalence of the Mediation, Confounding and Suppression Effect’</span>. <em>Prevention Science</em> 1 (4): 173–81.
+</div>
+<div id="ref-mair2020" class="csl-entry" role="listitem">
+Mair, Patrick, and Rand R. Wilcox. 2020. <span>‘Robust Statistical Methods in r Using the WRS2 Package’</span>. <em>Behavior Research Methods</em> 52 (2): 464–88. <a href="https://doi.org/10.3758/s13428-019-01246-w">https://doi.org/10.3758/s13428-019-01246-w</a>.
+</div>
+<div id="ref-mann1947" class="csl-entry" role="listitem">
+Mann, Henry B., and Donald R. Whitney. 1947. <span>‘On a Test of Whether One of Two Random Variables Is Stochastically Larger Than the Other’</span>. <em>The Annals of Mathematical Statistics</em> 18 (1): 50–60. <a href="https://doi.org/10.1214/aoms/1177730491">https://doi.org/10.1214/aoms/1177730491</a>.
+</div>
+<div id="ref-mcdonald1999" class="csl-entry" role="listitem">
+McDonald, Roderick P. 1999. <em>Test Theory: A Unified Treatment</em>. Mahwah, NJ: Lawrence Erlbaum Associates.
+</div>
+<div id="ref-morey2011" class="csl-entry" role="listitem">
+Morey, Richard D., and Jeffrey N. Rouder. 2011. <span>‘Bayes Factor Approaches for Testing Interval Null Hypotheses’</span>. <em>Psychological Methods</em> 16 (4): 406–19. <a href="https://doi.org/10.1037/a0024377">https://doi.org/10.1037/a0024377</a>.
+</div>
+<div id="ref-nielsen1993" class="csl-entry" role="listitem">
+Nielsen, Jakob. 1993. <em>Usability Engineering</em>. San Francisco, CA: Morgan Kaufmann.
+</div>
+<div id="ref-olsson1979" class="csl-entry" role="listitem">
+Olsson, Ulf. 1979. <span>‘Maximum Likelihood Estimation of the Polychoric Correlation Coefficient’</span>. <em>Psychometrika</em> 44 (4): 443–60.
+</div>
+<div id="ref-opricovic2004" class="csl-entry" role="listitem">
+Opricovic, Serafim, and Gwo-Hshiung Tzeng. 2004. <span>‘Compromise Solution by <span>MCDM</span> Methods: A Comparative Analysis of <span>VIKOR</span> and <span>TOPSIS</span>’</span>. <em>European Journal of Operational Research</em> 156 (2): 445–55. <a href="https://doi.org/10.1016/S0377-2217(03)00020-1">https://doi.org/10.1016/S0377-2217(03)00020-1</a>.
+</div>
+<div id="ref-page2021" class="csl-entry" role="listitem">
+Page, Matthew J., Joanne E. McKenzie, Patrick M. Bossuyt, Isabelle Boutron, Tammy C. Hoffmann, Cynthia D. Mulrow, Larissa Shamseer, et al. 2021. <span>‘The <span>PRISMA</span> 2020 Statement: An Updated Guideline for Reporting Systematic Reviews’</span>. <em>BMJ</em> 372: n71. <a href="https://doi.org/10.1136/bmj.n71">https://doi.org/10.1136/bmj.n71</a>.
+</div>
+<div id="ref-rcore2026" class="csl-entry" role="listitem">
+R Core Team. 2026. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+</div>
+<div id="ref-rubin1987" class="csl-entry" role="listitem">
+Rubin, Donald B. 1987. <em>Multiple Imputation for Nonresponse in Surveys</em>. New York, NY: Wiley.
+</div>
+<div id="ref-saaty1980" class="csl-entry" role="listitem">
+Saaty, Thomas L. 1980. <em>The Analytic Hierarchy Process</em>. New York, NY: McGraw-Hill.
+</div>
+<div id="ref-schulz2010" class="csl-entry" role="listitem">
+Schulz, Kenneth F., Douglas G. Altman, and David Moher. 2010. <span>‘<span>CONSORT</span> 2010 Statement: Updated Guidelines for Reporting Parallel Group Randomised Trials’</span>. <em>BMJ</em> 340: c332. <a href="https://doi.org/10.1136/bmj.c332">https://doi.org/10.1136/bmj.c332</a>.
+</div>
+<div id="ref-shan2018" class="csl-entry" role="listitem">
+Shan, Guogen. 2018. <em>Exact Statistical Inference for Categorical Data</em>. London: Academic Press.
+</div>
+<div id="ref-sterne2009" class="csl-entry" role="listitem">
+Sterne, Jonathan A. C., Ian R. White, John B. Carlin, Michael Spratt, Patrick Royston, Michael G. Kenward, Angela M. Wood, and James R. Carpenter. 2009. <span>‘Multiple Imputation for Missing Data in Epidemiological and Clinical Research: Potential and Pitfalls’</span>. <em>BMJ</em> 338: b2393. <a href="https://doi.org/10.1136/bmj.b2393">https://doi.org/10.1136/bmj.b2393</a>.
+</div>
+<div id="ref-teare2014" class="csl-entry" role="listitem">
+Teare, M. Dawn, Munyaradzi Dimairo, Neil Shephard, Amanda Hayman, Amy Whitehead, and Stephen J. Walters. 2014. <span>‘Sample Size Requirements to Estimate Key Design Parameters from External Pilot Randomised Controlled Trials: A Simulation Study’</span>. <em>Trials</em> 15: 264. <a href="https://doi.org/10.1186/1745-6215-15-264">https://doi.org/10.1186/1745-6215-15-264</a>.
+</div>
+<div id="ref-tomczak2014" class="csl-entry" role="listitem">
+Tomczak, Maciej, and Ewa Tomczak. 2014. <span>‘The Need to Report Effect Size Estimates Revisited: An Overview of Some Recommended Measures of Effect Size’</span>. <em>Trends in Sport Sciences</em> 21 (1): 19–25.
+</div>
+<div id="ref-trizano2016" class="csl-entry" role="listitem">
+Trizano-Hermosilla, Italo, and Jose M. Alvarado. 2016. <span>‘Best Alternatives to Cronbach’s Alpha Reliability in Realistic Conditions: Congeneric and Asymmetrical Measurements’</span>. <em>Frontiers in Psychology</em> 7: 769. <a href="https://doi.org/10.3389/fpsyg.2016.00769">https://doi.org/10.3389/fpsyg.2016.00769</a>.
+</div>
+<div id="ref-vandeschoot2020" class="csl-entry" role="listitem">
+Van de Schoot, Rens, and Milica Miočević. 2020. <em>Small Sample Size Solutions: A Guide for Applied Researchers and Practitioners</em>. London: Routledge.
+</div>
+<div id="ref-vehtari2017" class="csl-entry" role="listitem">
+Vehtari, Aki, Andrew Gelman, and Jonah Gabry. 2017. <span>‘Practical Bayesian Model Evaluation Using Leave-One-Out Cross-Validation and <span>WAIC</span>’</span>. <em>Statistics and Computing</em> 27 (5): 1413–32. <a href="https://doi.org/10.1007/s11222-016-9696-4">https://doi.org/10.1007/s11222-016-9696-4</a>.
+</div>
+<div id="ref-wagenmakers2018" class="csl-entry" role="listitem">
+Wagenmakers, Eric-Jan, Jonathon Love, Maarten Marsman, Tahira Jamil, Alexander Ly, Josine Verhagen, Ravi Selker, et al. 2018. <span>‘Bayesian Inference for Psychology. Part <span>II</span>: Example Applications with <span>JASP</span>’</span>. <em>Psychonomic Bulletin &amp; Review</em> 25 (1): 58–76. <a href="https://doi.org/10.3758/s13423-017-1323-7">https://doi.org/10.3758/s13423-017-1323-7</a>.
+</div>
+<div id="ref-white2011" class="csl-entry" role="listitem">
+White, Ian R., Patrick Royston, and Angela M. Wood. 2011. <span>‘Multiple Imputation Using Chained Equations: Issues and Guidance for Practice’</span>. <em>Statistics in Medicine</em> 30 (4): 377–99. <a href="https://doi.org/10.1002/sim.4067">https://doi.org/10.1002/sim.4067</a>.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/part-d-reporting.html" class="pagination-link" aria-label="Part D: Reporting and Interpretation">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Part D: Reporting and Interpretation</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/part-d-reporting--chapter-16-interpreting-non-significant-results.html" class="pagination-link" aria-label="Chapter 16: Interpreting Non-Significant Results">
+        <span class="nav-page-text"><span class="chapter-title">Chapter 16: Interpreting Non-Significant Results</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ch15-setup</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>({</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(knitr)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">normalizePath</span>(<span class="fu">file.path</span>(<span class="fu">dirname</span>(knitr<span class="sc">::</span><span class="fu">current_input</span>(<span class="at">dir =</span> <span class="cn">TRUE</span>)), <span class="st">".."</span>, <span class="st">"R"</span>, <span class="st">"chapter_table_helpers.R"</span>), <span class="at">mustWork =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>format_p <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ifelse</span>(x <span class="sc">&lt;</span> <span class="fl">0.001</span>, <span class="st">"&lt;0.001"</span>, <span class="fu">sprintf</span>(<span class="st">"%.3f"</span>, x))</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>format_p_statement <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ifelse</span>(x <span class="sc">&lt;</span> <span class="fl">0.001</span>, <span class="st">"p &lt; 0.001"</span>, <span class="fu">sprintf</span>(<span class="st">"p = %.3f"</span>, x))</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>effect_size_guide <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">Domain =</span> <span class="fu">c</span>(</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Psychological interventions"</span>,</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Educational interventions"</span>,</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Medical treatments"</span>,</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Customer satisfaction"</span>,</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Process improvements"</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">Small benchmark</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"d = 0.20"</span>, <span class="st">"d = 0.05-0.10"</span>, <span class="st">"OR = 1.20"</span>, <span class="st">"d = 0.20"</span>, <span class="st">"5% change"</span>),</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">Moderate benchmark</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"d = 0.50"</span>, <span class="st">"d = 0.20-0.30"</span>, <span class="st">"OR = 2.00"</span>, <span class="st">"d = 0.50"</span>, <span class="st">"10-20% change"</span>),</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">Large benchmark</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"d = 0.80"</span>, <span class="st">"d &gt;= 0.50"</span>, <span class="st">"OR &gt;= 4.00"</span>, <span class="st">"d = 0.80"</span>, <span class="st">"&gt;=25% change"</span>),</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  <span class="at">Source =</span> <span class="fu">c</span>(</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Cohen; Lipsey and Wilson"</span>,</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Kraft"</span>,</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Chen and colleagues"</span>,</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Domain standard"</span>,</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Domain standard"</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>method_a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">78</span>, <span class="dv">82</span>, <span class="dv">75</span>, <span class="dv">88</span>, <span class="dv">79</span>, <span class="dv">85</span>, <span class="dv">80</span>, <span class="dv">83</span>, <span class="dv">77</span>, <span class="dv">84</span>, <span class="dv">81</span>, <span class="dv">86</span>)</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>method_b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">76</span>, <span class="dv">80</span>, <span class="dv">78</span>, <span class="dv">83</span>, <span class="dv">79</span>, <span class="dv">77</span>, <span class="dv">81</span>, <span class="dv">82</span>, <span class="dv">78</span>, <span class="dv">80</span>, <span class="dv">79</span>, <span class="dv">84</span>)</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>n_a <span class="ot">&lt;-</span> <span class="fu">length</span>(method_a)</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>n_b <span class="ot">&lt;-</span> <span class="fu">length</span>(method_b)</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>df_t <span class="ot">&lt;-</span> n_a <span class="sc">+</span> n_b <span class="sc">-</span> <span class="dv">2</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>mean_a <span class="ot">&lt;-</span> <span class="fu">mean</span>(method_a)</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>mean_b <span class="ot">&lt;-</span> <span class="fu">mean</span>(method_b)</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>sd_pooled <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(((n_a <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">*</span> <span class="fu">var</span>(method_a) <span class="sc">+</span> (n_b <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">*</span> <span class="fu">var</span>(method_b)) <span class="sc">/</span> df_t)</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>mean_diff <span class="ot">&lt;-</span> mean_a <span class="sc">-</span> mean_b</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>se_diff <span class="ot">&lt;-</span> sd_pooled <span class="sc">*</span> <span class="fu">sqrt</span>(<span class="dv">1</span> <span class="sc">/</span> n_a <span class="sc">+</span> <span class="dv">1</span> <span class="sc">/</span> n_b)</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>tcrit <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.975</span>, <span class="at">df =</span> df_t)</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>mean_ci <span class="ot">&lt;-</span> mean_diff <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>) <span class="sc">*</span> tcrit <span class="sc">*</span> se_diff</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>cohens_d <span class="ot">&lt;-</span> mean_diff <span class="sc">/</span> sd_pooled</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>hedges_correction <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="dv">3</span> <span class="sc">/</span> (<span class="dv">4</span> <span class="sc">*</span> (n_a <span class="sc">+</span> n_b) <span class="sc">-</span> <span class="dv">9</span>)</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>hedges_g <span class="ot">&lt;-</span> cohens_d <span class="sc">*</span> hedges_correction</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>se_d <span class="ot">&lt;-</span> <span class="fu">sqrt</span>((n_a <span class="sc">+</span> n_b) <span class="sc">/</span> (n_a <span class="sc">*</span> n_b) <span class="sc">+</span> cohens_d<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> (<span class="dv">2</span> <span class="sc">*</span> df_t))</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>d_ci <span class="ot">&lt;-</span> cohens_d <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>) <span class="sc">*</span> tcrit <span class="sc">*</span> se_d</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>g_ci <span class="ot">&lt;-</span> d_ci <span class="sc">*</span> hedges_correction</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>t_value <span class="ot">&lt;-</span> mean_diff <span class="sc">/</span> se_diff</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>p_value <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">pt</span>(<span class="fu">abs</span>(t_value), <span class="at">df =</span> df_t, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>continuous_effects <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>  <span class="at">Quantity =</span> <span class="fu">c</span>(<span class="st">"Method A mean"</span>, <span class="st">"Method B mean"</span>, <span class="st">"Mean difference (A - B)"</span>, <span class="st">"Cohen's d"</span>, <span class="st">"Hedges' g"</span>),</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>  <span class="at">Estimate =</span> <span class="fu">c</span>(</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sprintf</span>(<span class="st">"%.1f"</span>, mean_a),</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sprintf</span>(<span class="st">"%.1f"</span>, mean_b),</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sprintf</span>(<span class="st">"%.1f"</span>, mean_diff),</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sprintf</span>(<span class="st">"%.2f"</span>, cohens_d),</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sprintf</span>(<span class="st">"%.2f"</span>, hedges_g)</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">95% CI</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>    <span class="st">"--"</span>,</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>    <span class="st">"--"</span>,</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sprintf</span>(<span class="st">"%.1f to %.1f"</span>, mean_ci[<span class="dv">1</span>], mean_ci[<span class="dv">2</span>]),</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sprintf</span>(<span class="st">"%.2f to %.2f"</span>, d_ci[<span class="dv">1</span>], d_ci[<span class="dv">2</span>]),</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sprintf</span>(<span class="st">"%.2f to %.2f"</span>, g_ci[<span class="dv">1</span>], g_ci[<span class="dv">2</span>])</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>  <span class="at">Interpretation =</span> <span class="fu">c</span>(</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Average score under Method A"</span>,</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Average score under Method B"</span>,</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Difference in original test-score units"</span>,</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Standardised difference using the pooled SD"</span>,</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Small-sample correction to Cohen's d"</span></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>trial_table <span class="ot">&lt;-</span> <span class="fu">matrix</span>(</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">10</span>),</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>  <span class="at">nrow =</span> <span class="dv">2</span>,</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>  <span class="at">byrow =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>  <span class="at">dimnames =</span> <span class="fu">list</span>(<span class="at">Group =</span> <span class="fu">c</span>(<span class="st">"Treatment"</span>, <span class="st">"Control"</span>), <span class="at">Outcome =</span> <span class="fu">c</span>(<span class="st">"Success"</span>, <span class="st">"Failure"</span>))</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>fisher_result <span class="ot">&lt;-</span> <span class="fu">fisher.test</span>(trial_table)</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>success_rates <span class="ot">&lt;-</span> <span class="fu">prop.table</span>(trial_table, <span class="at">margin =</span> <span class="dv">1</span>)[, <span class="st">"Success"</span>]</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>arr <span class="ot">&lt;-</span> <span class="fu">unname</span>(success_rates[<span class="st">"Treatment"</span>] <span class="sc">-</span> success_rates[<span class="st">"Control"</span>])</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>nnt <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">/</span> arr</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>risk_diff_ci <span class="ot">&lt;-</span> <span class="fu">prop.test</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">10</span>), <span class="at">n =</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">20</span>), <span class="at">correct =</span> <span class="cn">FALSE</span>)<span class="sc">$</span>conf.int</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>binary_effects <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>  <span class="at">Quantity =</span> <span class="fu">c</span>(<span class="st">"Treatment success rate"</span>, <span class="st">"Control success rate"</span>, <span class="st">"Absolute risk difference"</span>, <span class="st">"Odds ratio"</span>, <span class="st">"Number needed to treat"</span>),</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>  <span class="at">Estimate =</span> <span class="fu">c</span>(</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sprintf</span>(<span class="st">"%.2f"</span>, success_rates[<span class="st">"Treatment"</span>]),</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sprintf</span>(<span class="st">"%.2f"</span>, success_rates[<span class="st">"Control"</span>]),</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sprintf</span>(<span class="st">"%.2f"</span>, arr),</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sprintf</span>(<span class="st">"%.2f"</span>, <span class="fu">unname</span>(fisher_result<span class="sc">$</span>estimate)),</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sprintf</span>(<span class="st">"%.1f"</span>, nnt)</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">95% CI</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>    <span class="st">"--"</span>,</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>    <span class="st">"--"</span>,</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sprintf</span>(<span class="st">"%.2f to %.2f"</span>, risk_diff_ci[<span class="dv">1</span>], risk_diff_ci[<span class="dv">2</span>]),</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sprintf</span>(<span class="st">"%.2f to %.2f"</span>, fisher_result<span class="sc">$</span>conf.int[<span class="dv">1</span>], fisher_result<span class="sc">$</span>conf.int[<span class="dv">2</span>]),</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Not bounded because the risk-difference CI crosses 0"</span></span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>  <span class="at">Interpretation =</span> <span class="fu">c</span>(</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>    <span class="st">"15 successes among 20 treated participants"</span>,</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>    <span class="st">"10 successes among 20 control participants"</span>,</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Additional success probability under treatment"</span>,</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Odds of success in treatment relative to control"</span>,</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Approximate patients treated for one additional success"</span></span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>ci_examples <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>  <span class="at">Example =</span> <span class="fu">c</span>(<span class="st">"Precise trivial effect"</span>, <span class="st">"Imprecise non-significant effect"</span>, <span class="st">"Large precise effect"</span>),</span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>  <span class="at">Estimate =</span> <span class="fu">c</span>(<span class="fl">1.0</span>, <span class="fl">2.0</span>, mean_diff),</span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>  <span class="at">Lower =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.5</span>, <span class="sc">-</span><span class="fl">3.0</span>, mean_ci[<span class="dv">1</span>]),</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>  <span class="at">Upper =</span> <span class="fu">c</span>(<span class="fl">2.5</span>, <span class="fl">7.0</span>, mean_ci[<span class="dv">2</span>])</span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a><span class="fu"># Chapter 15: Effect Sizes and Confidence Intervals over P-Values</span></span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a><span class="fu">### Learning Objectives</span></span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>By the end of this chapter, you will be able to explain why p-values alone are insufficient for small-sample inference, compute and interpret common effect-size measures, use confidence intervals to judge magnitude and precision, and report results in language that separates statistical evidence from practical importance.</span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a><span class="fu">## Why P-Values Are Not Enough</span></span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>A p-value answers a narrow question: how unusual the data would be if the null hypothesis and modelling assumptions were true. It does not tell the reader whether an effect is large, precise, clinically important, educationally meaningful, or worth acting on. In small studies, this limitation is especially visible because even practically important effects can have p-values above 0.05 when the confidence interval is wide.</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>Effect sizes and confidence intervals restore the missing information. The effect size describes magnitude, while the interval describes the range of values that remain compatible with the data. A transparent report should therefore make the p-value secondary to the estimate, its uncertainty, and its practical interpretation.</span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a><span class="fu">## Common Effect-Size Metrics</span></span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>Cohen's d expresses a mean difference in pooled standard-deviation units. Odds ratios compare the odds of a binary outcome between groups. Correlations such as Pearson's r, Spearman's rho, and Kendall's tau describe association. Variance-accounted-for measures such as eta-squared and epsilon-squared are useful for omnibus comparisons. These metrics are not interchangeable; the correct choice depends on the outcome scale, design, and question.</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>For ANOVA-style summaries, eta-squared is often biased upward in small samples because it attributes sample-specific noise to the effect. Epsilon-squared and omega-squared are usually more cautious alternatives. For a Kruskal–Wallis test, a common epsilon-squared estimate is $\epsilon^2 = (H - k + 1)/(n - k)$, where $H$ is the test statistic, $k$ is the number of groups, and $n$ is the total sample size <span class="co">[</span><span class="ot">@tomczak2014</span><span class="co">]</span>.</span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>Cohen's conventional benchmarks of d = 0.20, 0.50, and 0.80 are useful only as a starting vocabulary <span class="co">[</span><span class="ot">@cohen1988</span><span class="co">]</span>. Practical importance is domain-specific. In education, effects as small as d = 0.10 can be meaningful when scaled to large populations <span class="co">[</span><span class="ot">@kraft2020</span><span class="co">]</span>; in clinical trials, even d = 0.50 may be insufficient if the intervention carries substantial risk, cost, or burden.</span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ch15-effect-size-guide-table</span></span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a><span class="co">#| results: asis</span></span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a><span class="fu">smallsamplelab_apa_table</span>(</span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>  <span class="st">"15.1"</span>,</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Context-specific effect-size benchmarks"</span>,</span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>  effect_size_guide,</span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>  <span class="at">align =</span> <span class="fu">c</span>(<span class="st">"l"</span>, <span class="st">"l"</span>, <span class="st">"l"</span>, <span class="st">"l"</span>, <span class="st">"l"</span>),</span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>  <span class="at">note =</span> <span class="st">"The values are interpretive anchors, not universal cut-offs. Use domain evidence and substantive consequences when judging magnitude."</span></span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>Educational effects are often smaller than laboratory effects but can still matter when an intervention reaches many students <span class="co">[</span><span class="ot">@kraft2020</span><span class="co">]</span>. Medical odds ratios require clinical context because the same odds ratio can imply very different absolute risk changes depending on baseline risk <span class="co">[</span><span class="ot">@chen2010</span><span class="co">]</span>. Meta-analytic norms, such as those reviewed by @lipsey1993, are useful because they place a new estimate within an empirical distribution of related studies.</span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a><span class="fu">## Mean Differences and Standardised Effects</span></span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>The most interpretable effect size is often the unstandardised mean difference. In the teaching-method example below, Method A has a higher average score than Method B. The difference in original score units is the first result to report; Cohen's d and Hedges' g help compare the result with other studies that used different scales.</span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ch15-continuous-effects-table</span></span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a><span class="co">#| results: asis</span></span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a><span class="fu">smallsamplelab_apa_table</span>(</span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>  <span class="st">"15.2"</span>,</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Mean-difference and standardised effect-size summary"</span>,</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>  continuous_effects,</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>  <span class="at">align =</span> <span class="fu">c</span>(<span class="st">"l"</span>, <span class="st">"r"</span>, <span class="st">"r"</span>, <span class="st">"l"</span>),</span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>  <span class="at">note =</span> <span class="fu">sprintf</span>(</span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Two independent groups with n = %d per group. Equal-variance t test: t(%d) = %.2f, %s."</span>,</span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>    n_a, df_t, t_value, <span class="fu">format_p_statement</span>(p_value)</span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>Students in Method A scored about <span class="in">`r sprintf("%.1f", mean_diff)`</span> points higher than those in Method B, with a 95% CI from <span class="in">`r sprintf("%.1f", mean_ci[1])`</span> to <span class="in">`r sprintf("%.1f", mean_ci[2])`</span> points. On the standardised scale, Cohen's d is about <span class="in">`r sprintf("%.2f", cohens_d)`</span> and Hedges' g is about <span class="in">`r sprintf("%.2f", hedges_g)`</span>. The reporting lesson is to give the reader both the original-unit difference and the standardised comparison, while recognising that the standardised interval remains wide with only <span class="in">`r n_a`</span> observations per group.</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a><span class="fu">## Binary Effects: Odds Ratios, Risk Differences, and NNT</span></span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>For binary outcomes, odds ratios are common but can be difficult to interpret. Odds ratios compare odds, not risks. When baseline risk is low, roughly below 10%, the odds ratio approximates the risk ratio; when baseline risk is higher, the odds ratio can substantially overstate the apparent effect. Risk differences are often more directly useful because they describe the absolute change in event probability. The number needed to treat (NNT) is the reciprocal of the absolute risk difference and answers how many people would need the intervention for one additional success relative to control.</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ch15-binary-effects-table</span></span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a><span class="co">#| results: asis</span></span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a><span class="fu">smallsamplelab_apa_table</span>(</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>  <span class="st">"15.3"</span>,</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Binary effect-size summaries for a small trial"</span>,</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>  binary_effects,</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>  <span class="at">align =</span> <span class="fu">c</span>(<span class="st">"l"</span>, <span class="st">"r"</span>, <span class="st">"r"</span>, <span class="st">"l"</span>),</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>  <span class="at">note =</span> <span class="fu">sprintf</span>(</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Fisher's exact test for the 2 x 2 table gives two-sided p = %s. The odds-ratio CI is exact; the odds ratio is the conditional maximum-likelihood estimate from Fisher's exact test and can differ slightly from the simple cross-product ratio. The risk-difference CI is an uncorrected large-sample interval used here for interpretation."</span>,</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>    <span class="fu">format_p</span>(fisher_result<span class="sc">$</span>p.value)</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>The treatment group has a higher observed success rate, but the confidence interval for the risk difference crosses zero and the exact odds-ratio interval is wide. Because NNT is the reciprocal of the risk difference, an interval that includes zero crosses infinity and produces an unbounded or discontinuous NNT interval. In such cases, report the risk difference and its interval as the primary inferential summary, and present the point-estimate NNT with a cautionary note rather than as a simple bounded interval.</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a><span class="fu">## Confidence Intervals as the Primary Summary</span></span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>Confidence intervals are often more informative than p-values because they communicate magnitude and precision simultaneously. An interval that excludes the null value also corresponds to a statistically significant result at the matching alpha level, but its real value is broader: it shows whether the data are compatible with effects that would matter in practice.</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: qfig-ch15-ci-interpretation</span></span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Figure 15.1: Confidence intervals communicate both magnitude and precision."</span></span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a><span class="co">#| alt: "Confidence intervals communicate both magnitude and precision."</span></span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-align: "center"</span></span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 7</span></span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 3.6</span></span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ci_examples, <span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">reorder</span>(Example, Estimate), <span class="at">x =</span> Estimate)) <span class="sc">+</span></span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">colour =</span> <span class="st">"grey35"</span>, <span class="at">linewidth =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>), <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">colour =</span> <span class="st">"#A65E2E"</span>, <span class="at">linewidth =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbarh</span>(<span class="fu">aes</span>(<span class="at">xmin =</span> Lower, <span class="at">xmax =</span> Upper), <span class="at">height =</span> <span class="fl">0.16</span>, <span class="at">linewidth =</span> <span class="fl">0.8</span>, <span class="at">colour =</span> <span class="st">"#325A73"</span>) <span class="sc">+</span></span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">colour =</span> <span class="st">"#8C3F2B"</span>) <span class="sc">+</span></span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Mean difference"</span>,</span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="cn">NULL</span>,</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Dashed lines mark an example practical-importance threshold of +/-5 points. Such thresholds should be pre-specified in the analysis plan."</span></span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">11</span>) <span class="sc">+</span></span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="dv">0</span>)</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>In small-sample work, a non-significant result with a wide interval should usually be described as imprecise rather than negative. Conversely, a narrow interval that rules out practically important effects can support a more substantive conclusion even when p is above 0.05. Chapter 16 develops this distinction in detail.</span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a><span class="fu">## Reporting Effect Sizes</span></span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>A complete results sentence names the estimator, gives the point estimate, reports the confidence interval, and then interprets the magnitude in context. For the teaching-method example, a concise report would be: "Method A scores were higher than Method B scores by <span class="in">`r sprintf("%.1f", mean_diff)`</span> points, 95% CI <span class="co">[</span><span class="ot">`r sprintf("%.1f", mean_ci[1])`, `r sprintf("%.1f", mean_ci[2])`</span><span class="co">]</span>, corresponding to Hedges' g = <span class="in">`r sprintf("%.2f", hedges_g)`</span>." The practical interpretation should then explain whether a <span class="in">`r sprintf("%.1f", mean_diff)`</span>-point gain is educationally meaningful, not merely whether the p-value crossed a threshold.</span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a><span class="fu">## Results Sentence Builder</span></span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>Use this structure when writing small-sample results:</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>**Estimator:** Name the comparison or association in original units.</span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>**Magnitude:** Report the point estimate and a suitable effect size.</span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>**Uncertainty:** Report the confidence interval before the p-value if both are included.</span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>**Context:** State the practical threshold, benchmark, or prior evidence used to judge importance.</span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>**Caution:** If the interval is wide, say that the estimate is imprecise rather than over-interpreting the point estimate.</span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>Example: "The intervention group scored 4.2 points higher than the comparison group, 95% CI <span class="co">[</span><span class="ot">0.8, 7.6</span><span class="co">]</span>, Hedges' g = 0.62. The interval includes values from a small educational benefit to a larger practically meaningful gain, so the estimate should be treated as promising but still imprecise."</span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>When adapting the code examples, record the random seed for any simulation or bootstrap step and include package versions in reproducible reports. Stochastic procedures can otherwise produce slightly different intervals across machines.</span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a><span class="fu">## Key Takeaways</span></span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>P-values alone are too thin for small-sample interpretation. Effect sizes describe how large a result is, confidence intervals describe how precisely it has been estimated, and original-unit summaries often communicate practical importance better than standardised metrics. A strong report gives the estimate, its uncertainty, and the substantive benchmark used to judge whether the effect matters.</span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a><span class="fu">## Self-Assessment Quiz</span></span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a><span class="co">#| results: asis</span></span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">normalizePath</span>(<span class="fu">file.path</span>(<span class="fu">dirname</span>(knitr<span class="sc">::</span><span class="fu">current_input</span>(<span class="at">dir =</span> <span class="cn">TRUE</span>)), <span class="st">".."</span>, <span class="st">"R"</span>, <span class="st">"quiz_helpers.R"</span>), <span class="at">mustWork =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a><span class="fu">smallsamplelab_render_quiz</span>(<span class="fu">list</span>(</span>
+<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(</span>
+<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>    <span class="at">prompt =</span> <span class="st">"Cohen's d = 0.50 means:"</span>,</span>
+<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>    <span class="at">options =</span> <span class="fu">c</span>(<span class="st">"The p-value is 0.50"</span>, <span class="st">"The means differ by one half of a pooled standard deviation"</span>, <span class="st">"Half of participants improved"</span>, <span class="st">"The effect explains 50% of the variance"</span>),</span>
+<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>    <span class="at">answer =</span> <span class="dv">2</span>L,</span>
+<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>    <span class="at">explanation =</span> <span class="st">"Cohen's d is a standardised mean difference. A value of 0.50 means the two group means differ by one half of the pooled standard deviation."</span></span>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(</span>
+<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>    <span class="at">prompt =</span> <span class="st">"Why should effect sizes be reported alongside p-values?"</span>,</span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>    <span class="at">options =</span> <span class="fu">c</span>(<span class="st">"Effect sizes quantify magnitude, whereas p-values mainly summarise evidence against a null value"</span>, <span class="st">"Effect sizes make confidence intervals unnecessary"</span>, <span class="st">"Effect sizes are useful only when p &lt; 0.05"</span>, <span class="st">"Effect sizes remove sampling uncertainty"</span>),</span>
+<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>    <span class="at">answer =</span> <span class="dv">1</span>L,</span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>    <span class="at">explanation =</span> <span class="st">"A p-value does not tell the reader how large an effect is. The effect size supplies the magnitude, and the confidence interval supplies the uncertainty around that magnitude."</span></span>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(</span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>    <span class="at">prompt =</span> <span class="st">"An odds ratio of 3.0 means:"</span>,</span>
+<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>    <span class="at">options =</span> <span class="fu">c</span>(<span class="st">"The outcome is exactly three times as common"</span>, <span class="st">"The odds of the outcome are three times as high in one group"</span>, <span class="st">"The risk difference is 3 percentage points"</span>, <span class="st">"The p-value must be below 0.05"</span>),</span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>    <span class="at">answer =</span> <span class="dv">2</span>L,</span>
+<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>    <span class="at">explanation =</span> <span class="st">"Odds ratios compare odds, not risks. When outcomes are common, an odds ratio can differ meaningfully from the corresponding risk ratio."</span></span>
+<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(</span>
+<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>    <span class="at">prompt =</span> <span class="st">"A confidence interval for a mean difference is -2 to 8 points. What is the best interpretation?"</span>,</span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>    <span class="at">options =</span> <span class="fu">c</span>(<span class="st">"The null hypothesis is true"</span>, <span class="st">"The result is inconclusive because plausible values range from slightly negative to meaningfully positive"</span>, <span class="st">"The effect is definitely harmful"</span>, <span class="st">"The confidence interval is irrelevant if p &gt; 0.05"</span>),</span>
+<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>    <span class="at">answer =</span> <span class="dv">2</span>L,</span>
+<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>    <span class="at">explanation =</span> <span class="st">"The interval includes zero but also includes positive values that may be practically important. That pattern indicates imprecision, not proof of no effect."</span></span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(</span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>    <span class="at">prompt =</span> <span class="st">"Why can an NNT confidence interval be difficult to report when the risk-difference interval crosses zero?"</span>,</span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>    <span class="at">options =</span> <span class="fu">c</span>(<span class="st">"The NNT is undefined at zero risk difference"</span>, <span class="st">"Fisher's exact test cannot be used"</span>, <span class="st">"The odds ratio must equal 1"</span>, <span class="st">"NNT is only for continuous outcomes"</span>),</span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>    <span class="at">answer =</span> <span class="dv">1</span>L,</span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>    <span class="at">explanation =</span> <span class="st">"NNT is the reciprocal of the risk difference. If the risk-difference interval includes zero, the reciprocal crosses infinity, so a simple bounded NNT interval is misleading."</span></span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(</span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>    <span class="at">prompt =</span> <span class="st">"Which statement about generic benchmarks such as d = 0.20, 0.50, and 0.80 is best?"</span>,</span>
+<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>    <span class="at">options =</span> <span class="fu">c</span>(<span class="st">"They are universal cut-offs"</span>, <span class="st">"They are conventions that must be interpreted in context"</span>, <span class="st">"They prove clinical importance"</span>, <span class="st">"They apply only to large samples"</span>),</span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>    <span class="at">answer =</span> <span class="dv">2</span>L,</span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>    <span class="at">explanation =</span> <span class="st">"Generic benchmarks are useful shorthand, but practical importance depends on the outcome, cost, risk, and prior evidence in the field."</span></span>
+<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.24">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Reproducibility and Data Availability – Quantitative Analysis with Small Samples</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/textbook-preface.html" rel="next">
+<link href="../chapters/how-to-cite.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-fc52e084097f5e82659c47ea4c4460c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/reproducibility-and-data-availability.html"><span class="chapter-title">Reproducibility and Data Availability</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Quantitative Analysis with Small Samples</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Publication Note</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/copyright-and-licence.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Copyright and Licence</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/author-contributions.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Author Contributions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/how-to-cite.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">How to Cite This Book</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/reproducibility-and-data-availability.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Reproducibility and Data Availability</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/textbook-preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/part-a-foundations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Part A: Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-a-foundations--chapter-1-why-small-sample-research-matters.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 1: Why Small-Sample Research Matters</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-a-foundations--chapter-2-questions-and-outcomes-that-fit-small-n.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 2: Questions and Outcomes that Fit Small n</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-a-foundations--summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Summary of Part A</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/part-b-data-collection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Part B: Design, Sampling, and Measurement</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-b-data-collection--chapter-3-sampling-strategies-for-small-studies.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 3: Sampling Strategies for Small Studies</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-b-data-collection--chapter-4-measurement-quality-and-scale-development.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 4: Measurement Quality and Scale Development</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-b-data-collection--chapter-5-reliability-and-measurement-quality-for-short-scales.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 5: Reliability and Measurement Quality for Short Scales</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-b-data-collection--chapter-6-developing-short-scales-for-small-samples.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6: Developing Short Scales for Small Samples</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-b-data-collection--chapter-7-data-screening-and-diagnostic-checks.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 7: Data Screening and Diagnostic Checks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-b-data-collection--chapter-8-handling-missing-data-in-small-samples.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 8: Handling Missing Data in Small Samples</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-b-data-collection--chapter-9-assessing-multiple-imputation-quality.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 9: Assessing Multiple Imputation Quality</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-b-data-collection--summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Summary of Part B</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/part-c-analysis-methods-textbook.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Part C: Analysis Methods</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-c-analysis-methods--chapter-10-exact-tests-and-resampling-methods.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 10: Exact Tests and Resampling Methods</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-c-analysis-methods--chapter-11-nonparametric-rank-based-methods.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 11: Nonparametric Rank-Based Methods</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-c-analysis-methods--chapter-12-methods-for-sparse-counts-and-short-time-series.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 12: Methods for Sparse Counts and Short Time Series</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-c-analysis-methods--chapter-13-penalised-and-bayesian-regression-for-small-samples.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sparse binary example with quasi-complete separation.</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-c-analysis-methods--chapter-14-multi-criteria-decision-making-mcdm-for-small-sets-of-alternatives.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AHP criteria comparisons: Cost, Effectiveness, Feasibility.</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-c-analysis-methods--summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Summary of Part C</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/part-d-reporting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Part D: Reporting and Interpretation</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-d-reporting--chapter-15-effect-sizes-and-confidence-intervals-over-p-values.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 15: Effect Sizes and Confidence Intervals over P-Values</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-d-reporting--chapter-16-interpreting-non-significant-results.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 16: Interpreting Non-Significant Results</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-d-reporting--chapter-17-transparent-reporting-of-methods-and-limitations.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 17: Transparent Reporting of Methods and Limitations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-d-reporting--chapter-18-visualising-uncertainty-and-presenting-results.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 18: Visualising Uncertainty and Presenting Results</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-d-reporting--summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Summary of Part D</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/part-e-worked-projects.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Part E: Worked Projects</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-e-worked-projects--project-1-evaluating-a-marketing-campaign-with-ordinal-outcomes.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Project 1. Evaluating a Marketing Campaign with Ordinal Outcomes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-e-worked-projects--project-2-assessing-reliability-of-a-short-service-quality-scale.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Project 2. Assessing Reliability of a Short Service Quality Scale</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-e-worked-projects--project-3-evaluating-a-process-improvement-intervention-paired-design.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Project 3. Evaluating a Process Improvement Intervention (Paired Design)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-e-worked-projects--project-4-evaluating-a-reading-intervention-in-small-classrooms-education.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Project 4. Evaluating a Reading Intervention in Small Classrooms (Education)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-e-worked-projects--project-5-understanding-intervention-mechanisms-simple-mediation-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Project 5. Understanding Intervention Mechanisms: Simple Mediation Analysis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/part-e-worked-projects--summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Summary of Part E</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#software-environment" id="toc-software-environment" class="nav-link active" data-scroll-target="#software-environment">Software environment</a></li>
+  <li><a href="#data-availability" id="toc-data-availability" class="nav-link" data-scroll-target="#data-availability">Data availability</a></li>
+  <li><a href="#reproducibility-expectation" id="toc-reproducibility-expectation" class="nav-link" data-scroll-target="#reproducibility-expectation">Reproducibility expectation</a></li>
+  <li><a href="#chapter-helper-functions" id="toc-chapter-helper-functions" class="nav-link" data-scroll-target="#chapter-helper-functions">Chapter helper functions</a></li>
+  <li><a href="#archival-release" id="toc-archival-release" class="nav-link" data-scroll-target="#archival-release">Archival release</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-title">Reproducibility and Data Availability</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This textbook was prepared as a reproducible Quarto project. The source files, R scripts, generated data examples, and rendering configuration are maintained in the project repository.</p>
+<p>Repository: <a href="https://github.com/MohammedAliSharafuddin/smallsamplelab" class="uri">https://github.com/MohammedAliSharafuddin/smallsamplelab</a></p>
+<section id="software-environment" class="level2">
+<h2 class="anchored" data-anchor-id="software-environment">Software environment</h2>
+<p>The project uses R, Quarto, Pandoc, and LaTeX for rendering. The main reproducibility files are:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>setup.R</code></td>
+<td>Installs or checks required R packages and prepares datasets where needed</td>
+</tr>
+<tr class="even">
+<td><code>validation_script.R</code></td>
+<td>Runs project-level validation checks</td>
+</tr>
+<tr class="odd">
+<td><code>renv.lock</code></td>
+<td>Records the package versions used for reproducible rendering</td>
+</tr>
+<tr class="even">
+<td><code>_quarto.yml</code></td>
+<td>Main Quarto book configuration</td>
+</tr>
+<tr class="odd">
+<td><code>references.bib</code></td>
+<td>Bibliographic database</td>
+</tr>
+<tr class="even">
+<td><code>data/</code></td>
+<td>Teaching and example datasets</td>
+</tr>
+<tr class="odd">
+<td><code>R/</code></td>
+<td>Supporting R functions and scripts</td>
+</tr>
+<tr class="even">
+<td><code>.github/workflows/render-book.yml</code></td>
+<td>GitHub Actions workflow for rendering the book on hosted infrastructure</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="data-availability" class="level2">
+<h2 class="anchored" data-anchor-id="data-availability">Data availability</h2>
+<p>The datasets used in the textbook are teaching datasets or generated example datasets designed for learning and reproducibility. They are not confidential human-subject datasets and should not be interpreted as real institutional or commercial records unless explicitly stated in a chapter.</p>
+</section>
+<section id="reproducibility-expectation" class="level2">
+<h2 class="anchored" data-anchor-id="reproducibility-expectation">Reproducibility expectation</h2>
+<p>A reader should be able to clone the repository, install the required tools, run <code>renv::restore()</code>, run the setup script, and render the book. All figures and tables can be regenerated on a fresh machine using <code>renv::restore()</code> followed by <code>quarto render</code> or the repository render scripts. Final publisher submission should include rendered HTML, PDF, and DOCX outputs, together with render logs and a release archive.</p>
+</section>
+<section id="chapter-helper-functions" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-helper-functions">Chapter helper functions</h2>
+<p>Some chapters use short helper functions to keep table styling and repeated simulation logic consistent across HTML and PDF output. These helpers are not hidden dependencies: they are stored in the repository under <code>R/</code> and are sourced by the relevant chapter setup chunks.</p>
+<p>The helper files are:</p>
+<ul>
+<li><code>R/chapter_table_helpers.R</code>: provides <code>smallsamplelab_apa_table()</code> for consistent APA-style table rendering in HTML and PDF.</li>
+<li><code>R/chapter_helpers.R</code>: provides chapter-specific helpers, including <code>chapter5_measurement_table()</code>, <code>chapter6_simulate_scale()</code>, <code>chapter6_problem_item_diagnostics()</code>, <code>smalln_mcar_table()</code>, and <code>chapter10_format_p()</code>.</li>
+<li><code>R/smalln_recipes.R</code>: provides reusable small-sample analysis recipes, including <code>mw_test()</code> and <code>boot_median_ci()</code>.</li>
+</ul>
+<p>To inspect or reuse them interactively, run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R/chapter_table_helpers.R"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R/chapter_helpers.R"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R/smalln_recipes.R"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="archival-release" class="level2">
+<h2 class="anchored" data-anchor-id="archival-release">Archival release</h2>
+<p>For formal citation, the publisher-ready version should be archived as Version 1.0.0 and deposited in a DOI-issuing repository. The DOI, ISBN, release date, and final licence should then be inserted into this page, <code>CITATION.cff</code>, <code>.zenodo.json</code>, <code>codemeta.json</code>, and the README.</p>
+
+
+<!-- -->
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-ayre2014" class="csl-entry" role="listitem">
+Ayre, Colin, and Andrew J. Scally. 2014. <span>‘Critical Values for Lawshe’s Content Validity Ratio: Revisiting the Original Methods of Calculation’</span>. <em>Measurement and Evaluation in Counseling and Development</em> 47 (1): 79–86. <a href="https://doi.org/10.1177/0748175613513808">https://doi.org/10.1177/0748175613513808</a>.
+</div>
+<div id="ref-briggs1986" class="csl-entry" role="listitem">
+Briggs, Steven R., and Jonathan M. Cheek. 1986. <span>‘The Role of Factor Analysis in the Development and Evaluation of Personality Scales’</span>. <em>Journal of Personality</em> 54 (1): 106–48.
+</div>
+<div id="ref-vanbuuren2018" class="csl-entry" role="listitem">
+Buuren, Stef van. 2018. <em>Flexible Imputation of Missing Data</em>. 2nd ed. Boca Raton, FL: Chapman; Hall/CRC.
+</div>
+<div id="ref-cameron2013" class="csl-entry" role="listitem">
+Cameron, A. Colin, and Pravin K. Trivedi. 2013. <em>Regression Analysis of Count Data</em>. 2nd ed. Cambridge: Cambridge University Press. <a href="https://doi.org/10.1017/CBO9781139013567">https://doi.org/10.1017/CBO9781139013567</a>.
+</div>
+<div id="ref-chen2010" class="csl-entry" role="listitem">
+Chen, Henian, Patricia Cohen, and Sophie Chen. 2010. <span>‘How Big Is a Big Odds Ratio? Interpreting the Magnitudes of Odds Ratios in Epidemiological Studies’</span>. <em>Communications in Statistics - Simulation and Computation</em> 39 (4): 860–64. <a href="https://doi.org/10.1080/03610911003650383">https://doi.org/10.1080/03610911003650383</a>.
+</div>
+<div id="ref-cicchetti1994" class="csl-entry" role="listitem">
+Cicchetti, Domenic V. 1994. <span>‘Guidelines, Criteria, and Rules of Thumb for Evaluating Normed and Standardized Assessment Instruments in Psychology’</span>. <em>Psychological Assessment</em> 6 (4): 284–90. <a href="https://doi.org/10.1037/1040-3590.6.4.284">https://doi.org/10.1037/1040-3590.6.4.284</a>.
+</div>
+<div id="ref-clark1995" class="csl-entry" role="listitem">
+Clark, Lee Anna, and David Watson. 1995. <span>‘Constructing Validity: Basic Issues in Objective Scale Development’</span>. <em>Psychological Assessment</em> 7 (3): 309–19.
+</div>
+<div id="ref-cohen1988" class="csl-entry" role="listitem">
+Cohen, Jacob. 1988. <em>Statistical Power Analysis for the Behavioral Sciences</em>. 2nd ed. Hillsdale, NJ: Lawrence Erlbaum Associates.
+</div>
+<div id="ref-conover1999" class="csl-entry" role="listitem">
+Conover, W. J. 1999. <em>Practical Nonparametric Statistics</em>. 3rd ed. New York: John Wiley &amp; Sons.
+</div>
+<div id="ref-costello2005" class="csl-entry" role="listitem">
+Costello, Anna B., and Jason Osborne. 2005. <span>‘Best Practices in Exploratory Factor Analysis: Four Recommendations for Getting the Most from Your Analysis’</span>. <em>Practical Assessment, Research, and Evaluation</em> 10 (1): 1–9. <a href="https://doi.org/10.7275/jyj1-4868">https://doi.org/10.7275/jyj1-4868</a>.
+</div>
+<div id="ref-davison1997" class="csl-entry" role="listitem">
+Davison, A. C., and D. V. Hinkley. 1997. <em>Bootstrap Methods and Their Application</em>. Cambridge Series in Statistical and Probabilistic Mathematics. Cambridge: Cambridge University Press.
+</div>
+<div id="ref-devellis2021" class="csl-entry" role="listitem">
+DeVellis, Robert F., and Carolyn T. Thorpe. 2021. <em>Scale Development: Theory and Applications</em>. 5th ed. Thousand Oaks, CA: SAGE Publications.
+</div>
+<div id="ref-dienes2014" class="csl-entry" role="listitem">
+Dienes, Zoltan. 2014. <span>‘Using Bayes to Get the Most Out of Non-Significant Results’</span>. <em>Frontiers in Psychology</em> 5: 781. <a href="https://doi.org/10.3389/fpsyg.2014.00781">https://doi.org/10.3389/fpsyg.2014.00781</a>.
+</div>
+<div id="ref-efron1993" class="csl-entry" role="listitem">
+Efron, Bradley, and Robert J. Tibshirani. 1993. <em>An Introduction to the Bootstrap</em>. New York, NY: Chapman; Hall/CRC.
+</div>
+<div id="ref-vonelm2007" class="csl-entry" role="listitem">
+Elm, Erik von, Douglas G. Altman, Matthias Egger, Stuart J. Pocock, Peter C. Gøtzsche, and Jan P. Vandenbroucke. 2007. <span>‘The Strengthening the Reporting of Observational Studies in Epidemiology (<span>STROBE</span>) Statement: Guidelines for Reporting Observational Studies’</span>. <em>PLoS Medicine</em> 4 (10): e296. <a href="https://doi.org/10.1371/journal.pmed.0040296">https://doi.org/10.1371/journal.pmed.0040296</a>.
+</div>
+<div id="ref-fay2010" class="csl-entry" role="listitem">
+Fay, Michael P. 2010. <span>‘Confidence Intervals That Match Fisher’s Exact or Blaker’s Exact Tests’</span>. <em>Biostatistics</em> 11 (2): 373–74. <a href="https://doi.org/10.1093/biostatistics/kxp050">https://doi.org/10.1093/biostatistics/kxp050</a>.
+</div>
+<div id="ref-firth1993" class="csl-entry" role="listitem">
+Firth, David. 1993. <span>‘Bias Reduction of Maximum Likelihood Estimates’</span>. <em>Biometrika</em> 80 (1): 27–38. <a href="https://doi.org/10.1093/biomet/80.1.27">https://doi.org/10.1093/biomet/80.1.27</a>.
+</div>
+<div id="ref-gelman2017" class="csl-entry" role="listitem">
+Gelman, Andrew, Daniel Simpson, and Michael Betancourt. 2017. <span>‘The Prior Can Often Only Be Understood in the Context of the Likelihood’</span>. <em>Entropy</em> 19 (10): 555. <a href="https://doi.org/10.3390/e19100555">https://doi.org/10.3390/e19100555</a>.
+</div>
+<div id="ref-good2005" class="csl-entry" role="listitem">
+Good, Phillip I. 2005. <em>Permutation, Parametric, and Bootstrap Tests of Hypotheses</em>. 3rd ed. New York: Springer.
+</div>
+<div id="ref-graham2009" class="csl-entry" role="listitem">
+Graham, John W. 2009. <span>‘Missing Data Analysis: Making It Work in the Real World’</span>. <em>Annual Review of Psychology</em> 60: 549–76. <a href="https://doi.org/10.1146/annurev.psych.58.110405.085530">https://doi.org/10.1146/annurev.psych.58.110405.085530</a>.
+</div>
+<div id="ref-hair2017" class="csl-entry" role="listitem">
+Hair, Joseph F., G. Tomas M. Hult, Christian M. Ringle, and Marko Sarstedt. 2017. <em>A Primer on Partial Least Squares Structural Equation Modeling (<span>PLS-SEM</span>)</em>. 2nd ed. Thousand Oaks, CA: SAGE Publications.
+</div>
+<div id="ref-harrell2015" class="csl-entry" role="listitem">
+Harrell, Frank E. 2015. <em>Regression Modeling Strategies: With Applications to Linear Models, Logistic and Ordinal Regression, and Survival Analysis</em>. 2nd ed. Springer Series in Statistics. New York: Springer. <a href="https://doi.org/10.1007/978-3-319-19425-7">https://doi.org/10.1007/978-3-319-19425-7</a>.
+</div>
+<div id="ref-heinze2002" class="csl-entry" role="listitem">
+Heinze, Georg, and Michael Schemper. 2002. <span>‘A Solution to the Problem of Separation in Logistic Regression’</span>. <em>Statistics in Medicine</em> 21 (16): 2409–19. <a href="https://doi.org/10.1002/sim.1047">https://doi.org/10.1002/sim.1047</a>.
+</div>
+<div id="ref-hodges1963" class="csl-entry" role="listitem">
+Hodges, Jr., J. L., and E. L. Lehmann. 1963. <span>‘Estimates of Location Based on Rank Tests’</span>. <em>The Annals of Mathematical Statistics</em> 34 (2): 598–611. <a href="https://doi.org/10.1214/aoms/1177704172">https://doi.org/10.1214/aoms/1177704172</a>.
+</div>
+<div id="ref-hoenig2001" class="csl-entry" role="listitem">
+Hoenig, John M., and Dennis M. Heisey. 2001. <span>‘The Abuse of Power: The Pervasive Fallacy of Power Calculations for Data Analysis’</span>. <em>The American Statistician</em> 55 (1): 19–24.
+</div>
+<div id="ref-hosmer2013" class="csl-entry" role="listitem">
+Hosmer, David W., Stanley Lemeshow, and Rodney X. Sturdivant. 2013. <em>Applied Logistic Regression</em>. 3rd ed. Wiley Series in Probability and Statistics. Hoboken, NJ: John Wiley &amp; Sons. <a href="https://doi.org/10.1002/9781118548387">https://doi.org/10.1002/9781118548387</a>.
+</div>
+<div id="ref-hu1999" class="csl-entry" role="listitem">
+Hu, Li-tze, and Peter M. Bentler. 1999. <span>‘Cutoff Criteria for Fit Indexes in Covariance Structure Analysis: Conventional Criteria Versus New Alternatives’</span>. <em>Structural Equation Modeling</em> 6 (1): 1–55. <a href="https://doi.org/10.1080/10705519909540118">https://doi.org/10.1080/10705519909540118</a>.
+</div>
+<div id="ref-huberty2006" class="csl-entry" role="listitem">
+Huberty, Carl J., and Stephen Olejnik. 2006. <em>Applied MANOVA and Discriminant Analysis</em>. 2nd ed. Hoboken, NJ: Wiley. <a href="https://doi.org/10.1002/047178947X">https://doi.org/10.1002/047178947X</a>.
+</div>
+<div id="ref-hwang1981" class="csl-entry" role="listitem">
+Hwang, Ching-Lai, and Kwangsun Yoon. 1981. <em>Multiple Attribute Decision Making: Methods and Applications</em>. Berlin: Springer. <a href="https://doi.org/10.1007/978-3-642-48318-9">https://doi.org/10.1007/978-3-642-48318-9</a>.
+</div>
+<div id="ref-hyndman2021" class="csl-entry" role="listitem">
+Hyndman, Rob J., and George Athanasopoulos. 2021. <em>Forecasting: Principles and Practice</em>. 3rd ed. Melbourne, Australia: OTexts. <a href="https://otexts.com/fpp3/">https://otexts.com/fpp3/</a>.
+</div>
+<div id="ref-koo2016" class="csl-entry" role="listitem">
+Koo, Terry K., and Mae Y. Li. 2016. <span>‘A Guideline of Selecting and Reporting Intraclass Correlation Coefficients for Reliability Research’</span>. <em>Journal of Chiropractic Medicine</em> 15 (2): 155–63. <a href="https://doi.org/10.1016/j.jcm.2016.02.012">https://doi.org/10.1016/j.jcm.2016.02.012</a>.
+</div>
+<div id="ref-kraft2020" class="csl-entry" role="listitem">
+Kraft, Matthew A. 2020. <span>‘Interpreting Effect Sizes of Education Interventions’</span>. <em>Educational Researcher</em> 49 (4): 241–53. <a href="https://doi.org/10.3102/0013189X20912798">https://doi.org/10.3102/0013189X20912798</a>.
+</div>
+<div id="ref-lakens2013" class="csl-entry" role="listitem">
+Lakens, Daniël. 2013. <span>‘Calculating and Reporting Effect Sizes to Facilitate Cumulative Science: A Practical Primer for t-Tests and <span>ANOVAs</span>’</span>. <em>Frontiers in Psychology</em> 4: 863. <a href="https://doi.org/10.3389/fpsyg.2013.00863">https://doi.org/10.3389/fpsyg.2013.00863</a>.
+</div>
+<div id="ref-lakens2018" class="csl-entry" role="listitem">
+Lakens, Daniël, Anne M. Scheel, and Peder M. Isager. 2018. <span>‘Equivalence Testing for Psychological Research: A Tutorial’</span>. <em>Advances in Methods and Practices in Psychological Science</em> 1 (2): 259–69. <a href="https://doi.org/10.1177/2515245918770963">https://doi.org/10.1177/2515245918770963</a>.
+</div>
+<div id="ref-lawshe1975" class="csl-entry" role="listitem">
+Lawshe, Charles H. 1975. <span>‘A Quantitative Approach to Content Validity’</span>. <em>Personnel Psychology</em> 28 (4): 563–75. <a href="https://doi.org/10.1111/j.1744-6570.1975.tb01393.x">https://doi.org/10.1111/j.1744-6570.1975.tb01393.x</a>.
+</div>
+<div id="ref-lipsey1993" class="csl-entry" role="listitem">
+Lipsey, Mark W., and David B. Wilson. 1993. <span>‘The Efficacy of Psychological, Educational, and Behavioural Treatment: Confirmation from Meta-Analysis’</span>. <em>American Psychologist</em> 48 (12): 1181–1209. <a href="https://doi.org/10.1037/0003-066X.48.12.1181">https://doi.org/10.1037/0003-066X.48.12.1181</a>.
+</div>
+<div id="ref-little1988" class="csl-entry" role="listitem">
+Little, Roderick J. A. 1988. <span>‘A Test of Missing Completely at Random for Multivariate Data with Missing Values’</span>. <em>Journal of the American Statistical Association</em> 83 (404): 1198–1202. <a href="https://doi.org/10.1080/01621459.1988.10478722">https://doi.org/10.1080/01621459.1988.10478722</a>.
+</div>
+<div id="ref-mackinnon2000" class="csl-entry" role="listitem">
+MacKinnon, David P., Jennifer L. Krull, and Chondra M. Lockwood. 2000. <span>‘Equivalence of the Mediation, Confounding and Suppression Effect’</span>. <em>Prevention Science</em> 1 (4): 173–81.
+</div>
+<div id="ref-mair2020" class="csl-entry" role="listitem">
+Mair, Patrick, and Rand R. Wilcox. 2020. <span>‘Robust Statistical Methods in r Using the WRS2 Package’</span>. <em>Behavior Research Methods</em> 52 (2): 464–88. <a href="https://doi.org/10.3758/s13428-019-01246-w">https://doi.org/10.3758/s13428-019-01246-w</a>.
+</div>
+<div id="ref-mann1947" class="csl-entry" role="listitem">
+Mann, Henry B., and Donald R. Whitney. 1947. <span>‘On a Test of Whether One of Two Random Variables Is Stochastically Larger Than the Other’</span>. <em>The Annals of Mathematical Statistics</em> 18 (1): 50–60. <a href="https://doi.org/10.1214/aoms/1177730491">https://doi.org/10.1214/aoms/1177730491</a>.
+</div>
+<div id="ref-mcdonald1999" class="csl-entry" role="listitem">
+McDonald, Roderick P. 1999. <em>Test Theory: A Unified Treatment</em>. Mahwah, NJ: Lawrence Erlbaum Associates.
+</div>
+<div id="ref-morey2011" class="csl-entry" role="listitem">
+Morey, Richard D., and Jeffrey N. Rouder. 2011. <span>‘Bayes Factor Approaches for Testing Interval Null Hypotheses’</span>. <em>Psychological Methods</em> 16 (4): 406–19. <a href="https://doi.org/10.1037/a0024377">https://doi.org/10.1037/a0024377</a>.
+</div>
+<div id="ref-nielsen1993" class="csl-entry" role="listitem">
+Nielsen, Jakob. 1993. <em>Usability Engineering</em>. San Francisco, CA: Morgan Kaufmann.
+</div>
+<div id="ref-olsson1979" class="csl-entry" role="listitem">
+Olsson, Ulf. 1979. <span>‘Maximum Likelihood Estimation of the Polychoric Correlation Coefficient’</span>. <em>Psychometrika</em> 44 (4): 443–60.
+</div>
+<div id="ref-opricovic2004" class="csl-entry" role="listitem">
+Opricovic, Serafim, and Gwo-Hshiung Tzeng. 2004. <span>‘Compromise Solution by <span>MCDM</span> Methods: A Comparative Analysis of <span>VIKOR</span> and <span>TOPSIS</span>’</span>. <em>European Journal of Operational Research</em> 156 (2): 445–55. <a href="https://doi.org/10.1016/S0377-2217(03)00020-1">https://doi.org/10.1016/S0377-2217(03)00020-1</a>.
+</div>
+<div id="ref-page2021" class="csl-entry" role="listitem">
+Page, Matthew J., Joanne E. McKenzie, Patrick M. Bossuyt, Isabelle Boutron, Tammy C. Hoffmann, Cynthia D. Mulrow, Larissa Shamseer, et al. 2021. <span>‘The <span>PRISMA</span> 2020 Statement: An Updated Guideline for Reporting Systematic Reviews’</span>. <em>BMJ</em> 372: n71. <a href="https://doi.org/10.1136/bmj.n71">https://doi.org/10.1136/bmj.n71</a>.
+</div>
+<div id="ref-rcore2026" class="csl-entry" role="listitem">
+R Core Team. 2026. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+</div>
+<div id="ref-rubin1987" class="csl-entry" role="listitem">
+Rubin, Donald B. 1987. <em>Multiple Imputation for Nonresponse in Surveys</em>. New York, NY: Wiley.
+</div>
+<div id="ref-saaty1980" class="csl-entry" role="listitem">
+Saaty, Thomas L. 1980. <em>The Analytic Hierarchy Process</em>. New York, NY: McGraw-Hill.
+</div>
+<div id="ref-schulz2010" class="csl-entry" role="listitem">
+Schulz, Kenneth F., Douglas G. Altman, and David Moher. 2010. <span>‘<span>CONSORT</span> 2010 Statement: Updated Guidelines for Reporting Parallel Group Randomised Trials’</span>. <em>BMJ</em> 340: c332. <a href="https://doi.org/10.1136/bmj.c332">https://doi.org/10.1136/bmj.c332</a>.
+</div>
+<div id="ref-shan2018" class="csl-entry" role="listitem">
+Shan, Guogen. 2018. <em>Exact Statistical Inference for Categorical Data</em>. London: Academic Press.
+</div>
+<div id="ref-sterne2009" class="csl-entry" role="listitem">
+Sterne, Jonathan A. C., Ian R. White, John B. Carlin, Michael Spratt, Patrick Royston, Michael G. Kenward, Angela M. Wood, and James R. Carpenter. 2009. <span>‘Multiple Imputation for Missing Data in Epidemiological and Clinical Research: Potential and Pitfalls’</span>. <em>BMJ</em> 338: b2393. <a href="https://doi.org/10.1136/bmj.b2393">https://doi.org/10.1136/bmj.b2393</a>.
+</div>
+<div id="ref-teare2014" class="csl-entry" role="listitem">
+Teare, M. Dawn, Munyaradzi Dimairo, Neil Shephard, Amanda Hayman, Amy Whitehead, and Stephen J. Walters. 2014. <span>‘Sample Size Requirements to Estimate Key Design Parameters from External Pilot Randomised Controlled Trials: A Simulation Study’</span>. <em>Trials</em> 15: 264. <a href="https://doi.org/10.1186/1745-6215-15-264">https://doi.org/10.1186/1745-6215-15-264</a>.
+</div>
+<div id="ref-tomczak2014" class="csl-entry" role="listitem">
+Tomczak, Maciej, and Ewa Tomczak. 2014. <span>‘The Need to Report Effect Size Estimates Revisited: An Overview of Some Recommended Measures of Effect Size’</span>. <em>Trends in Sport Sciences</em> 21 (1): 19–25.
+</div>
+<div id="ref-trizano2016" class="csl-entry" role="listitem">
+Trizano-Hermosilla, Italo, and Jose M. Alvarado. 2016. <span>‘Best Alternatives to Cronbach’s Alpha Reliability in Realistic Conditions: Congeneric and Asymmetrical Measurements’</span>. <em>Frontiers in Psychology</em> 7: 769. <a href="https://doi.org/10.3389/fpsyg.2016.00769">https://doi.org/10.3389/fpsyg.2016.00769</a>.
+</div>
+<div id="ref-vandeschoot2020" class="csl-entry" role="listitem">
+Van de Schoot, Rens, and Milica Miočević. 2020. <em>Small Sample Size Solutions: A Guide for Applied Researchers and Practitioners</em>. London: Routledge.
+</div>
+<div id="ref-vehtari2017" class="csl-entry" role="listitem">
+Vehtari, Aki, Andrew Gelman, and Jonah Gabry. 2017. <span>‘Practical Bayesian Model Evaluation Using Leave-One-Out Cross-Validation and <span>WAIC</span>’</span>. <em>Statistics and Computing</em> 27 (5): 1413–32. <a href="https://doi.org/10.1007/s11222-016-9696-4">https://doi.org/10.1007/s11222-016-9696-4</a>.
+</div>
+<div id="ref-wagenmakers2018" class="csl-entry" role="listitem">
+Wagenmakers, Eric-Jan, Jonathon Love, Maarten Marsman, Tahira Jamil, Alexander Ly, Josine Verhagen, Ravi Selker, et al. 2018. <span>‘Bayesian Inference for Psychology. Part <span>II</span>: Example Applications with <span>JASP</span>’</span>. <em>Psychonomic Bulletin &amp; Review</em> 25 (1): 58–76. <a href="https://doi.org/10.3758/s13423-017-1323-7">https://doi.org/10.3758/s13423-017-1323-7</a>.
+</div>
+<div id="ref-white2011" class="csl-entry" role="listitem">
+White, Ian R., Patrick Royston, and Angela M. Wood. 2011. <span>‘Multiple Imputation Using Chained Equations: Issues and Guidance for Practice’</span>. <em>Statistics in Medicine</em> 30 (4): 377–99. <a href="https://doi.org/10.1002/sim.4067">https://doi.org/10.1002/sim.4067</a>.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/how-to-cite.html" class="pagination-link" aria-label="How to Cite This Book">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">How to Cite This Book</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/textbook-preface.html" class="pagination-link" aria-label="Preface">
+        <span class="nav-page-text">Preface</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Reproducibility and Data Availability</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>This textbook was prepared as a reproducible Quarto project. The source files, R scripts, generated data examples, and rendering configuration are maintained in the project repository.</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>Repository: <span class="ot">&lt;https://github.com/MohammedAliSharafuddin/smallsamplelab&gt;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## Software environment</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>The project uses R, Quarto, Pandoc, and LaTeX for rendering. The main reproducibility files are:</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> File <span class="pp">|</span> Purpose <span class="pp">|</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`setup.R`</span> <span class="pp">|</span> Installs or checks required R packages and prepares datasets where needed <span class="pp">|</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`validation_script.R`</span> <span class="pp">|</span> Runs project-level validation checks <span class="pp">|</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`renv.lock`</span> <span class="pp">|</span> Records the package versions used for reproducible rendering <span class="pp">|</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`_quarto.yml`</span> <span class="pp">|</span> Main Quarto book configuration <span class="pp">|</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`references.bib`</span> <span class="pp">|</span> Bibliographic database <span class="pp">|</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`data/`</span> <span class="pp">|</span> Teaching and example datasets <span class="pp">|</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`R/`</span> <span class="pp">|</span> Supporting R functions and scripts <span class="pp">|</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.github/workflows/render-book.yml`</span> <span class="pp">|</span> GitHub Actions workflow for rendering the book on hosted infrastructure <span class="pp">|</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data availability</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>The datasets used in the textbook are teaching datasets or generated example datasets designed for learning and reproducibility. They are not confidential human-subject datasets and should not be interpreted as real institutional or commercial records unless explicitly stated in a chapter.</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="fu">## Reproducibility expectation</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>A reader should be able to clone the repository, install the required tools, run <span class="in">`renv::restore()`</span>, run the setup script, and render the book. All figures and tables can be regenerated on a fresh machine using <span class="in">`renv::restore()`</span> followed by <span class="in">`quarto render`</span> or the repository render scripts. Final publisher submission should include rendered HTML, PDF, and DOCX outputs, together with render logs and a release archive.</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="fu">## Chapter helper functions</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>Some chapters use short helper functions to keep table styling and repeated simulation logic consistent across HTML and PDF output. These helpers are not hidden dependencies: they are stored in the repository under <span class="in">`R/`</span> and are sourced by the relevant chapter setup chunks.</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>The helper files are:</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`R/chapter_table_helpers.R`</span>: provides <span class="in">`smallsamplelab_apa_table()`</span> for consistent APA-style table rendering in HTML and PDF.</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`R/chapter_helpers.R`</span>: provides chapter-specific helpers, including <span class="in">`chapter5_measurement_table()`</span>, <span class="in">`chapter6_simulate_scale()`</span>, <span class="in">`chapter6_problem_item_diagnostics()`</span>, <span class="in">`smalln_mcar_table()`</span>, and <span class="in">`chapter10_format_p()`</span>.</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`R/smalln_recipes.R`</span>: provides reusable small-sample analysis recipes, including <span class="in">`mw_test()`</span> and <span class="in">`boot_median_ci()`</span>.</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>To inspect or reuse them interactively, run:</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R/chapter_table_helpers.R"</span>)</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R/chapter_helpers.R"</span>)</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R/smalln_recipes.R"</span>)</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="fu">## Archival release</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>For formal citation, the publisher-ready version should be archived as Version 1.0.0 and deposited in a DOI-issuing repository. The DOI, ISBN, release date, and final licence should then be inserted into this page, <span class="in">`CITATION.cff`</span>, <span class="in">`.zenodo.json`</span>, <span class="in">`codemeta.json`</span>, and the README.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
