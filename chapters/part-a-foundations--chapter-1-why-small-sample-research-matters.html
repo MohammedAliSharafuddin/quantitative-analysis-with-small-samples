@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
 
 <title>Chapter 1: Why Small-Sample Research Matters – Quantitative Analysis with Small Samples</title>
 <style>
@@ -1709,6 +1710,13 @@ window.Quarto = {
 };
 </script>
 
+<meta property="og:title" content="Chapter 1: Why Small-Sample Research Matters – Quantitative Analysis with Small Samples">
+<meta property="og:description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
+<meta property="og:site_name" content="Quantitative Analysis with Small Samples">
+<meta name="twitter:title" content="Chapter 1: Why Small-Sample Research Matters – Quantitative Analysis with Small Samples">
+<meta name="twitter:description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/chapters/part-a-foundations--chapter-1-why-small-sample-research-matters.html">
 </head>
 
 <body class="nav-sidebar floating quarto-light">
@@ -1738,6 +1746,9 @@ window.Quarto = {
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Quantitative Analysis with Small Samples</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/MohammedAliSharafuddin/smallsamplelab" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -3416,8 +3427,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 1.</span> A study with n = 12 per group has 25% power to detect d = 0.5. What does this mean?</p>
-<div id="webex-ee2535ebb91faa2d85cd044b24a3d989" class="webex-radiogroup" data-answer="PlUeBB8FSVI/">
-<label><input type="radio" autocomplete="off" name="ee2535ebb91faa2d85cd044b24a3d989"><span>There is a 25% chance the treatment is effective</span></label><label><input type="radio" autocomplete="off" name="ee2535ebb91faa2d85cd044b24a3d989"><span>If the true effect is d = 0.5, there is a 25% probability of detecting it (p &lt; 0.05)</span></label><label><input type="radio" autocomplete="off" name="ee2535ebb91faa2d85cd044b24a3d989"><span>The Type I error rate is 25%</span></label><label><input type="radio" autocomplete="off" name="ee2535ebb91faa2d85cd044b24a3d989"><span>25% of participants will show the effect</span></label>
+<div id="webex-9b3ef4330b8deec52ce6134893b22aff" class="webex-radiogroup" data-answer="YlIfVEoEHwNt">
+<label><input type="radio" autocomplete="off" name="9b3ef4330b8deec52ce6134893b22aff"><span>There is a 25% chance the treatment is effective</span></label><label><input type="radio" autocomplete="off" name="9b3ef4330b8deec52ce6134893b22aff"><span>If the true effect is d = 0.5, there is a 25% probability of detecting it (p &lt; 0.05)</span></label><label><input type="radio" autocomplete="off" name="9b3ef4330b8deec52ce6134893b22aff"><span>The Type I error rate is 25%</span></label><label><input type="radio" autocomplete="off" name="9b3ef4330b8deec52ce6134893b22aff"><span>25% of participants will show the effect</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3428,8 +3439,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 2.</span> Why might large-sample approximations fail with n = 15?</p>
-<div id="webex-28f7b0a3b714e2de7aed4be9fa04656d" class="webex-radiogroup" data-answer="aQhKBk4ATQM/">
-<label><input type="radio" autocomplete="off" name="28f7b0a3b714e2de7aed4be9fa04656d"><span>Computers cannot process small datasets</span></label><label><input type="radio" autocomplete="off" name="28f7b0a3b714e2de7aed4be9fa04656d"><span>Sampling distributions may not be approximately normal</span></label><label><input type="radio" autocomplete="off" name="28f7b0a3b714e2de7aed4be9fa04656d"><span>Effect sizes cannot be calculated</span></label><label><input type="radio" autocomplete="off" name="28f7b0a3b714e2de7aed4be9fa04656d"><span>P-values are always incorrect</span></label>
+<div id="webex-bf02c1ce55b8793fecc36d5ef42aa824" class="webex-radiogroup" data-answer="OVYcA08BT1Vo">
+<label><input type="radio" autocomplete="off" name="bf02c1ce55b8793fecc36d5ef42aa824"><span>Computers cannot process small datasets</span></label><label><input type="radio" autocomplete="off" name="bf02c1ce55b8793fecc36d5ef42aa824"><span>Sampling distributions may not be approximately normal</span></label><label><input type="radio" autocomplete="off" name="bf02c1ce55b8793fecc36d5ef42aa824"><span>Effect sizes cannot be calculated</span></label><label><input type="radio" autocomplete="off" name="bf02c1ce55b8793fecc36d5ef42aa824"><span>P-values are always incorrect</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3440,8 +3451,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 3.</span> Which research question is MOST appropriate for n = 20?</p>
-<div id="webex-15954c4b8acbe34f5c9bd006bf3f1a7b" class="webex-radiogroup" data-answer="agUVBBhTGFJl">
-<label><input type="radio" autocomplete="off" name="15954c4b8acbe34f5c9bd006bf3f1a7b"><span>“What are all factors that predict customer loyalty?” (testing 15 predictors)</span></label><label><input type="radio" autocomplete="off" name="15954c4b8acbe34f5c9bd006bf3f1a7b"><span>“Is there a difference in satisfaction between two service approaches?”</span></label><label><input type="radio" autocomplete="off" name="15954c4b8acbe34f5c9bd006bf3f1a7b"><span>“How do age, gender, income, education, and occupation interact to predict outcomes?”</span></label><label><input type="radio" autocomplete="off" name="15954c4b8acbe34f5c9bd006bf3f1a7b"><span>“Can we build a machine learning model to predict customer behavior?”</span></label>
+<div id="webex-ee7320c6c9099d37810a5e0e61ed2689" class="webex-radiogroup" data-answer="PlUbAh4ATwY+">
+<label><input type="radio" autocomplete="off" name="ee7320c6c9099d37810a5e0e61ed2689"><span>“What are all factors that predict customer loyalty?” (testing 15 predictors)</span></label><label><input type="radio" autocomplete="off" name="ee7320c6c9099d37810a5e0e61ed2689"><span>“Is there a difference in satisfaction between two service approaches?”</span></label><label><input type="radio" autocomplete="off" name="ee7320c6c9099d37810a5e0e61ed2689"><span>“How do age, gender, income, education, and occupation interact to predict outcomes?”</span></label><label><input type="radio" autocomplete="off" name="ee7320c6c9099d37810a5e0e61ed2689"><span>“Can we build a machine learning model to predict customer behavior?”</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3452,8 +3463,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 4.</span> A pilot study with n = 8 finds a mean difference of 5 points (95% CI: [-2, 12], p = 0.14). The correct interpretation is:</p>
-<div id="webex-7237593ff88a59650afd14e4441b59ad" class="webex-radiogroup" data-answer="bAIfBxkIH1Y7">
-<label><input type="radio" autocomplete="off" name="7237593ff88a59650afd14e4441b59ad"><span>There is no effect</span></label><label><input type="radio" autocomplete="off" name="7237593ff88a59650afd14e4441b59ad"><span>The effect is exactly 5 points</span></label><label><input type="radio" autocomplete="off" name="7237593ff88a59650afd14e4441b59ad"><span>The study is underpowered; effects from -2 to 12 points are plausible</span></label><label><input type="radio" autocomplete="off" name="7237593ff88a59650afd14e4441b59ad"><span>The null hypothesis is proven true</span></label>
+<div id="webex-3298a228d123965e4a1f5cd9b271a65d" class="webex-radiogroup" data-answer="aAIVCE0DHgg5">
+<label><input type="radio" autocomplete="off" name="3298a228d123965e4a1f5cd9b271a65d"><span>There is no effect</span></label><label><input type="radio" autocomplete="off" name="3298a228d123965e4a1f5cd9b271a65d"><span>The effect is exactly 5 points</span></label><label><input type="radio" autocomplete="off" name="3298a228d123965e4a1f5cd9b271a65d"><span>The study is underpowered; effects from -2 to 12 points are plausible</span></label><label><input type="radio" autocomplete="off" name="3298a228d123965e4a1f5cd9b271a65d"><span>The null hypothesis is proven true</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3464,8 +3475,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 5.</span> Which outcome measure provides the MOST statistical information per observation?</p>
-<div id="webex-7ffa87295f3512ea3cb92fcc26cd98c2" class="webex-radiogroup" data-answer="bFZKURQGHglo">
-<label><input type="radio" autocomplete="off" name="7ffa87295f3512ea3cb92fcc26cd98c2"><span>Binary (pass/fail)</span></label><label><input type="radio" autocomplete="off" name="7ffa87295f3512ea3cb92fcc26cd98c2"><span>Ordinal (grade A-F)</span></label><label><input type="radio" autocomplete="off" name="7ffa87295f3512ea3cb92fcc26cd98c2"><span>Continuous (test score 0-100)</span></label><label><input type="radio" autocomplete="off" name="7ffa87295f3512ea3cb92fcc26cd98c2"><span>All provide equal information</span></label>
+<div id="webex-e435f8c2cfccb8c41a9c39654f35781f" class="webex-radiogroup" data-answer="PgQfBUoJTwI+">
+<label><input type="radio" autocomplete="off" name="e435f8c2cfccb8c41a9c39654f35781f"><span>Binary (pass/fail)</span></label><label><input type="radio" autocomplete="off" name="e435f8c2cfccb8c41a9c39654f35781f"><span>Ordinal (grade A-F)</span></label><label><input type="radio" autocomplete="off" name="e435f8c2cfccb8c41a9c39654f35781f"><span>Continuous (test score 0-100)</span></label><label><input type="radio" autocomplete="off" name="e435f8c2cfccb8c41a9c39654f35781f"><span>All provide equal information</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3476,8 +3487,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 6.</span> With n = 10 per group, which statement about power is TRUE?</p>
-<div id="webex-208af07475766c9bc4f955c3e7534c51" class="webex-radiogroup" data-answer="aQAUUEoAGwRq">
-<label><input type="radio" autocomplete="off" name="208af07475766c9bc4f955c3e7534c51"><span>Power is always 50% regardless of effect size</span></label><label><input type="radio" autocomplete="off" name="208af07475766c9bc4f955c3e7534c51"><span>Power increases as the true effect size increases</span></label><label><input type="radio" autocomplete="off" name="208af07475766c9bc4f955c3e7534c51"><span>Power is unrelated to sample size</span></label><label><input type="radio" autocomplete="off" name="208af07475766c9bc4f955c3e7534c51"><span>Power cannot be calculated for small samples</span></label>
+<div id="webex-8da8dcb9d1312a6f7651c00914602cf0" class="webex-radiogroup" data-answer="Y1RNCUhTTgk5">
+<label><input type="radio" autocomplete="off" name="8da8dcb9d1312a6f7651c00914602cf0"><span>Power is always 50% regardless of effect size</span></label><label><input type="radio" autocomplete="off" name="8da8dcb9d1312a6f7651c00914602cf0"><span>Power increases as the true effect size increases</span></label><label><input type="radio" autocomplete="off" name="8da8dcb9d1312a6f7651c00914602cf0"><span>Power is unrelated to sample size</span></label><label><input type="radio" autocomplete="off" name="8da8dcb9d1312a6f7651c00914602cf0"><span>Power cannot be calculated for small samples</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3488,8 +3499,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 7.</span> A study finds p = 0.048 with n = 8 per group. Which concern is MOST valid?</p>
-<div id="webex-b47630e23e135037fa0c3b7f1b951874" class="webex-radiogroup" data-answer="OQQbBx8ASQJu">
-<label><input type="radio" autocomplete="off" name="b47630e23e135037fa0c3b7f1b951874"><span>The result is definitely a false positive</span></label><label><input type="radio" autocomplete="off" name="b47630e23e135037fa0c3b7f1b951874"><span>With small n, results near the significance threshold should be interpreted cautiously</span></label><label><input type="radio" autocomplete="off" name="b47630e23e135037fa0c3b7f1b951874"><span>Small samples always produce spurious results</span></label><label><input type="radio" autocomplete="off" name="b47630e23e135037fa0c3b7f1b951874"><span>The p-value is meaningless with n &lt; 30</span></label>
+<div id="webex-8382c8a60b1704a698cad9cbd18ef5f6" class="webex-radiogroup" data-answer="YwMUA08ITQZt">
+<label><input type="radio" autocomplete="off" name="8382c8a60b1704a698cad9cbd18ef5f6"><span>The result is definitely a false positive</span></label><label><input type="radio" autocomplete="off" name="8382c8a60b1704a698cad9cbd18ef5f6"><span>With small n, results near the significance threshold should be interpreted cautiously</span></label><label><input type="radio" autocomplete="off" name="8382c8a60b1704a698cad9cbd18ef5f6"><span>Small samples always produce spurious results</span></label><label><input type="radio" autocomplete="off" name="8382c8a60b1704a698cad9cbd18ef5f6"><span>The p-value is meaningless with n &lt; 30</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3500,8 +3511,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 8.</span> When is a small sample (n &lt; 30) potentially sufficient?</p>
-<div id="webex-a5fa550c98090d86828f852421cc6ef8" class="webex-radiogroup" data-answer="OgVKUBkFHFNk">
-<label><input type="radio" autocomplete="off" name="a5fa550c98090d86828f852421cc6ef8"><span>Never—all research requires n &gt;= 100</span></label><label><input type="radio" autocomplete="off" name="a5fa550c98090d86828f852421cc6ef8"><span>When the effect is very large and variance is low</span></label><label><input type="radio" autocomplete="off" name="a5fa550c98090d86828f852421cc6ef8"><span>Only for qualitative research</span></label><label><input type="radio" autocomplete="off" name="a5fa550c98090d86828f852421cc6ef8"><span>When using machine learning methods</span></label>
+<div id="webex-2460435afc619264baa8d297c8dc758b" class="webex-radiogroup" data-answer="aQQaARgDGVE7">
+<label><input type="radio" autocomplete="off" name="2460435afc619264baa8d297c8dc758b"><span>Never—all research requires n &gt;= 100</span></label><label><input type="radio" autocomplete="off" name="2460435afc619264baa8d297c8dc758b"><span>When the effect is very large and variance is low</span></label><label><input type="radio" autocomplete="off" name="2460435afc619264baa8d297c8dc758b"><span>Only for qualitative research</span></label><label><input type="radio" autocomplete="off" name="2460435afc619264baa8d297c8dc758b"><span>When using machine learning methods</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3512,8 +3523,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 9.</span> Which is a legitimate reason for small sample size?</p>
-<div id="webex-0fcfd79c04caa8d645928aca46afe62c" class="webex-radiogroup" data-answer="a1ZPV0gHFVNt">
-<label><input type="radio" autocomplete="off" name="0fcfd79c04caa8d645928aca46afe62c"><span>The researcher is lazy</span></label><label><input type="radio" autocomplete="off" name="0fcfd79c04caa8d645928aca46afe62c"><span>The population is rare (e.g., a genetic disorder affecting 1 in 100,000)</span></label><label><input type="radio" autocomplete="off" name="0fcfd79c04caa8d645928aca46afe62c"><span>The researcher wants to save time</span></label><label><input type="radio" autocomplete="off" name="0fcfd79c04caa8d645928aca46afe62c"><span>Small samples are always preferable</span></label>
+<div id="webex-44bc76c19bcb8ee46c97c2e303524675" class="webex-radiogroup" data-answer="bwROUhsGTwFk">
+<label><input type="radio" autocomplete="off" name="44bc76c19bcb8ee46c97c2e303524675"><span>The researcher is lazy</span></label><label><input type="radio" autocomplete="off" name="44bc76c19bcb8ee46c97c2e303524675"><span>The population is rare (e.g., a genetic disorder affecting 1 in 100,000)</span></label><label><input type="radio" autocomplete="off" name="44bc76c19bcb8ee46c97c2e303524675"><span>The researcher wants to save time</span></label><label><input type="radio" autocomplete="off" name="44bc76c19bcb8ee46c97c2e303524675"><span>Small samples are always preferable</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3524,8 +3535,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 10.</span> A researcher states: “My study has n = 15, so I’ll just use nonparametric tests.” What is the problem with this reasoning?</p>
-<div id="webex-3e5a637521498633c39bbc2f0f36587e" class="webex-radiogroup" data-answer="aFUZUBoDGwVv">
-<label><input type="radio" autocomplete="off" name="3e5a637521498633c39bbc2f0f36587e"><span>Nonparametric tests require n &gt;= 30</span></label><label><input type="radio" autocomplete="off" name="3e5a637521498633c39bbc2f0f36587e"><span>The choice of test should depend on the data characteristics and research question, not just sample size</span></label><label><input type="radio" autocomplete="off" name="3e5a637521498633c39bbc2f0f36587e"><span>Nonparametric tests are always inferior</span></label><label><input type="radio" autocomplete="off" name="3e5a637521498633c39bbc2f0f36587e"><span>Parametric tests always work regardless of assumptions</span></label>
+<div id="webex-2728599307ff3bb83f4789074b66abeb" class="webex-radiogroup" data-answer="aQceCRkJFQNt">
+<label><input type="radio" autocomplete="off" name="2728599307ff3bb83f4789074b66abeb"><span>Nonparametric tests require n &gt;= 30</span></label><label><input type="radio" autocomplete="off" name="2728599307ff3bb83f4789074b66abeb"><span>The choice of test should depend on the data characteristics and research question, not just sample size</span></label><label><input type="radio" autocomplete="off" name="2728599307ff3bb83f4789074b66abeb"><span>Nonparametric tests are always inferior</span></label><label><input type="radio" autocomplete="off" name="2728599307ff3bb83f4789074b66abeb"><span>Parametric tests always work regardless of assumptions</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3844,7 +3855,7 @@ White, Ian R., Patrick Royston, and Angela M. Wood. 2011. <span>‘Multiple Impu
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/mohammedalisharafuddin\.github\.io\/quantitative-analysis-with-small-samples\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

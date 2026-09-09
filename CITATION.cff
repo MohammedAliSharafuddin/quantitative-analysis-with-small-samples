@@ -1,35 +1,48 @@
 cff-version: 1.2.0
-message: "If you use this work, please cite it as below."
+message: "If you use this textbook or its code examples, please cite it as below."
 type: book
-title: "Quantitative Analysis with Small Samples: A Practical Guide for Students and Early-Career Researchers"
-version: 0.1.0
-doi: 10.5281/zenodo.20221929
-date-released: 2026-05-16
-url: "https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/"
-repository-code: "https://github.com/MohammedAliSharafuddin/quantitative-analysis-with-small-samples"
-license: CC-BY-4.0
+title: "Quantitative Analysis with Small Samples"
+subtitle: "A Practical Guide for Students and Early-Career Researchers"
 authors:
-  - family-names: Sharafuddin
-    given-names: Mohammed Ali
+  - family-names: "Sharafuddin"
+    given-names: "Mohammed Ali"
+    affiliation: "Qasim Ibrahim School of Business, Villa College, Maldives"
     orcid: "https://orcid.org/0000-0001-5247-2964"
+  - family-names: "Jaleel"
+    given-names: "Ahsan Ahmed"
     affiliation: "Qasim Ibrahim School of Business, Villa College, Maldives"
-  - family-names: Jaleel
-    given-names: Ahsan Ahmed
     orcid: "https://orcid.org/0009-0004-5576-8700"
-    affiliation: "Qasim Ibrahim School of Business, Villa College, Maldives"
-  - family-names: Madhavan
-    given-names: Meena
+  - family-names: "Madhavan"
+    given-names: "Meena"
+    affiliation: "Department of Logistics Management, International Maritime College Oman, National University of Science & Technology, Oman"
     orcid: "https://orcid.org/0000-0003-1244-5392"
-    affiliation: "International Maritime College Oman, NUST, Oman"
-abstract: >
-  A textbook covering rigorous quantitative analysis when sample sizes are
-  small. Topics include study design, measurement quality, exact and
-  resampling tests, nonparametric inference, penalised and Bayesian
-  regression, missing data, uncertainty reporting, and five worked projects
-  in R.
-keywords:
-  - small samples
-  - quantitative methods
-  - statistics
-  - R
-  - research methods
+repository-code: "https://github.com/MohammedAliSharafuddin/smallsamplelab"
+url: "https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/"
+version: "0.1.0"
+date-released: 2026-05-16
+doi: "10.5281/zenodo.20221929"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.20221929"
+    description: "Concept DOI. Always resolves to the latest version of the book. Use this one unless you need a specific version."
+  - type: doi
+    value: "10.5281/zenodo.20221930"
+    description: "Version DOI for v0.1.0, deposited 2026-05-16."
+license: "CC-BY-4.0"
+abstract: "A practical Quarto and R textbook on quantitative analysis when sample sizes are small, with emphasis on design, measurement, exact and resampling methods, nonparametric inference, penalised and Bayesian approaches, uncertainty reporting, and worked projects."
+preferred-citation:
+  type: book
+  title: "Quantitative Analysis with Small Samples: A Practical Guide for Students and Early-Career Researchers"
+  authors:
+    - family-names: "Sharafuddin"
+      given-names: "Mohammed Ali"
+      orcid: "https://orcid.org/0000-0001-5247-2964"
+    - family-names: "Jaleel"
+      given-names: "Ahsan Ahmed"
+      orcid: "https://orcid.org/0009-0004-5576-8700"
+    - family-names: "Madhavan"
+      given-names: "Meena"
+      orcid: "https://orcid.org/0000-0003-1244-5392"
+  year: 2026
+  doi: "10.5281/zenodo.20221929"
+  url: "https://doi.org/10.5281/zenodo.20221929"

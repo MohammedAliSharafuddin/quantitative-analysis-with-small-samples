@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
 
 <title>Chapter 13: Penalised and Bayesian Regression for Small Samples – Quantitative Analysis with Small Samples</title>
 <style>
@@ -1680,6 +1681,19 @@ globalThis.qwebrExecuteCode = async function (
 </script>
 
 
+<meta property="og:title" content="Chapter 13: Penalised and Bayesian Regression for Small Samples – Quantitative Analysis with Small Samples">
+<meta property="og:description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
+<meta property="og:image" content="https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/chapters/part-c-analysis-methods--chapter-13-penalised-and-bayesian-regression-for-small-samples_files/figure-html/ch13-ridge-figure-1.png">
+<meta property="og:site_name" content="Quantitative Analysis with Small Samples">
+<meta property="og:image:height" content="960">
+<meta property="og:image:width" content="1344">
+<meta name="twitter:title" content="Chapter 13: Penalised and Bayesian Regression for Small Samples – Quantitative Analysis with Small Samples">
+<meta name="twitter:description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
+<meta name="twitter:image" content="https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/chapters/part-c-analysis-methods--chapter-13-penalised-and-bayesian-regression-for-small-samples_files/figure-html/ch13-ridge-figure-1.png">
+<meta name="twitter:image-height" content="960">
+<meta name="twitter:image-width" content="1344">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/chapters/part-c-analysis-methods--chapter-13-penalised-and-bayesian-regression-for-small-samples.html">
 </head>
 
 <body class="nav-sidebar floating quarto-light">
@@ -1709,6 +1723,9 @@ globalThis.qwebrExecuteCode = async function (
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Quantitative Analysis with Small Samples</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/MohammedAliSharafuddin/smallsamplelab" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -3661,8 +3678,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 1.</span> What does separation mean in logistic regression?</p>
-<div id="webex-8003493868f23e1f36e818bb54c25ffb" class="webex-radiogroup" data-answer="YwAcAhgJHwhr">
-<label><input type="radio" autocomplete="off" name="8003493868f23e1f36e818bb54c25ffb"><span>Predictors are measured on different scales</span></label><label><input type="radio" autocomplete="off" name="8003493868f23e1f36e818bb54c25ffb"><span>A predictor or predictor combination nearly perfectly classifies the binary outcome</span></label><label><input type="radio" autocomplete="off" name="8003493868f23e1f36e818bb54c25ffb"><span>The residuals are normally distributed</span></label><label><input type="radio" autocomplete="off" name="8003493868f23e1f36e818bb54c25ffb"><span>The model has no intercept</span></label>
+<div id="webex-290ea2c5ca3c053a418e1a59e45cca77" class="webex-radiogroup" data-answer="aQkcVE0CTwU+">
+<label><input type="radio" autocomplete="off" name="290ea2c5ca3c053a418e1a59e45cca77"><span>Predictors are measured on different scales</span></label><label><input type="radio" autocomplete="off" name="290ea2c5ca3c053a418e1a59e45cca77"><span>A predictor or predictor combination nearly perfectly classifies the binary outcome</span></label><label><input type="radio" autocomplete="off" name="290ea2c5ca3c053a418e1a59e45cca77"><span>The residuals are normally distributed</span></label><label><input type="radio" autocomplete="off" name="290ea2c5ca3c053a418e1a59e45cca77"><span>The model has no intercept</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3673,8 +3690,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 2.</span> Why is Firth logistic regression useful with sparse binary outcomes?</p>
-<div id="webex-69e04a67fbd4db82adb8baff91d14dbb" class="webex-radiogroup" data-answer="bQlJARhRGgc7">
-<label><input type="radio" autocomplete="off" name="69e04a67fbd4db82adb8baff91d14dbb"><span>It removes the binary outcome</span></label><label><input type="radio" autocomplete="off" name="69e04a67fbd4db82adb8baff91d14dbb"><span>It reduces small-sample bias and produces finite estimates under separation</span></label><label><input type="radio" autocomplete="off" name="69e04a67fbd4db82adb8baff91d14dbb"><span>It guarantees statistical significance</span></label><label><input type="radio" autocomplete="off" name="69e04a67fbd4db82adb8baff91d14dbb"><span>It replaces the need to report event counts</span></label>
+<div id="webex-3158326cc8980b02b097f0a927c8d89d" class="webex-radiogroup" data-answer="aAEZCR8CGlM+">
+<label><input type="radio" autocomplete="off" name="3158326cc8980b02b097f0a927c8d89d"><span>It removes the binary outcome</span></label><label><input type="radio" autocomplete="off" name="3158326cc8980b02b097f0a927c8d89d"><span>It reduces small-sample bias and produces finite estimates under separation</span></label><label><input type="radio" autocomplete="off" name="3158326cc8980b02b097f0a927c8d89d"><span>It guarantees statistical significance</span></label><label><input type="radio" autocomplete="off" name="3158326cc8980b02b097f0a927c8d89d"><span>It replaces the need to report event counts</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3685,8 +3702,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 3.</span> What does ridge regression do to coefficients?</p>
-<div id="webex-603f35f80d12760eeadac36a26aae7e7" class="webex-radiogroup" data-answer="bQAfVx8FSght">
-<label><input type="radio" autocomplete="off" name="603f35f80d12760eeadac36a26aae7e7"><span>It forces all coefficients to be exactly zero</span></label><label><input type="radio" autocomplete="off" name="603f35f80d12760eeadac36a26aae7e7"><span>It shrinks coefficients toward zero by penalising large values</span></label><label><input type="radio" autocomplete="off" name="603f35f80d12760eeadac36a26aae7e7"><span>It converts a binary outcome into a count</span></label><label><input type="radio" autocomplete="off" name="603f35f80d12760eeadac36a26aae7e7"><span>It removes the need to standardise predictors</span></label>
+<div id="webex-c163aa0c59b228076aef45543507dadb" class="webex-radiogroup" data-answer="OAEaAk1RHFNo">
+<label><input type="radio" autocomplete="off" name="c163aa0c59b228076aef45543507dadb"><span>It forces all coefficients to be exactly zero</span></label><label><input type="radio" autocomplete="off" name="c163aa0c59b228076aef45543507dadb"><span>It shrinks coefficients toward zero by penalising large values</span></label><label><input type="radio" autocomplete="off" name="c163aa0c59b228076aef45543507dadb"><span>It converts a binary outcome into a count</span></label><label><input type="radio" autocomplete="off" name="c163aa0c59b228076aef45543507dadb"><span>It removes the need to standardise predictors</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3697,8 +3714,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 4.</span> In a small-sample Bayesian regression, why should prior sensitivity be reported?</p>
-<div id="webex-c1cd31b5d52406fcb038a3650a53d2bc" class="webex-radiogroup" data-answer="OAFPVR8BTgU5">
-<label><input type="radio" autocomplete="off" name="c1cd31b5d52406fcb038a3650a53d2bc"><span>Because priors have no effect</span></label><label><input type="radio" autocomplete="off" name="c1cd31b5d52406fcb038a3650a53d2bc"><span>Because small samples can leave the posterior sensitive to reasonable prior choices</span></label><label><input type="radio" autocomplete="off" name="c1cd31b5d52406fcb038a3650a53d2bc"><span>Because it replaces convergence diagnostics</span></label><label><input type="radio" autocomplete="off" name="c1cd31b5d52406fcb038a3650a53d2bc"><span>Because credible intervals are always narrow</span></label>
+<div id="webex-b26ccc3d5e697df12e67849b2b41e088" class="webex-radiogroup" data-answer="OQIaUk9TH1Ro">
+<label><input type="radio" autocomplete="off" name="b26ccc3d5e697df12e67849b2b41e088"><span>Because priors have no effect</span></label><label><input type="radio" autocomplete="off" name="b26ccc3d5e697df12e67849b2b41e088"><span>Because small samples can leave the posterior sensitive to reasonable prior choices</span></label><label><input type="radio" autocomplete="off" name="b26ccc3d5e697df12e67849b2b41e088"><span>Because it replaces convergence diagnostics</span></label><label><input type="radio" autocomplete="off" name="b26ccc3d5e697df12e67849b2b41e088"><span>Because credible intervals are always narrow</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3709,8 +3726,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 5.</span> Which statement is the safest interpretation of a regularised estimate?</p>
-<div id="webex-30450a6d43bd2061318a162d38b2bf88" class="webex-radiogroup" data-answer="aAAYBBxRGlRp">
-<label><input type="radio" autocomplete="off" name="30450a6d43bd2061318a162d38b2bf88"><span>It is automatically unbiased</span></label><label><input type="radio" autocomplete="off" name="30450a6d43bd2061318a162d38b2bf88"><span>It is stabilised by an explicit penalty or prior and should be interpreted with that assumption stated</span></label><label><input type="radio" autocomplete="off" name="30450a6d43bd2061318a162d38b2bf88"><span>It proves that the effect exists</span></label><label><input type="radio" autocomplete="off" name="30450a6d43bd2061318a162d38b2bf88"><span>It needs no confidence or credible interval</span></label>
+<div id="webex-0010fd5761b91ce8341b116958865500" class="webex-radiogroup" data-answer="awAdAUpUGQdr">
+<label><input type="radio" autocomplete="off" name="0010fd5761b91ce8341b116958865500"><span>It is automatically unbiased</span></label><label><input type="radio" autocomplete="off" name="0010fd5761b91ce8341b116958865500"><span>It is stabilised by an explicit penalty or prior and should be interpreted with that assumption stated</span></label><label><input type="radio" autocomplete="off" name="0010fd5761b91ce8341b116958865500"><span>It proves that the effect exists</span></label><label><input type="radio" autocomplete="off" name="0010fd5761b91ce8341b116958865500"><span>It needs no confidence or credible interval</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -4029,7 +4046,7 @@ White, Ian R., Patrick Royston, and Angela M. Wood. 2011. <span>‘Multiple Impu
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/mohammedalisharafuddin\.github\.io\/quantitative-analysis-with-small-samples\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

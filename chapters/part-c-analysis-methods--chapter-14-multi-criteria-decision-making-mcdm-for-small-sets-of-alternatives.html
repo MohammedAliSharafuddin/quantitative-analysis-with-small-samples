@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
 
 <title>Chapter 14: Multi-Criteria Decision Making (MCDM) for Small Sets of Alternatives – Quantitative Analysis with Small Samples</title>
 <style>
@@ -1709,6 +1710,19 @@ window.Quarto = {
 };
 </script>
 
+<meta property="og:title" content="Chapter 14: Multi-Criteria Decision Making (MCDM) for Small Sets of Alternatives – Quantitative Analysis with Small Samples">
+<meta property="og:description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
+<meta property="og:image" content="https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/chapters/part-c-analysis-methods--chapter-14-multi-criteria-decision-making-mcdm-for-small-sets-of-alternatives_files/figure-html/ch14-sensitivity-figure-1.png">
+<meta property="og:site_name" content="Quantitative Analysis with Small Samples">
+<meta property="og:image:height" content="960">
+<meta property="og:image:width" content="1344">
+<meta name="twitter:title" content="Chapter 14: Multi-Criteria Decision Making (MCDM) for Small Sets of Alternatives – Quantitative Analysis with Small Samples">
+<meta name="twitter:description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
+<meta name="twitter:image" content="https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/chapters/part-c-analysis-methods--chapter-14-multi-criteria-decision-making-mcdm-for-small-sets-of-alternatives_files/figure-html/ch14-sensitivity-figure-1.png">
+<meta name="twitter:image-height" content="960">
+<meta name="twitter:image-width" content="1344">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/chapters/part-c-analysis-methods--chapter-14-multi-criteria-decision-making-mcdm-for-small-sets-of-alternatives.html">
 </head>
 
 <body class="nav-sidebar floating quarto-light">
@@ -1738,6 +1752,9 @@ window.Quarto = {
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Quantitative Analysis with Small Samples</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/MohammedAliSharafuddin/smallsamplelab" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -3624,8 +3641,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 1.</span> When are MCDM methods most appropriate?</p>
-<div id="webex-3ba65352f74f51c88f24721821ef74fa" class="webex-radiogroup" data-answer="aFJNBxkDGQI7">
-<label><input type="radio" autocomplete="off" name="3ba65352f74f51c88f24721821ef74fa"><span>When the goal is hypothesis testing</span></label><label><input type="radio" autocomplete="off" name="3ba65352f74f51c88f24721821ef74fa"><span>When a small set of alternatives must be ranked using multiple criteria</span></label><label><input type="radio" autocomplete="off" name="3ba65352f74f51c88f24721821ef74fa"><span>When there is only one outcome variable</span></label><label><input type="radio" autocomplete="off" name="3ba65352f74f51c88f24721821ef74fa"><span>When p-values are required</span></label>
+<div id="webex-ff5888b3de531d46de4f71d2cac1d149" class="webex-radiogroup" data-answer="PVYZCRQITgM5">
+<label><input type="radio" autocomplete="off" name="ff5888b3de531d46de4f71d2cac1d149"><span>When the goal is hypothesis testing</span></label><label><input type="radio" autocomplete="off" name="ff5888b3de531d46de4f71d2cac1d149"><span>When a small set of alternatives must be ranked using multiple criteria</span></label><label><input type="radio" autocomplete="off" name="ff5888b3de531d46de4f71d2cac1d149"><span>When there is only one outcome variable</span></label><label><input type="radio" autocomplete="off" name="ff5888b3de531d46de4f71d2cac1d149"><span>When p-values are required</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3636,8 +3653,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 2.</span> What does AHP’s consistency ratio evaluate?</p>
-<div id="webex-64dcd8efe452444ab714ad2b59bc86b2" class="webex-radiogroup" data-answer="bQRIUkgISVY4">
-<label><input type="radio" autocomplete="off" name="64dcd8efe452444ab714ad2b59bc86b2"><span>Whether residuals are normally distributed</span></label><label><input type="radio" autocomplete="off" name="64dcd8efe452444ab714ad2b59bc86b2"><span>Whether pairwise judgements are coherent enough to use</span></label><label><input type="radio" autocomplete="off" name="64dcd8efe452444ab714ad2b59bc86b2"><span>Whether the sample size is large</span></label><label><input type="radio" autocomplete="off" name="64dcd8efe452444ab714ad2b59bc86b2"><span>Whether every criterion has equal weight</span></label>
+<div id="webex-3feb91a1dbd43c032c01c905e187ce41" class="webex-radiogroup" data-answer="aFZJUxUBTQE5">
+<label><input type="radio" autocomplete="off" name="3feb91a1dbd43c032c01c905e187ce41"><span>Whether residuals are normally distributed</span></label><label><input type="radio" autocomplete="off" name="3feb91a1dbd43c032c01c905e187ce41"><span>Whether pairwise judgements are coherent enough to use</span></label><label><input type="radio" autocomplete="off" name="3feb91a1dbd43c032c01c905e187ce41"><span>Whether the sample size is large</span></label><label><input type="radio" autocomplete="off" name="3feb91a1dbd43c032c01c905e187ce41"><span>Whether every criterion has equal weight</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3648,8 +3665,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 3.</span> In TOPSIS, what does a larger closeness coefficient mean?</p>
-<div id="webex-b91a4b3d5561faf8cd03edb0b8732df8" class="webex-radiogroup" data-answer="OQgdURhSH1Ro">
-<label><input type="radio" autocomplete="off" name="b91a4b3d5561faf8cd03edb0b8732df8"><span>The alternative is closer to the ideal and farther from the negative ideal</span></label><label><input type="radio" autocomplete="off" name="b91a4b3d5561faf8cd03edb0b8732df8"><span>The p-value is smaller</span></label><label><input type="radio" autocomplete="off" name="b91a4b3d5561faf8cd03edb0b8732df8"><span>The criterion is less important</span></label><label><input type="radio" autocomplete="off" name="b91a4b3d5561faf8cd03edb0b8732df8"><span>The alternative has a larger sample size</span></label>
+<div id="webex-89582178858ca017148e3156d933d672" class="webex-radiogroup" data-answer="YwgZCB4BGwhl">
+<label><input type="radio" autocomplete="off" name="89582178858ca017148e3156d933d672"><span>The alternative is closer to the ideal and farther from the negative ideal</span></label><label><input type="radio" autocomplete="off" name="89582178858ca017148e3156d933d672"><span>The p-value is smaller</span></label><label><input type="radio" autocomplete="off" name="89582178858ca017148e3156d933d672"><span>The criterion is less important</span></label><label><input type="radio" autocomplete="off" name="89582178858ca017148e3156d933d672"><span>The alternative has a larger sample size</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3660,8 +3677,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 4.</span> Why must cost criteria often be transformed before TOPSIS?</p>
-<div id="webex-cc1330c5064747cae3363f31b7ed681b" class="webex-radiogroup" data-answer="OFMdAh8ATwVt">
-<label><input type="radio" autocomplete="off" name="cc1330c5064747cae3363f31b7ed681b"><span>TOPSIS cannot use numbers below zero</span></label><label><input type="radio" autocomplete="off" name="cc1330c5064747cae3363f31b7ed681b"><span>TOPSIS assumes larger criterion values are better</span></label><label><input type="radio" autocomplete="off" name="cc1330c5064747cae3363f31b7ed681b"><span>Cost is always irrelevant</span></label><label><input type="radio" autocomplete="off" name="cc1330c5064747cae3363f31b7ed681b"><span>It is required for statistical significance</span></label>
+<div id="webex-fb0d7bd1a095b6a367594f9644c6476a" class="webex-radiogroup" data-answer="PVIcVRtSSAE8">
+<label><input type="radio" autocomplete="off" name="fb0d7bd1a095b6a367594f9644c6476a"><span>TOPSIS cannot use numbers below zero</span></label><label><input type="radio" autocomplete="off" name="fb0d7bd1a095b6a367594f9644c6476a"><span>TOPSIS assumes larger criterion values are better</span></label><label><input type="radio" autocomplete="off" name="fb0d7bd1a095b6a367594f9644c6476a"><span>Cost is always irrelevant</span></label><label><input type="radio" autocomplete="off" name="fb0d7bd1a095b6a367594f9644c6476a"><span>It is required for statistical significance</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3672,8 +3689,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 5.</span> Why is sensitivity analysis essential in MCDM?</p>
-<div id="webex-77b2b9cef68fc652f6b33e4115715962" class="webex-radiogroup" data-answer="bAdOA04JT1U7">
-<label><input type="radio" autocomplete="off" name="77b2b9cef68fc652f6b33e4115715962"><span>It replaces stakeholder judgement</span></label><label><input type="radio" autocomplete="off" name="77b2b9cef68fc652f6b33e4115715962"><span>It shows whether rankings change under plausible weights or inputs</span></label><label><input type="radio" autocomplete="off" name="77b2b9cef68fc652f6b33e4115715962"><span>It computes exact p-values</span></label><label><input type="radio" autocomplete="off" name="77b2b9cef68fc652f6b33e4115715962"><span>It removes the need to state criteria</span></label>
+<div id="webex-a347173efd4bbf49ba9188735434b3a5" class="webex-radiogroup" data-answer="OgMYBh0HH1U7">
+<label><input type="radio" autocomplete="off" name="a347173efd4bbf49ba9188735434b3a5"><span>It replaces stakeholder judgement</span></label><label><input type="radio" autocomplete="off" name="a347173efd4bbf49ba9188735434b3a5"><span>It shows whether rankings change under plausible weights or inputs</span></label><label><input type="radio" autocomplete="off" name="a347173efd4bbf49ba9188735434b3a5"><span>It computes exact p-values</span></label><label><input type="radio" autocomplete="off" name="a347173efd4bbf49ba9188735434b3a5"><span>It removes the need to state criteria</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3992,7 +4009,7 @@ White, Ian R., Patrick Royston, and Angela M. Wood. 2011. <span>‘Multiple Impu
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/mohammedalisharafuddin\.github\.io\/quantitative-analysis-with-small-samples\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

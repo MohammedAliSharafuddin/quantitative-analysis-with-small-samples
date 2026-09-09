@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
 
 <title>Chapter 16: Interpreting Non-Significant Results – Quantitative Analysis with Small Samples</title>
 <style>
@@ -127,6 +128,19 @@ div.csl-indent {
 }</script>
 
 
+<meta property="og:title" content="Chapter 16: Interpreting Non-Significant Results – Quantitative Analysis with Small Samples">
+<meta property="og:description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
+<meta property="og:image" content="https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/chapters/part-d-reporting--chapter-16-interpreting-non-significant-results_files/figure-html/qfig-ch16-nonsignificant-ci-1.png">
+<meta property="og:site_name" content="Quantitative Analysis with Small Samples">
+<meta property="og:image:height" content="672">
+<meta property="og:image:width" content="1344">
+<meta name="twitter:title" content="Chapter 16: Interpreting Non-Significant Results – Quantitative Analysis with Small Samples">
+<meta name="twitter:description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
+<meta name="twitter:image" content="https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/chapters/part-d-reporting--chapter-16-interpreting-non-significant-results_files/figure-html/qfig-ch16-nonsignificant-ci-1.png">
+<meta name="twitter:image-height" content="672">
+<meta name="twitter:image-width" content="1344">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/chapters/part-d-reporting--chapter-16-interpreting-non-significant-results.html">
 </head>
 
 <body class="nav-sidebar floating quarto-light">
@@ -156,6 +170,9 @@ div.csl-indent {
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Quantitative Analysis with Small Samples</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/MohammedAliSharafuddin/smallsamplelab" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -1619,8 +1636,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 1.</span> What does a non-significant result usually mean?</p>
-<div id="webex-eefe647d37e1c2efa9cfb69df58dc08d" class="webex-radiogroup" data-answer="PlVKVBoEG1Ru">
-<label><input type="radio" autocomplete="off" name="eefe647d37e1c2efa9cfb69df58dc08d"><span>The null hypothesis is proven true</span></label><label><input type="radio" autocomplete="off" name="eefe647d37e1c2efa9cfb69df58dc08d"><span>The data were not sufficiently inconsistent with the null hypothesis to reject it</span></label><label><input type="radio" autocomplete="off" name="eefe647d37e1c2efa9cfb69df58dc08d"><span>The treatment has no effect</span></label><label><input type="radio" autocomplete="off" name="eefe647d37e1c2efa9cfb69df58dc08d"><span>The study was necessarily invalid</span></label>
+<div id="webex-18fa4ac105e57e8119648359cc80e80a" class="webex-radiogroup" data-answer="aghKUBhRTwFt">
+<label><input type="radio" autocomplete="off" name="18fa4ac105e57e8119648359cc80e80a"><span>The null hypothesis is proven true</span></label><label><input type="radio" autocomplete="off" name="18fa4ac105e57e8119648359cc80e80a"><span>The data were not sufficiently inconsistent with the null hypothesis to reject it</span></label><label><input type="radio" autocomplete="off" name="18fa4ac105e57e8119648359cc80e80a"><span>The treatment has no effect</span></label><label><input type="radio" autocomplete="off" name="18fa4ac105e57e8119648359cc80e80a"><span>The study was necessarily invalid</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -1637,8 +1654,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 2.</span> Which confidence interval best supports a claim of no meaningful effect if any effect within ±3 points is considered trivial?</p>
-<div id="webex-c564dc3f9e61bbed0470d93cf61ab950" class="webex-radiogroup" data-answer="OAQaBEhTH1Zk">
-<label><input type="radio" autocomplete="off" name="c564dc3f9e61bbed0470d93cf61ab950"><span>-0.5 to 2.5</span></label><label><input type="radio" autocomplete="off" name="c564dc3f9e61bbed0470d93cf61ab950"><span>-6.0 to 6.0</span></label><label><input type="radio" autocomplete="off" name="c564dc3f9e61bbed0470d93cf61ab950"><span>-2.0 to 8.0</span></label><label><input type="radio" autocomplete="off" name="c564dc3f9e61bbed0470d93cf61ab950"><span>-10.0 to 1.0</span></label>
+<div id="webex-386676c364ab902f4e6c4e3d88013a3d" class="webex-radiogroup" data-answer="aAkaBhsGTwNr">
+<label><input type="radio" autocomplete="off" name="386676c364ab902f4e6c4e3d88013a3d"><span>-0.5 to 2.5</span></label><label><input type="radio" autocomplete="off" name="386676c364ab902f4e6c4e3d88013a3d"><span>-6.0 to 6.0</span></label><label><input type="radio" autocomplete="off" name="386676c364ab902f4e6c4e3d88013a3d"><span>-2.0 to 8.0</span></label><label><input type="radio" autocomplete="off" name="386676c364ab902f4e6c4e3d88013a3d"><span>-10.0 to 1.0</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -1655,8 +1672,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 3.</span> Why are non-significant results common in small-sample studies?</p>
-<div id="webex-ca527d187280a81cc63d93a283a3fcf3" class="webex-radiogroup" data-answer="OFEZAxtUHQhq">
-<label><input type="radio" autocomplete="off" name="ca527d187280a81cc63d93a283a3fcf3"><span>Small samples automatically bias effects toward zero</span></label><label><input type="radio" autocomplete="off" name="ca527d187280a81cc63d93a283a3fcf3"><span>Limited power means true effects are often missed</span></label><label><input type="radio" autocomplete="off" name="ca527d187280a81cc63d93a283a3fcf3"><span>Statistical tests cannot be used with small samples</span></label><label><input type="radio" autocomplete="off" name="ca527d187280a81cc63d93a283a3fcf3"><span>Confidence intervals are always narrow</span></label>
+<div id="webex-e8852dc851a89ec2fe0e27d16b0c14e6" class="webex-radiogroup" data-answer="PggUBB5UTwho">
+<label><input type="radio" autocomplete="off" name="e8852dc851a89ec2fe0e27d16b0c14e6"><span>Small samples automatically bias effects toward zero</span></label><label><input type="radio" autocomplete="off" name="e8852dc851a89ec2fe0e27d16b0c14e6"><span>Limited power means true effects are often missed</span></label><label><input type="radio" autocomplete="off" name="e8852dc851a89ec2fe0e27d16b0c14e6"><span>Statistical tests cannot be used with small samples</span></label><label><input type="radio" autocomplete="off" name="e8852dc851a89ec2fe0e27d16b0c14e6"><span>Confidence intervals are always narrow</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -1673,8 +1690,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 4.</span> What is an equivalence test designed to show?</p>
-<div id="webex-f556cd98313634a6d94a942baf11ae4e" class="webex-radiogroup" data-answer="PQUZB09UFQhu">
-<label><input type="radio" autocomplete="off" name="f556cd98313634a6d94a942baf11ae4e"><span>That two effects are exactly identical</span></label><label><input type="radio" autocomplete="off" name="f556cd98313634a6d94a942baf11ae4e"><span>That an effect is small enough to fall within a prespecified negligible range</span></label><label><input type="radio" autocomplete="off" name="f556cd98313634a6d94a942baf11ae4e"><span>That p is greater than 0.05</span></label><label><input type="radio" autocomplete="off" name="f556cd98313634a6d94a942baf11ae4e"><span>That the sample size is large</span></label>
+<div id="webex-c13bc6a92d08ec317743604c63d8acbf" class="webex-radiogroup" data-answer="OAEfU08GTQlv">
+<label><input type="radio" autocomplete="off" name="c13bc6a92d08ec317743604c63d8acbf"><span>That two effects are exactly identical</span></label><label><input type="radio" autocomplete="off" name="c13bc6a92d08ec317743604c63d8acbf"><span>That an effect is small enough to fall within a prespecified negligible range</span></label><label><input type="radio" autocomplete="off" name="c13bc6a92d08ec317743604c63d8acbf"><span>That p is greater than 0.05</span></label><label><input type="radio" autocomplete="off" name="c13bc6a92d08ec317743604c63d8acbf"><span>That the sample size is large</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -1691,8 +1708,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 5.</span> A non-significant result has a wide CI that includes both harmful and beneficial effects. What is the best conclusion?</p>
-<div id="webex-bb102bed5f18052cdb8bc1275cae083d" class="webex-radiogroup" data-answer="OVIdAR5SSVRo">
-<label><input type="radio" autocomplete="off" name="bb102bed5f18052cdb8bc1275cae083d"><span>There is no effect</span></label><label><input type="radio" autocomplete="off" name="bb102bed5f18052cdb8bc1275cae083d"><span>The study is inconclusive</span></label><label><input type="radio" autocomplete="off" name="bb102bed5f18052cdb8bc1275cae083d"><span>The null hypothesis is true</span></label><label><input type="radio" autocomplete="off" name="bb102bed5f18052cdb8bc1275cae083d"><span>Equivalence has been shown</span></label>
+<div id="webex-438a2b90430f6974fae091012f756a28" class="webex-radiogroup" data-answer="bwMUUB5SFQBp">
+<label><input type="radio" autocomplete="off" name="438a2b90430f6974fae091012f756a28"><span>There is no effect</span></label><label><input type="radio" autocomplete="off" name="438a2b90430f6974fae091012f756a28"><span>The study is inconclusive</span></label><label><input type="radio" autocomplete="off" name="438a2b90430f6974fae091012f756a28"><span>The null hypothesis is true</span></label><label><input type="radio" autocomplete="off" name="438a2b90430f6974fae091012f756a28"><span>Equivalence has been shown</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -1709,8 +1726,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 6.</span> Which phrase is safest when the CI is wide and p &gt; 0.05?</p>
-<div id="webex-14a48887896b15a56220114384a87a61" class="webex-radiogroup" data-answer="agRNBRQIFAdl">
-<label><input type="radio" autocomplete="off" name="14a48887896b15a56220114384a87a61"><span>The treatments were identical</span></label><label><input type="radio" autocomplete="off" name="14a48887896b15a56220114384a87a61"><span>No statistically significant difference was observed, and meaningful effects remain plausible</span></label><label><input type="radio" autocomplete="off" name="14a48887896b15a56220114384a87a61"><span>The intervention failed</span></label><label><input type="radio" autocomplete="off" name="14a48887896b15a56220114384a87a61"><span>The null hypothesis was confirmed</span></label>
+<div id="webex-c8f6ea941ed0996e457242977dff1d3a" class="webex-radiogroup" data-answer="OAhKB0lRFQRs">
+<label><input type="radio" autocomplete="off" name="c8f6ea941ed0996e457242977dff1d3a"><span>The treatments were identical</span></label><label><input type="radio" autocomplete="off" name="c8f6ea941ed0996e457242977dff1d3a"><span>No statistically significant difference was observed, and meaningful effects remain plausible</span></label><label><input type="radio" autocomplete="off" name="c8f6ea941ed0996e457242977dff1d3a"><span>The intervention failed</span></label><label><input type="radio" autocomplete="off" name="c8f6ea941ed0996e457242977dff1d3a"><span>The null hypothesis was confirmed</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -2035,7 +2052,7 @@ White, Ian R., Patrick Royston, and Angela M. Wood. 2011. <span>‘Multiple Impu
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/mohammedalisharafuddin\.github\.io\/quantitative-analysis-with-small-samples\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

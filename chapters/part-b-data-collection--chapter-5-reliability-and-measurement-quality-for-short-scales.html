@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
 
 <title>Chapter 5: Reliability and Measurement Quality for Short Scales – Quantitative Analysis with Small Samples</title>
 <style>
@@ -1709,6 +1710,19 @@ window.Quarto = {
 };
 </script>
 
+<meta property="og:title" content="Chapter 5: Reliability and Measurement Quality for Short Scales – Quantitative Analysis with Small Samples">
+<meta property="og:description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
+<meta property="og:image" content="https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/chapters/part-b-data-collection--chapter-5-reliability-and-measurement-quality-for-short-scales_files/figure-html/qfig-ch5-item-performance-web-1.png">
+<meta property="og:site_name" content="Quantitative Analysis with Small Samples">
+<meta property="og:image:height" content="960">
+<meta property="og:image:width" content="1344">
+<meta name="twitter:title" content="Chapter 5: Reliability and Measurement Quality for Short Scales – Quantitative Analysis with Small Samples">
+<meta name="twitter:description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
+<meta name="twitter:image" content="https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/chapters/part-b-data-collection--chapter-5-reliability-and-measurement-quality-for-short-scales_files/figure-html/qfig-ch5-item-performance-web-1.png">
+<meta name="twitter:image-height" content="960">
+<meta name="twitter:image-width" content="1344">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/chapters/part-b-data-collection--chapter-5-reliability-and-measurement-quality-for-short-scales.html">
 </head>
 
 <body class="nav-sidebar floating quarto-light">
@@ -1738,6 +1752,9 @@ window.Quarto = {
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Quantitative Analysis with Small Samples</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/MohammedAliSharafuddin/smallsamplelab" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -2763,7 +2780,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </tr>
 </tbody>
 </table>
-<p class="smallsamplelab-apa-table-note"><em>Note.</em> This chapter reports the minimum split-half reliability from <code>psych::splitHalf()</code>. Earlier editions referenced Revelle's β, but current psych workflows integrate that lower-bound logic within <code>splitHalf()</code> (here using psych 2.6.3).</p></div>
+<p class="smallsamplelab-apa-table-note"><em>Note.</em> This chapter reports the minimum split-half reliability from <code>psych::splitHalf()</code>. Earlier editions referenced Revelle's β, but current psych workflows integrate that lower-bound logic within <code>splitHalf()</code> (here using psych 2.6.5).</p></div>
 </div>
 <div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
 <div id="qwebr-insertion-location-6"></div>
@@ -2971,28 +2988,28 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <td style="text-align: right;">0.990</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">WRS5</td>
-<td style="text-align: right;">0.820</td>
-<td style="text-align: right;">0.751</td>
-<td style="text-align: right;">3.636</td>
-<td style="text-align: right;">0.492</td>
-</tr>
-<tr class="odd">
 <td style="text-align: left;">WRS3</td>
 <td style="text-align: right;">0.820</td>
 <td style="text-align: right;">0.751</td>
 <td style="text-align: right;">4.636</td>
 <td style="text-align: right;">0.492</td>
 </tr>
+<tr class="odd">
+<td style="text-align: left;">WRS5</td>
+<td style="text-align: right;">0.820</td>
+<td style="text-align: right;">0.751</td>
+<td style="text-align: right;">3.636</td>
+<td style="text-align: right;">0.492</td>
+</tr>
 <tr class="even">
-<td style="text-align: left;">WRS2</td>
+<td style="text-align: left;">WRS6</td>
 <td style="text-align: right;">0.857</td>
 <td style="text-align: right;">0.805</td>
 <td style="text-align: right;">3.273</td>
 <td style="text-align: right;">0.631</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">WRS6</td>
+<td style="text-align: left;">WRS2</td>
 <td style="text-align: right;">0.857</td>
 <td style="text-align: right;">0.805</td>
 <td style="text-align: right;">3.273</td>
@@ -4083,8 +4100,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 1.</span> Cronbach’s alpha measures:</p>
-<div id="webex-d21bae077b3fd08ea6ebcacf4334685b" class="webex-radiogroup" data-answer="PwIdU01VHAdq">
-<label><input type="radio" autocomplete="off" name="d21bae077b3fd08ea6ebcacf4334685b"><span>Whether data are normally distributed</span></label><label><input type="radio" autocomplete="off" name="d21bae077b3fd08ea6ebcacf4334685b"><span>Internal consistency—how closely related a set of items are</span></label><label><input type="radio" autocomplete="off" name="d21bae077b3fd08ea6ebcacf4334685b"><span>Test-retest reliability</span></label><label><input type="radio" autocomplete="off" name="d21bae077b3fd08ea6ebcacf4334685b"><span>Inter-rater agreement</span></label>
+<div id="webex-e0b4755c789e88ef769e5073f20e94cc" class="webex-radiogroup" data-answer="PgBOBRsFGVNq">
+<label><input type="radio" autocomplete="off" name="e0b4755c789e88ef769e5073f20e94cc"><span>Whether data are normally distributed</span></label><label><input type="radio" autocomplete="off" name="e0b4755c789e88ef769e5073f20e94cc"><span>Internal consistency—how closely related a set of items are</span></label><label><input type="radio" autocomplete="off" name="e0b4755c789e88ef769e5073f20e94cc"><span>Test-retest reliability</span></label><label><input type="radio" autocomplete="off" name="e0b4755c789e88ef769e5073f20e94cc"><span>Inter-rater agreement</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -4095,8 +4112,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 2.</span> What is the main limitation of Cronbach’s alpha?</p>
-<div id="webex-dc64db59817edbad3610e0364e868453" class="webex-radiogroup" data-answer="P1MaBUhSGQll">
-<label><input type="radio" autocomplete="off" name="dc64db59817edbad3610e0364e868453"><span>It requires n&gt;1,000</span></label><label><input type="radio" autocomplete="off" name="dc64db59817edbad3610e0364e868453"><span>It assumes tau-equivalence (equal factor loadings across items)</span></label><label><input type="radio" autocomplete="off" name="dc64db59817edbad3610e0364e868453"><span>It cannot be calculated for short scales</span></label><label><input type="radio" autocomplete="off" name="dc64db59817edbad3610e0364e868453"><span>It is always too high</span></label>
+<div id="webex-f8fc4516e3f71649e75c78b093141541" class="webex-radiogroup" data-answer="PQhKUhgFHQY4">
+<label><input type="radio" autocomplete="off" name="f8fc4516e3f71649e75c78b093141541"><span>It requires n&gt;1,000</span></label><label><input type="radio" autocomplete="off" name="f8fc4516e3f71649e75c78b093141541"><span>It assumes tau-equivalence (equal factor loadings across items)</span></label><label><input type="radio" autocomplete="off" name="f8fc4516e3f71649e75c78b093141541"><span>It cannot be calculated for short scales</span></label><label><input type="radio" autocomplete="off" name="f8fc4516e3f71649e75c78b093141541"><span>It is always too high</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -4107,8 +4124,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 3.</span> A 3-item scale has α=0.55 with n=25. Is this acceptable?</p>
-<div id="webex-81a731cc38d3bdf88d1262a4e075f4ee" class="webex-radiogroup" data-answer="YwFNBh8BT1Nu">
-<label><input type="radio" autocomplete="off" name="81a731cc38d3bdf88d1262a4e075f4ee"><span>No—alpha must always exceed 0.70</span></label><label><input type="radio" autocomplete="off" name="81a731cc38d3bdf88d1262a4e075f4ee"><span>Possibly—short scales naturally have lower alpha; consider context, item-total correlations, and CI</span></label><label><input type="radio" autocomplete="off" name="81a731cc38d3bdf88d1262a4e075f4ee"><span>Yes—always acceptable</span></label><label><input type="radio" autocomplete="off" name="81a731cc38d3bdf88d1262a4e075f4ee"><span>No—the scale must be discarded</span></label>
+<div id="webex-313dab29ddd37cbc94885f8e6cf3bd74" class="webex-radiogroup" data-answer="aAEfVU1SHgk5">
+<label><input type="radio" autocomplete="off" name="313dab29ddd37cbc94885f8e6cf3bd74"><span>No—alpha must always exceed 0.70</span></label><label><input type="radio" autocomplete="off" name="313dab29ddd37cbc94885f8e6cf3bd74"><span>Possibly—short scales naturally have lower alpha; consider context, item-total correlations, and CI</span></label><label><input type="radio" autocomplete="off" name="313dab29ddd37cbc94885f8e6cf3bd74"><span>Yes—always acceptable</span></label><label><input type="radio" autocomplete="off" name="313dab29ddd37cbc94885f8e6cf3bd74"><span>No—the scale must be discarded</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -4119,8 +4136,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 4.</span> McDonald’s omega is preferred over alpha when:</p>
-<div id="webex-26a8cfeea25d970ed87fc9c55d0327d0" class="webex-radiogroup" data-answer="aQZNCU9WSVU8">
-<label><input type="radio" autocomplete="off" name="26a8cfeea25d970ed87fc9c55d0327d0"><span>Items have equal factor loadings</span></label><label><input type="radio" autocomplete="off" name="26a8cfeea25d970ed87fc9c55d0327d0"><span>Items have varying factor loadings (not tau-equivalent)</span></label><label><input type="radio" autocomplete="off" name="26a8cfeea25d970ed87fc9c55d0327d0"><span>Sample size exceeds 500</span></label><label><input type="radio" autocomplete="off" name="26a8cfeea25d970ed87fc9c55d0327d0"><span>Data are categorical</span></label>
+<div id="webex-b3b41af01d0947fe6eb212b83d5adbf6" class="webex-radiogroup" data-answer="OQNOBR1RSgBs">
+<label><input type="radio" autocomplete="off" name="b3b41af01d0947fe6eb212b83d5adbf6"><span>Items have equal factor loadings</span></label><label><input type="radio" autocomplete="off" name="b3b41af01d0947fe6eb212b83d5adbf6"><span>Items have varying factor loadings (not tau-equivalent)</span></label><label><input type="radio" autocomplete="off" name="b3b41af01d0947fe6eb212b83d5adbf6"><span>Sample size exceeds 500</span></label><label><input type="radio" autocomplete="off" name="b3b41af01d0947fe6eb212b83d5adbf6"><span>Data are categorical</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -4131,8 +4148,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 5.</span> Item-total correlation measures:</p>
-<div id="webex-33a868d4bd546d469ce994878227682e" class="webex-radiogroup" data-answer="aAJNCBoISAQ/">
-<label><input type="radio" autocomplete="off" name="33a868d4bd546d469ce994878227682e"><span>How well an item correlates with the total scale score (excluding that item)</span></label><label><input type="radio" autocomplete="off" name="33a868d4bd546d469ce994878227682e"><span>Test-retest stability</span></label><label><input type="radio" autocomplete="off" name="33a868d4bd546d469ce994878227682e"><span>The mean of all items</span></label><label><input type="radio" autocomplete="off" name="33a868d4bd546d469ce994878227682e"><span>Sample size adequacy</span></label>
+<div id="webex-d0c28d97540fcc0bb6282046d7a63bf9" class="webex-radiogroup" data-answer="PwFPAhRUFQdo">
+<label><input type="radio" autocomplete="off" name="d0c28d97540fcc0bb6282046d7a63bf9"><span>How well an item correlates with the total scale score (excluding that item)</span></label><label><input type="radio" autocomplete="off" name="d0c28d97540fcc0bb6282046d7a63bf9"><span>Test-retest stability</span></label><label><input type="radio" autocomplete="off" name="d0c28d97540fcc0bb6282046d7a63bf9"><span>The mean of all items</span></label><label><input type="radio" autocomplete="off" name="d0c28d97540fcc0bb6282046d7a63bf9"><span>Sample size adequacy</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -4143,8 +4160,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 6.</span> What does “alpha if item deleted” show?</p>
-<div id="webex-c08e41754c6e47f3668cc243bc6170a3" class="webex-radiogroup" data-answer="OAAUVBgBGwVp">
-<label><input type="radio" autocomplete="off" name="c08e41754c6e47f3668cc243bc6170a3"><span>The p-value for each item</span></label><label><input type="radio" autocomplete="off" name="c08e41754c6e47f3668cc243bc6170a3"><span>How alpha would change if a specific item were removed</span></label><label><input type="radio" autocomplete="off" name="c08e41754c6e47f3668cc243bc6170a3"><span>The mean of each item</span></label><label><input type="radio" autocomplete="off" name="c08e41754c6e47f3668cc243bc6170a3"><span>Whether items are normally distributed</span></label>
+<div id="webex-e4ae7d68ac8a24495c336a5185598b46" class="webex-radiogroup" data-answer="PgRNVBtUGgg8">
+<label><input type="radio" autocomplete="off" name="e4ae7d68ac8a24495c336a5185598b46"><span>The p-value for each item</span></label><label><input type="radio" autocomplete="off" name="e4ae7d68ac8a24495c336a5185598b46"><span>How alpha would change if a specific item were removed</span></label><label><input type="radio" autocomplete="off" name="e4ae7d68ac8a24495c336a5185598b46"><span>The mean of each item</span></label><label><input type="radio" autocomplete="off" name="e4ae7d68ac8a24495c336a5185598b46"><span>Whether items are normally distributed</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -4155,8 +4172,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 7.</span> Polychoric correlations are used when:</p>
-<div id="webex-9400a7d0f8bc5e0853c59537a4a78d24" class="webex-radiogroup" data-answer="YgQcAU0HSAA7">
-<label><input type="radio" autocomplete="off" name="9400a7d0f8bc5e0853c59537a4a78d24"><span>Items are continuous and normally distributed</span></label><label><input type="radio" autocomplete="off" name="9400a7d0f8bc5e0853c59537a4a78d24"><span>Items are ordinal (e.g., Likert scales) and you want to estimate correlations between underlying continuous latent variables</span></label><label><input type="radio" autocomplete="off" name="9400a7d0f8bc5e0853c59537a4a78d24"><span>Sample size exceeds 1,000</span></label><label><input type="radio" autocomplete="off" name="9400a7d0f8bc5e0853c59537a4a78d24"><span>Data have no missing values</span></label>
+<div id="webex-5dd7d2135e4a83b168333189fa7c5199" class="webex-radiogroup" data-answer="blRIBkgCHQNo">
+<label><input type="radio" autocomplete="off" name="5dd7d2135e4a83b168333189fa7c5199"><span>Items are continuous and normally distributed</span></label><label><input type="radio" autocomplete="off" name="5dd7d2135e4a83b168333189fa7c5199"><span>Items are ordinal (e.g., Likert scales) and you want to estimate correlations between underlying continuous latent variables</span></label><label><input type="radio" autocomplete="off" name="5dd7d2135e4a83b168333189fa7c5199"><span>Sample size exceeds 1,000</span></label><label><input type="radio" autocomplete="off" name="5dd7d2135e4a83b168333189fa7c5199"><span>Data have no missing values</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -4167,8 +4184,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 8.</span> A scale has α=0.72 with n=36. The 95% CI is [0.52, 0.86]. What does this tell us?</p>
-<div id="webex-cb1a35bc3ae83f8b77e35e72a4a57f20" class="webex-radiogroup" data-answer="OFIdUB8FTlNu">
-<label><input type="radio" autocomplete="off" name="cb1a35bc3ae83f8b77e35e72a4a57f20"><span>Reliability is excellent</span></label><label><input type="radio" autocomplete="off" name="cb1a35bc3ae83f8b77e35e72a4a57f20"><span>Reliability is moderate, but precision is limited (wide CI) due to small sample</span></label><label><input type="radio" autocomplete="off" name="cb1a35bc3ae83f8b77e35e72a4a57f20"><span>The scale is unreliable</span></label><label><input type="radio" autocomplete="off" name="cb1a35bc3ae83f8b77e35e72a4a57f20"><span>More items must be added</span></label>
+<div id="webex-1a8911dc47cc9e49ce07d130be683b25" class="webex-radiogroup" data-answer="alEUCB0BSFNp">
+<label><input type="radio" autocomplete="off" name="1a8911dc47cc9e49ce07d130be683b25"><span>Reliability is excellent</span></label><label><input type="radio" autocomplete="off" name="1a8911dc47cc9e49ce07d130be683b25"><span>Reliability is moderate, but precision is limited (wide CI) due to small sample</span></label><label><input type="radio" autocomplete="off" name="1a8911dc47cc9e49ce07d130be683b25"><span>The scale is unreliable</span></label><label><input type="radio" autocomplete="off" name="1a8911dc47cc9e49ce07d130be683b25"><span>More items must be added</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -4179,8 +4196,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 9.</span> Split-half reliability involves:</p>
-<div id="webex-c03d0e263279a0117e6ea920f37f0064" class="webex-radiogroup" data-answer="OAAfVRxVHgZu">
-<label><input type="radio" autocomplete="off" name="c03d0e263279a0117e6ea920f37f0064"><span>Testing participants twice</span></label><label><input type="radio" autocomplete="off" name="c03d0e263279a0117e6ea920f37f0064"><span>Dividing items into two halves, computing correlation, and applying Spearman-Brown correction</span></label><label><input type="radio" autocomplete="off" name="c03d0e263279a0117e6ea920f37f0064"><span>Removing half the sample</span></label><label><input type="radio" autocomplete="off" name="c03d0e263279a0117e6ea920f37f0064"><span>Using different raters</span></label>
+<div id="webex-7481f65bd0e386c5d9a8203a1a6cddea" class="webex-radiogroup" data-answer="bAQUAEoGGVI5">
+<label><input type="radio" autocomplete="off" name="7481f65bd0e386c5d9a8203a1a6cddea"><span>Testing participants twice</span></label><label><input type="radio" autocomplete="off" name="7481f65bd0e386c5d9a8203a1a6cddea"><span>Dividing items into two halves, computing correlation, and applying Spearman-Brown correction</span></label><label><input type="radio" autocomplete="off" name="7481f65bd0e386c5d9a8203a1a6cddea"><span>Removing half the sample</span></label><label><input type="radio" autocomplete="off" name="7481f65bd0e386c5d9a8203a1a6cddea"><span>Using different raters</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -4191,8 +4208,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 10.</span> A scale shows α=−0.15. What is the most likely cause?</p>
-<div id="webex-6fe019e29fbc43ed9bffeace7bcccbec" class="webex-radiogroup" data-answer="bVZJAR0JSQJk">
-<label><input type="radio" autocomplete="off" name="6fe019e29fbc43ed9bffeace7bcccbec"><span>Perfect reliability</span></label><label><input type="radio" autocomplete="off" name="6fe019e29fbc43ed9bffeace7bcccbec"><span>Reverse-coded items not properly recoded, or items measuring different constructs</span></label><label><input type="radio" autocomplete="off" name="6fe019e29fbc43ed9bffeace7bcccbec"><span>Sample size too large</span></label><label><input type="radio" autocomplete="off" name="6fe019e29fbc43ed9bffeace7bcccbec"><span>Normal distribution</span></label>
+<div id="webex-e04c7926c5fa059883aa178a834e4e5a" class="webex-radiogroup" data-answer="PgAYUhsJHgY+">
+<label><input type="radio" autocomplete="off" name="e04c7926c5fa059883aa178a834e4e5a"><span>Perfect reliability</span></label><label><input type="radio" autocomplete="off" name="e04c7926c5fa059883aa178a834e4e5a"><span>Reverse-coded items not properly recoded, or items measuring different constructs</span></label><label><input type="radio" autocomplete="off" name="e04c7926c5fa059883aa178a834e4e5a"><span>Sample size too large</span></label><label><input type="radio" autocomplete="off" name="e04c7926c5fa059883aa178a834e4e5a"><span>Normal distribution</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -4511,7 +4528,7 @@ White, Ian R., Patrick Royston, and Angela M. Wood. 2011. <span>‘Multiple Impu
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/mohammedalisharafuddin\.github\.io\/quantitative-analysis-with-small-samples\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

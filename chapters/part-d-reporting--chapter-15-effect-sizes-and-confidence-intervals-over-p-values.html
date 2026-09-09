@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
 
 <title>Chapter 15: Effect Sizes and Confidence Intervals over P-Values – Quantitative Analysis with Small Samples</title>
 <style>
@@ -156,6 +157,19 @@ window.Quarto = {
 };
 </script>
 
+<meta property="og:title" content="Chapter 15: Effect Sizes and Confidence Intervals over P-Values – Quantitative Analysis with Small Samples">
+<meta property="og:description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
+<meta property="og:image" content="https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/chapters/part-d-reporting--chapter-15-effect-sizes-and-confidence-intervals-over-p-values_files/figure-html/qfig-ch15-ci-interpretation-1.png">
+<meta property="og:site_name" content="Quantitative Analysis with Small Samples">
+<meta property="og:image:height" content="691">
+<meta property="og:image:width" content="1344">
+<meta name="twitter:title" content="Chapter 15: Effect Sizes and Confidence Intervals over P-Values – Quantitative Analysis with Small Samples">
+<meta name="twitter:description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
+<meta name="twitter:image" content="https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/chapters/part-d-reporting--chapter-15-effect-sizes-and-confidence-intervals-over-p-values_files/figure-html/qfig-ch15-ci-interpretation-1.png">
+<meta name="twitter:image-height" content="691">
+<meta name="twitter:image-width" content="1344">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/chapters/part-d-reporting--chapter-15-effect-sizes-and-confidence-intervals-over-p-values.html">
 </head>
 
 <body class="nav-sidebar floating quarto-light">
@@ -185,6 +199,9 @@ window.Quarto = {
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Quantitative Analysis with Small Samples</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/MohammedAliSharafuddin/smallsamplelab" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -1640,8 +1657,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 1.</span> Cohen’s d = 0.50 means:</p>
-<div id="webex-310a26f139a5f3660288ec2653a6a5b3" class="webex-radiogroup" data-answer="aAEcUB4GSgFu">
-<label><input type="radio" autocomplete="off" name="310a26f139a5f3660288ec2653a6a5b3"><span>The p-value is 0.50</span></label><label><input type="radio" autocomplete="off" name="310a26f139a5f3660288ec2653a6a5b3"><span>The means differ by one half of a pooled standard deviation</span></label><label><input type="radio" autocomplete="off" name="310a26f139a5f3660288ec2653a6a5b3"><span>Half of participants improved</span></label><label><input type="radio" autocomplete="off" name="310a26f139a5f3660288ec2653a6a5b3"><span>The effect explains 50% of the variance</span></label>
+<div id="webex-865db96235bf87abe95516e10f8c1620" class="webex-radiogroup" data-answer="YwYZVU4JGgJu">
+<label><input type="radio" autocomplete="off" name="865db96235bf87abe95516e10f8c1620"><span>The p-value is 0.50</span></label><label><input type="radio" autocomplete="off" name="865db96235bf87abe95516e10f8c1620"><span>The means differ by one half of a pooled standard deviation</span></label><label><input type="radio" autocomplete="off" name="865db96235bf87abe95516e10f8c1620"><span>Half of participants improved</span></label><label><input type="radio" autocomplete="off" name="865db96235bf87abe95516e10f8c1620"><span>The effect explains 50% of the variance</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -1652,8 +1669,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 2.</span> Why should effect sizes be reported alongside p-values?</p>
-<div id="webex-c43c33af5367c9f7bbd8de46f144c362" class="webex-radiogroup" data-answer="OAUfUx8DTVZo">
-<label><input type="radio" autocomplete="off" name="c43c33af5367c9f7bbd8de46f144c362"><span>Effect sizes quantify magnitude, whereas p-values mainly summarise evidence against a null value</span></label><label><input type="radio" autocomplete="off" name="c43c33af5367c9f7bbd8de46f144c362"><span>Effect sizes make confidence intervals unnecessary</span></label><label><input type="radio" autocomplete="off" name="c43c33af5367c9f7bbd8de46f144c362"><span>Effect sizes are useful only when p &lt; 0.05</span></label><label><input type="radio" autocomplete="off" name="c43c33af5367c9f7bbd8de46f144c362"><span>Effect sizes remove sampling uncertainty</span></label>
+<div id="webex-ea951f0f687ab8fa00b42d93245c0e95" class="webex-radiogroup" data-answer="PlAVBR1WHFZr">
+<label><input type="radio" autocomplete="off" name="ea951f0f687ab8fa00b42d93245c0e95"><span>Effect sizes quantify magnitude, whereas p-values mainly summarise evidence against a null value</span></label><label><input type="radio" autocomplete="off" name="ea951f0f687ab8fa00b42d93245c0e95"><span>Effect sizes make confidence intervals unnecessary</span></label><label><input type="radio" autocomplete="off" name="ea951f0f687ab8fa00b42d93245c0e95"><span>Effect sizes are useful only when p &lt; 0.05</span></label><label><input type="radio" autocomplete="off" name="ea951f0f687ab8fa00b42d93245c0e95"><span>Effect sizes remove sampling uncertainty</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -1664,8 +1681,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 3.</span> An odds ratio of 3.0 means:</p>
-<div id="webex-4fb314a8a83967af451cc868e1236429" class="webex-radiogroup" data-answer="b1ZOAh0ETQg8">
-<label><input type="radio" autocomplete="off" name="4fb314a8a83967af451cc868e1236429"><span>The outcome is exactly three times as common</span></label><label><input type="radio" autocomplete="off" name="4fb314a8a83967af451cc868e1236429"><span>The odds of the outcome are three times as high in one group</span></label><label><input type="radio" autocomplete="off" name="4fb314a8a83967af451cc868e1236429"><span>The risk difference is 3 percentage points</span></label><label><input type="radio" autocomplete="off" name="4fb314a8a83967af451cc868e1236429"><span>The p-value must be below 0.05</span></label>
+<div id="webex-19f04bd6c6447e8ba185957644cc4f9e" class="webex-radiogroup" data-answer="aglKARhSSAY+">
+<label><input type="radio" autocomplete="off" name="19f04bd6c6447e8ba185957644cc4f9e"><span>The outcome is exactly three times as common</span></label><label><input type="radio" autocomplete="off" name="19f04bd6c6447e8ba185957644cc4f9e"><span>The odds of the outcome are three times as high in one group</span></label><label><input type="radio" autocomplete="off" name="19f04bd6c6447e8ba185957644cc4f9e"><span>The risk difference is 3 percentage points</span></label><label><input type="radio" autocomplete="off" name="19f04bd6c6447e8ba185957644cc4f9e"><span>The p-value must be below 0.05</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -1676,8 +1693,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 4.</span> A confidence interval for a mean difference is -2 to 8 points. What is the best interpretation?</p>
-<div id="webex-68ef6463700cbccffdcbdbc924199d8f" class="webex-radiogroup" data-answer="bQhJVxoEGgNq">
-<label><input type="radio" autocomplete="off" name="68ef6463700cbccffdcbdbc924199d8f"><span>The null hypothesis is true</span></label><label><input type="radio" autocomplete="off" name="68ef6463700cbccffdcbdbc924199d8f"><span>The result is inconclusive because plausible values range from slightly negative to meaningfully positive</span></label><label><input type="radio" autocomplete="off" name="68ef6463700cbccffdcbdbc924199d8f"><span>The effect is definitely harmful</span></label><label><input type="radio" autocomplete="off" name="68ef6463700cbccffdcbdbc924199d8f"><span>The confidence interval is irrelevant if p &gt; 0.05</span></label>
+<div id="webex-5a603efd7b9ff76a19fb328190fed2e8" class="webex-radiogroup" data-answer="blEaAR9VSlRq">
+<label><input type="radio" autocomplete="off" name="5a603efd7b9ff76a19fb328190fed2e8"><span>The null hypothesis is true</span></label><label><input type="radio" autocomplete="off" name="5a603efd7b9ff76a19fb328190fed2e8"><span>The result is inconclusive because plausible values range from slightly negative to meaningfully positive</span></label><label><input type="radio" autocomplete="off" name="5a603efd7b9ff76a19fb328190fed2e8"><span>The effect is definitely harmful</span></label><label><input type="radio" autocomplete="off" name="5a603efd7b9ff76a19fb328190fed2e8"><span>The confidence interval is irrelevant if p &gt; 0.05</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -1688,8 +1705,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 5.</span> Why can an NNT confidence interval be difficult to report when the risk-difference interval crosses zero?</p>
-<div id="webex-4e958e50dbf151bd102110765d75a689" class="webex-radiogroup" data-answer="b1QVBRRVGQA5">
-<label><input type="radio" autocomplete="off" name="4e958e50dbf151bd102110765d75a689"><span>The NNT is undefined at zero risk difference</span></label><label><input type="radio" autocomplete="off" name="4e958e50dbf151bd102110765d75a689"><span>Fisher’s exact test cannot be used</span></label><label><input type="radio" autocomplete="off" name="4e958e50dbf151bd102110765d75a689"><span>The odds ratio must equal 1</span></label><label><input type="radio" autocomplete="off" name="4e958e50dbf151bd102110765d75a689"><span>NNT is only for continuous outcomes</span></label>
+<div id="webex-1dbefd02a290f8d4fd496c6249892565" class="webex-radiogroup" data-answer="alVOVUpUHAI8">
+<label><input type="radio" autocomplete="off" name="1dbefd02a290f8d4fd496c6249892565"><span>The NNT is undefined at zero risk difference</span></label><label><input type="radio" autocomplete="off" name="1dbefd02a290f8d4fd496c6249892565"><span>Fisher’s exact test cannot be used</span></label><label><input type="radio" autocomplete="off" name="1dbefd02a290f8d4fd496c6249892565"><span>The odds ratio must equal 1</span></label><label><input type="radio" autocomplete="off" name="1dbefd02a290f8d4fd496c6249892565"><span>NNT is only for continuous outcomes</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -1700,8 +1717,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 6.</span> Which statement about generic benchmarks such as d = 0.20, 0.50, and 0.80 is best?</p>
-<div id="webex-cfcf35232d92ebb0f6ed22e3d8f4d374" class="webex-radiogroup" data-answer="OFZPVx8FHgNv">
-<label><input type="radio" autocomplete="off" name="cfcf35232d92ebb0f6ed22e3d8f4d374"><span>They are universal cut-offs</span></label><label><input type="radio" autocomplete="off" name="cfcf35232d92ebb0f6ed22e3d8f4d374"><span>They are conventions that must be interpreted in context</span></label><label><input type="radio" autocomplete="off" name="cfcf35232d92ebb0f6ed22e3d8f4d374"><span>They prove clinical importance</span></label><label><input type="radio" autocomplete="off" name="cfcf35232d92ebb0f6ed22e3d8f4d374"><span>They apply only to large samples</span></label>
+<div id="webex-5ec205e0be5d9c67e6e122c88e236f76" class="webex-radiogroup" data-answer="blVPAxwFSQA/">
+<label><input type="radio" autocomplete="off" name="5ec205e0be5d9c67e6e122c88e236f76"><span>They are universal cut-offs</span></label><label><input type="radio" autocomplete="off" name="5ec205e0be5d9c67e6e122c88e236f76"><span>They are conventions that must be interpreted in context</span></label><label><input type="radio" autocomplete="off" name="5ec205e0be5d9c67e6e122c88e236f76"><span>They prove clinical importance</span></label><label><input type="radio" autocomplete="off" name="5ec205e0be5d9c67e6e122c88e236f76"><span>They apply only to large samples</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -2020,7 +2037,7 @@ White, Ian R., Patrick Royston, and Angela M. Wood. 2011. <span>‘Multiple Impu
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/mohammedalisharafuddin\.github\.io\/quantitative-analysis-with-small-samples\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

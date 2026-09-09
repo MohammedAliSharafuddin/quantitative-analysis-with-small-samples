@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
 
 <title>Chapter 11: Nonparametric Rank-Based Methods – Quantitative Analysis with Small Samples</title>
 <style>
@@ -1709,6 +1710,19 @@ window.Quarto = {
 };
 </script>
 
+<meta property="og:title" content="Chapter 11: Nonparametric Rank-Based Methods – Quantitative Analysis with Small Samples">
+<meta property="og:description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
+<meta property="og:image" content="https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/chapters/part-c-analysis-methods--chapter-11-nonparametric-rank-based-methods_files/figure-html/qfig-ch11-shape-example-1.png">
+<meta property="og:site_name" content="Quantitative Analysis with Small Samples">
+<meta property="og:image:height" content="960">
+<meta property="og:image:width" content="1344">
+<meta name="twitter:title" content="Chapter 11: Nonparametric Rank-Based Methods – Quantitative Analysis with Small Samples">
+<meta name="twitter:description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
+<meta name="twitter:image" content="https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/chapters/part-c-analysis-methods--chapter-11-nonparametric-rank-based-methods_files/figure-html/qfig-ch11-shape-example-1.png">
+<meta name="twitter:image-height" content="960">
+<meta name="twitter:image-width" content="1344">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/chapters/part-c-analysis-methods--chapter-11-nonparametric-rank-based-methods.html">
 </head>
 
 <body class="nav-sidebar floating quarto-light">
@@ -1738,6 +1752,9 @@ window.Quarto = {
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Quantitative Analysis with Small Samples</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/MohammedAliSharafuddin/smallsamplelab" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -3820,8 +3837,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 1.</span> The Mann–Whitney U test is most appropriate when:</p>
-<div id="webex-81f43be0d346c0364cbfdc5d30dda1e4" class="webex-radiogroup" data-answer="YwFKBR9SSQA5">
-<label><input type="radio" autocomplete="off" name="81f43be0d346c0364cbfdc5d30dda1e4"><span>The outcome is a normally distributed continuous variable and means are the only estimand</span></label><label><input type="radio" autocomplete="off" name="81f43be0d346c0364cbfdc5d30dda1e4"><span>Two independent groups have ordinal or skewed continuous outcomes</span></label><label><input type="radio" autocomplete="off" name="81f43be0d346c0364cbfdc5d30dda1e4"><span>The same participants are measured under three conditions</span></label><label><input type="radio" autocomplete="off" name="81f43be0d346c0364cbfdc5d30dda1e4"><span>The goal is to estimate a Poisson event rate</span></label>
+<div id="webex-e54ba13fcabea28b8aac63902b8296f1" class="webex-radiogroup" data-answer="PgUYU00BH1Y+">
+<label><input type="radio" autocomplete="off" name="e54ba13fcabea28b8aac63902b8296f1"><span>The outcome is a normally distributed continuous variable and means are the only estimand</span></label><label><input type="radio" autocomplete="off" name="e54ba13fcabea28b8aac63902b8296f1"><span>Two independent groups have ordinal or skewed continuous outcomes</span></label><label><input type="radio" autocomplete="off" name="e54ba13fcabea28b8aac63902b8296f1"><span>The same participants are measured under three conditions</span></label><label><input type="radio" autocomplete="off" name="e54ba13fcabea28b8aac63902b8296f1"><span>The goal is to estimate a Poisson event rate</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3832,8 +3849,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 2.</span> A significant Mann–Whitney test can be interpreted as a median difference only when:</p>
-<div id="webex-835b6040a42adf9e619b2c367bffd537" class="webex-radiogroup" data-answer="YwIZUhoAGAA8">
-<label><input type="radio" autocomplete="off" name="835b6040a42adf9e619b2c367bffd537"><span>Both groups have similar distributional shapes</span></label><label><input type="radio" autocomplete="off" name="835b6040a42adf9e619b2c367bffd537"><span>The p-value is below 0.001</span></label><label><input type="radio" autocomplete="off" name="835b6040a42adf9e619b2c367bffd537"><span>The sample size is larger than 200</span></label><label><input type="radio" autocomplete="off" name="835b6040a42adf9e619b2c367bffd537"><span>There are no repeated values</span></label>
+<div id="webex-1f84e5ead46e8ad3b967ff47ea9b7765" class="webex-radiogroup" data-answer="alcUBEkFSVE5">
+<label><input type="radio" autocomplete="off" name="1f84e5ead46e8ad3b967ff47ea9b7765"><span>Both groups have similar distributional shapes</span></label><label><input type="radio" autocomplete="off" name="1f84e5ead46e8ad3b967ff47ea9b7765"><span>The p-value is below 0.001</span></label><label><input type="radio" autocomplete="off" name="1f84e5ead46e8ad3b967ff47ea9b7765"><span>The sample size is larger than 200</span></label><label><input type="radio" autocomplete="off" name="1f84e5ead46e8ad3b967ff47ea9b7765"><span>There are no repeated values</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3844,8 +3861,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 3.</span> The Wilcoxon signed-rank test is used for:</p>
-<div id="webex-4238c05073470b5c93516354319aaff1" class="webex-radiogroup" data-answer="bwIfCU8AGQBq">
-<label><input type="radio" autocomplete="off" name="4238c05073470b5c93516354319aaff1"><span>Two independent groups</span></label><label><input type="radio" autocomplete="off" name="4238c05073470b5c93516354319aaff1"><span>Paired or matched observations</span></label><label><input type="radio" autocomplete="off" name="4238c05073470b5c93516354319aaff1"><span>Three or more independent groups</span></label><label><input type="radio" autocomplete="off" name="4238c05073470b5c93516354319aaff1"><span>A single count against a benchmark rate</span></label>
+<div id="webex-417a854ecbeb837cf0b192e85270a76a" class="webex-radiogroup" data-answer="bwEbUBQFGFU+">
+<label><input type="radio" autocomplete="off" name="417a854ecbeb837cf0b192e85270a76a"><span>Two independent groups</span></label><label><input type="radio" autocomplete="off" name="417a854ecbeb837cf0b192e85270a76a"><span>Paired or matched observations</span></label><label><input type="radio" autocomplete="off" name="417a854ecbeb837cf0b192e85270a76a"><span>Three or more independent groups</span></label><label><input type="radio" autocomplete="off" name="417a854ecbeb837cf0b192e85270a76a"><span>A single count against a benchmark rate</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3856,8 +3873,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 4.</span> What does the Hodges–Lehmann estimate summarise in a rank-sum comparison?</p>
-<div id="webex-1066998b101fea0d2b18680ddc6a93dc" class="webex-radiogroup" data-answer="agAaBxUJFFJs">
-<label><input type="radio" autocomplete="off" name="1066998b101fea0d2b18680ddc6a93dc"><span>The ordinary mean difference</span></label><label><input type="radio" autocomplete="off" name="1066998b101fea0d2b18680ddc6a93dc"><span>The median of all pairwise differences</span></label><label><input type="radio" autocomplete="off" name="1066998b101fea0d2b18680ddc6a93dc"><span>The chi-square statistic</span></label><label><input type="radio" autocomplete="off" name="1066998b101fea0d2b18680ddc6a93dc"><span>The number of tied ranks</span></label>
+<div id="webex-7222e89a92add5ac90e0ec1ca0b5b118" class="webex-radiogroup" data-answer="bAIeA0kIFVFk">
+<label><input type="radio" autocomplete="off" name="7222e89a92add5ac90e0ec1ca0b5b118"><span>The ordinary mean difference</span></label><label><input type="radio" autocomplete="off" name="7222e89a92add5ac90e0ec1ca0b5b118"><span>The median of all pairwise differences</span></label><label><input type="radio" autocomplete="off" name="7222e89a92add5ac90e0ec1ca0b5b118"><span>The chi-square statistic</span></label><label><input type="radio" autocomplete="off" name="7222e89a92add5ac90e0ec1ca0b5b118"><span>The number of tied ranks</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3868,8 +3885,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 5.</span> After a significant Kruskal–Wallis test, the next step is usually to:</p>
-<div id="webex-8eea4d5d19cd38424306db7c5b4ca968" class="webex-radiogroup" data-answer="Y1VJUBhUGVRs">
-<label><input type="radio" autocomplete="off" name="8eea4d5d19cd38424306db7c5b4ca968"><span>Assume every pair differs</span></label><label><input type="radio" autocomplete="off" name="8eea4d5d19cd38424306db7c5b4ca968"><span>Use adjusted pairwise rank comparisons to identify where the difference lies</span></label><label><input type="radio" autocomplete="off" name="8eea4d5d19cd38424306db7c5b4ca968"><span>Switch to Pearson correlation</span></label><label><input type="radio" autocomplete="off" name="8eea4d5d19cd38424306db7c5b4ca968"><span>Ignore the result because it is nonparametric</span></label>
+<div id="webex-7527acd45800ff5d1f09928c0eece4ca" class="webex-radiogroup" data-answer="bAUeBk1TSARo">
+<label><input type="radio" autocomplete="off" name="7527acd45800ff5d1f09928c0eece4ca"><span>Assume every pair differs</span></label><label><input type="radio" autocomplete="off" name="7527acd45800ff5d1f09928c0eece4ca"><span>Use adjusted pairwise rank comparisons to identify where the difference lies</span></label><label><input type="radio" autocomplete="off" name="7527acd45800ff5d1f09928c0eece4ca"><span>Switch to Pearson correlation</span></label><label><input type="radio" autocomplete="off" name="7527acd45800ff5d1f09928c0eece4ca"><span>Ignore the result because it is nonparametric</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3880,8 +3897,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 6.</span> Friedman’s test is the rank-based alternative to:</p>
-<div id="webex-25b38145cab35c801263f9eb04323e82" class="webex-radiogroup" data-answer="aQROAxQBGAU+">
-<label><input type="radio" autocomplete="off" name="25b38145cab35c801263f9eb04323e82"><span>Repeated-measures ANOVA</span></label><label><input type="radio" autocomplete="off" name="25b38145cab35c801263f9eb04323e82"><span>One-sample t-test</span></label><label><input type="radio" autocomplete="off" name="25b38145cab35c801263f9eb04323e82"><span>Poisson regression</span></label><label><input type="radio" autocomplete="off" name="25b38145cab35c801263f9eb04323e82"><span>Fisher’s exact test</span></label>
+<div id="webex-0862c52528e6eec506ae96e8ed93597a" class="webex-radiogroup" data-answer="awkaAk8FHgVv">
+<label><input type="radio" autocomplete="off" name="0862c52528e6eec506ae96e8ed93597a"><span>Repeated-measures ANOVA</span></label><label><input type="radio" autocomplete="off" name="0862c52528e6eec506ae96e8ed93597a"><span>One-sample t-test</span></label><label><input type="radio" autocomplete="off" name="0862c52528e6eec506ae96e8ed93597a"><span>Poisson regression</span></label><label><input type="radio" autocomplete="off" name="0862c52528e6eec506ae96e8ed93597a"><span>Fisher’s exact test</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3892,8 +3909,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 7.</span> Kendall’s tau is often useful when:</p>
-<div id="webex-2721e32bed0a7129ff42433eb45215d7" class="webex-radiogroup" data-answer="aQceAEkDHlI4">
-<label><input type="radio" autocomplete="off" name="2721e32bed0a7129ff42433eb45215d7"><span>The outcome is a sparse event count</span></label><label><input type="radio" autocomplete="off" name="2721e32bed0a7129ff42433eb45215d7"><span>There are many tied ranks or a probability-based rank interpretation is helpful</span></label><label><input type="radio" autocomplete="off" name="2721e32bed0a7129ff42433eb45215d7"><span>The model has many predictors</span></label><label><input type="radio" autocomplete="off" name="2721e32bed0a7129ff42433eb45215d7"><span>A bootstrap median interval is required</span></label>
+<div id="webex-583b9d1ef914f05b596d1c3e0a51e1c4" class="webex-radiogroup" data-answer="bggfUxVUHVU7">
+<label><input type="radio" autocomplete="off" name="583b9d1ef914f05b596d1c3e0a51e1c4"><span>The outcome is a sparse event count</span></label><label><input type="radio" autocomplete="off" name="583b9d1ef914f05b596d1c3e0a51e1c4"><span>There are many tied ranks or a probability-based rank interpretation is helpful</span></label><label><input type="radio" autocomplete="off" name="583b9d1ef914f05b596d1c3e0a51e1c4"><span>The model has many predictors</span></label><label><input type="radio" autocomplete="off" name="583b9d1ef914f05b596d1c3e0a51e1c4"><span>A bootstrap median interval is required</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3904,8 +3921,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 8.</span> A large Cliff’s delta from a tiny sample should be interpreted:</p>
-<div id="webex-298b3fb9fe9b36b9a40e03f6b967f770" class="webex-radiogroup" data-answer="aQkUUx9WTgk7">
-<label><input type="radio" autocomplete="off" name="298b3fb9fe9b36b9a40e03f6b967f770"><span>As definitive proof of a population effect</span></label><label><input type="radio" autocomplete="off" name="298b3fb9fe9b36b9a40e03f6b967f770"><span>Together with the sample size, confidence interval, p-value, and substantive plausibility</span></label><label><input type="radio" autocomplete="off" name="298b3fb9fe9b36b9a40e03f6b967f770"><span>As invalid because rank tests cannot have effect sizes</span></label><label><input type="radio" autocomplete="off" name="298b3fb9fe9b36b9a40e03f6b967f770"><span>As equivalent to a mean difference in standard deviations</span></label>
+<div id="webex-f00c5b8ae6013bcf78d154fb3f34ae6e" class="webex-radiogroup" data-answer="PQAcUhlSFFE4">
+<label><input type="radio" autocomplete="off" name="f00c5b8ae6013bcf78d154fb3f34ae6e"><span>As definitive proof of a population effect</span></label><label><input type="radio" autocomplete="off" name="f00c5b8ae6013bcf78d154fb3f34ae6e"><span>Together with the sample size, confidence interval, p-value, and substantive plausibility</span></label><label><input type="radio" autocomplete="off" name="f00c5b8ae6013bcf78d154fb3f34ae6e"><span>As invalid because rank tests cannot have effect sizes</span></label><label><input type="radio" autocomplete="off" name="f00c5b8ae6013bcf78d154fb3f34ae6e"><span>As equivalent to a mean difference in standard deviations</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -4224,7 +4241,7 @@ White, Ian R., Patrick Royston, and Angela M. Wood. 2011. <span>‘Multiple Impu
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/mohammedalisharafuddin\.github\.io\/quantitative-analysis-with-small-samples\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

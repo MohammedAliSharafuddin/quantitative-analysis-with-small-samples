@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
 
 <title>Chapter 10: Exact Tests and Resampling Methods – Quantitative Analysis with Small Samples</title>
 <style>
@@ -1680,6 +1681,19 @@ globalThis.qwebrExecuteCode = async function (
 </script>
 
 
+<meta property="og:title" content="Chapter 10: Exact Tests and Resampling Methods – Quantitative Analysis with Small Samples">
+<meta property="og:description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
+<meta property="og:image" content="https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/chapters/part-c-analysis-methods--chapter-10-exact-tests-and-resampling-methods_files/figure-html/chapter10-fisher-mosaic-html-1.png">
+<meta property="og:site_name" content="Quantitative Analysis with Small Samples">
+<meta property="og:image:height" content="960">
+<meta property="og:image:width" content="1344">
+<meta name="twitter:title" content="Chapter 10: Exact Tests and Resampling Methods – Quantitative Analysis with Small Samples">
+<meta name="twitter:description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
+<meta name="twitter:image" content="https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/chapters/part-c-analysis-methods--chapter-10-exact-tests-and-resampling-methods_files/figure-html/chapter10-fisher-mosaic-html-1.png">
+<meta name="twitter:image-height" content="960">
+<meta name="twitter:image-width" content="1344">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/chapters/part-c-analysis-methods--chapter-10-exact-tests-and-resampling-methods.html">
 </head>
 
 <body class="nav-sidebar floating quarto-light">
@@ -1709,6 +1723,9 @@ globalThis.qwebrExecuteCode = async function (
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Quantitative Analysis with Small Samples</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/MohammedAliSharafuddin/smallsamplelab" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -3641,8 +3658,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 1.</span> When is Fisher’s exact test especially appropriate?</p>
-<div id="webex-22f5f625c1d6d0aea78dfe3aece95d8e" class="webex-radiogroup" data-answer="aQJKBEoGHgU+">
-<label><input type="radio" autocomplete="off" name="22f5f625c1d6d0aea78dfe3aece95d8e"><span>When every expected cell count is comfortably above 20</span></label><label><input type="radio" autocomplete="off" name="22f5f625c1d6d0aea78dfe3aece95d8e"><span>When a 2×2 table has sparse counts and exact inference is preferred</span></label><label><input type="radio" autocomplete="off" name="22f5f625c1d6d0aea78dfe3aece95d8e"><span>When the outcome is continuous and normally distributed</span></label><label><input type="radio" autocomplete="off" name="22f5f625c1d6d0aea78dfe3aece95d8e"><span>When the goal is estimating a time-series trend</span></label>
+<div id="webex-884c3c36050134e6a993ace37a5bdb34" class="webex-radiogroup" data-answer="YwgYUh9THwZt">
+<label><input type="radio" autocomplete="off" name="884c3c36050134e6a993ace37a5bdb34"><span>When every expected cell count is comfortably above 20</span></label><label><input type="radio" autocomplete="off" name="884c3c36050134e6a993ace37a5bdb34"><span>When a 2×2 table has sparse counts and exact inference is preferred</span></label><label><input type="radio" autocomplete="off" name="884c3c36050134e6a993ace37a5bdb34"><span>When the outcome is continuous and normally distributed</span></label><label><input type="radio" autocomplete="off" name="884c3c36050134e6a993ace37a5bdb34"><span>When the goal is estimating a time-series trend</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3653,8 +3670,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 2.</span> Why can Fisher’s exact test be conservative in some settings?</p>
-<div id="webex-b07f0c56b5f72b4272e803db4304fbb7" class="webex-radiogroup" data-answer="OQAbVxxTGQY/">
-<label><input type="radio" autocomplete="off" name="b07f0c56b5f72b4272e803db4304fbb7"><span>It ignores the observed table</span></label><label><input type="radio" autocomplete="off" name="b07f0c56b5f72b4272e803db4304fbb7"><span>It conditions on both margins, which can make rejection harder than necessary when both are not fixed by design</span></label><label><input type="radio" autocomplete="off" name="b07f0c56b5f72b4272e803db4304fbb7"><span>It always assumes normality</span></label><label><input type="radio" autocomplete="off" name="b07f0c56b5f72b4272e803db4304fbb7"><span>It uses too many bootstrap resamples</span></label>
+<div id="webex-9cba9589d3d63bd6a38de593a8fa8edf" class="webex-radiogroup" data-answer="YlNOUBUFFAk5">
+<label><input type="radio" autocomplete="off" name="9cba9589d3d63bd6a38de593a8fa8edf"><span>It ignores the observed table</span></label><label><input type="radio" autocomplete="off" name="9cba9589d3d63bd6a38de593a8fa8edf"><span>It conditions on both margins, which can make rejection harder than necessary when both are not fixed by design</span></label><label><input type="radio" autocomplete="off" name="9cba9589d3d63bd6a38de593a8fa8edf"><span>It always assumes normality</span></label><label><input type="radio" autocomplete="off" name="9cba9589d3d63bd6a38de593a8fa8edf"><span>It uses too many bootstrap resamples</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3665,8 +3682,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 3.</span> When might Barnard-style unconditional tests or a mid-p correction be considered?</p>
-<div id="webex-e03c65bad46d2c8687371a8162a3343c" class="webex-radiogroup" data-answer="PgEfUxoFTlE5">
-<label><input type="radio" autocomplete="off" name="e03c65bad46d2c8687371a8162a3343c"><span>When you need a less conservative sensitivity check for sparse 2×2 data</span></label><label><input type="radio" autocomplete="off" name="e03c65bad46d2c8687371a8162a3343c"><span>When the outcome is continuous and homoscedastic</span></label><label><input type="radio" autocomplete="off" name="e03c65bad46d2c8687371a8162a3343c"><span>When all expected counts exceed 100</span></label><label><input type="radio" autocomplete="off" name="e03c65bad46d2c8687371a8162a3343c"><span>When fitting Bayesian regression with weakly informative priors</span></label>
+<div id="webex-b7fde51956353c81179af3695ba6def9" class="webex-radiogroup" data-answer="OQZKVEkFHQlo">
+<label><input type="radio" autocomplete="off" name="b7fde51956353c81179af3695ba6def9"><span>When you need a less conservative sensitivity check for sparse 2×2 data</span></label><label><input type="radio" autocomplete="off" name="b7fde51956353c81179af3695ba6def9"><span>When the outcome is continuous and homoscedastic</span></label><label><input type="radio" autocomplete="off" name="b7fde51956353c81179af3695ba6def9"><span>When all expected counts exceed 100</span></label><label><input type="radio" autocomplete="off" name="b7fde51956353c81179af3695ba6def9"><span>When fitting Bayesian regression with weakly informative priors</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3677,8 +3694,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 4.</span> What does the exact binomial test evaluate?</p>
-<div id="webex-c841e758a3db273e53e1fc910722e3e7" class="webex-radiogroup" data-answer="OAgYAEkHGQg8">
-<label><input type="radio" autocomplete="off" name="c841e758a3db273e53e1fc910722e3e7"><span>Whether two means differ after random permutation</span></label><label><input type="radio" autocomplete="off" name="c841e758a3db273e53e1fc910722e3e7"><span>Whether an observed number of successes is consistent with a hypothesised proportion</span></label><label><input type="radio" autocomplete="off" name="c841e758a3db273e53e1fc910722e3e7"><span>Whether a count process is overdispersed relative to Poisson</span></label><label><input type="radio" autocomplete="off" name="c841e758a3db273e53e1fc910722e3e7"><span>Whether a regression model has converged</span></label>
+<div id="webex-c67b9ba511a4331c82316607bc7cf245" class="webex-radiogroup" data-answer="OAYbUxVSTQVs">
+<label><input type="radio" autocomplete="off" name="c67b9ba511a4331c82316607bc7cf245"><span>Whether two means differ after random permutation</span></label><label><input type="radio" autocomplete="off" name="c67b9ba511a4331c82316607bc7cf245"><span>Whether an observed number of successes is consistent with a hypothesised proportion</span></label><label><input type="radio" autocomplete="off" name="c67b9ba511a4331c82316607bc7cf245"><span>Whether a count process is overdispersed relative to Poisson</span></label><label><input type="radio" autocomplete="off" name="c67b9ba511a4331c82316607bc7cf245"><span>Whether a regression model has converged</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3689,8 +3706,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 5.</span> What is the exact Poisson test used for in this chapter?</p>
-<div id="webex-a3aa0a2fe8b9815f68d134efc1e1c3c1" class="webex-radiogroup" data-answer="OgNNUBxRHlY4">
-<label><input type="radio" autocomplete="off" name="a3aa0a2fe8b9815f68d134efc1e1c3c1"><span>Comparing two continuous variables with tied ranks</span></label><label><input type="radio" autocomplete="off" name="a3aa0a2fe8b9815f68d134efc1e1c3c1"><span>Testing whether an observed event count or rate is consistent with a specified Poisson rate</span></label><label><input type="radio" autocomplete="off" name="a3aa0a2fe8b9815f68d134efc1e1c3c1"><span>Selecting variables in penalised regression</span></label><label><input type="radio" autocomplete="off" name="a3aa0a2fe8b9815f68d134efc1e1c3c1"><span>Checking MCMC convergence</span></label>
+<div id="webex-6d1ec03fb14065d79a55f6d7f6f823a8" class="webex-radiogroup" data-answer="bVQdVE8AH1Y/">
+<label><input type="radio" autocomplete="off" name="6d1ec03fb14065d79a55f6d7f6f823a8"><span>Comparing two continuous variables with tied ranks</span></label><label><input type="radio" autocomplete="off" name="6d1ec03fb14065d79a55f6d7f6f823a8"><span>Testing whether an observed event count or rate is consistent with a specified Poisson rate</span></label><label><input type="radio" autocomplete="off" name="6d1ec03fb14065d79a55f6d7f6f823a8"><span>Selecting variables in penalised regression</span></label><label><input type="radio" autocomplete="off" name="6d1ec03fb14065d79a55f6d7f6f823a8"><span>Checking MCMC convergence</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3701,8 +3718,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 6.</span> What key assumption makes a permutation test valid under the null hypothesis?</p>
-<div id="webex-c32ce2236ddd232b5b35bf50e491ae77" class="webex-radiogroup" data-answer="OAIeU0kCHgNr">
-<label><input type="radio" autocomplete="off" name="c32ce2236ddd232b5b35bf50e491ae77"><span>Exchangeability of observations or labels under the null</span></label><label><input type="radio" autocomplete="off" name="c32ce2236ddd232b5b35bf50e491ae77"><span>Normal residuals with equal variance</span></label><label><input type="radio" autocomplete="off" name="c32ce2236ddd232b5b35bf50e491ae77"><span>At least 100 observations per group</span></label><label><input type="radio" autocomplete="off" name="c32ce2236ddd232b5b35bf50e491ae77"><span>A Poisson-distributed outcome</span></label>
+<div id="webex-c506b990e4444c5a612daad1fc72ed27" class="webex-radiogroup" data-answer="OAQcBk4JFQA4">
+<label><input type="radio" autocomplete="off" name="c506b990e4444c5a612daad1fc72ed27"><span>Exchangeability of observations or labels under the null</span></label><label><input type="radio" autocomplete="off" name="c506b990e4444c5a612daad1fc72ed27"><span>Normal residuals with equal variance</span></label><label><input type="radio" autocomplete="off" name="c506b990e4444c5a612daad1fc72ed27"><span>At least 100 observations per group</span></label><label><input type="radio" autocomplete="off" name="c506b990e4444c5a612daad1fc72ed27"><span>A Poisson-distributed outcome</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3713,8 +3730,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 7.</span> Why is the bootstrap especially useful in small-sample work?</p>
-<div id="webex-a95dfea921fcb0fac32df4efc21317b7" class="webex-radiogroup" data-answer="OgkZVUpVTQlv">
-<label><input type="radio" autocomplete="off" name="a95dfea921fcb0fac32df4efc21317b7"><span>It guarantees narrow confidence intervals</span></label><label><input type="radio" autocomplete="off" name="a95dfea921fcb0fac32df4efc21317b7"><span>It can approximate uncertainty for statistics like medians when closed-form standard errors are unavailable</span></label><label><input type="radio" autocomplete="off" name="a95dfea921fcb0fac32df4efc21317b7"><span>It removes the need to report uncertainty</span></label><label><input type="radio" autocomplete="off" name="a95dfea921fcb0fac32df4efc21317b7"><span>It is only valid for normal data</span></label>
+<div id="webex-d98e27084191d03057e4db425e7c5fc2" class="webex-radiogroup" data-answer="PwkUVB4HHAhp">
+<label><input type="radio" autocomplete="off" name="d98e27084191d03057e4db425e7c5fc2"><span>It guarantees narrow confidence intervals</span></label><label><input type="radio" autocomplete="off" name="d98e27084191d03057e4db425e7c5fc2"><span>It can approximate uncertainty for statistics like medians when closed-form standard errors are unavailable</span></label><label><input type="radio" autocomplete="off" name="d98e27084191d03057e4db425e7c5fc2"><span>It removes the need to report uncertainty</span></label><label><input type="radio" autocomplete="off" name="d98e27084191d03057e4db425e7c5fc2"><span>It is only valid for normal data</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3725,8 +3742,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 8.</span> Which reporting detail is most important to include for resampling procedures?</p>
-<div id="webex-a33edb4fcbed2d42699f22841a894c75" class="webex-radiogroup" data-answer="OgMfVEhSGFY+">
-<label><input type="radio" autocomplete="off" name="a33edb4fcbed2d42699f22841a894c75"><span>Only whether the result was significant</span></label><label><input type="radio" autocomplete="off" name="a33edb4fcbed2d42699f22841a894c75"><span>The number of resamples or permutations, the statistic used, and enough detail to reproduce the procedure</span></label><label><input type="radio" autocomplete="off" name="a33edb4fcbed2d42699f22841a894c75"><span>Only the sample size</span></label><label><input type="radio" autocomplete="off" name="a33edb4fcbed2d42699f22841a894c75"><span>Only the largest resampled statistic</span></label>
+<div id="webex-4f069e4556069a85277388abc9f758a3" class="webex-radiogroup" data-answer="b1YcBxVVGAVo">
+<label><input type="radio" autocomplete="off" name="4f069e4556069a85277388abc9f758a3"><span>Only whether the result was significant</span></label><label><input type="radio" autocomplete="off" name="4f069e4556069a85277388abc9f758a3"><span>The number of resamples or permutations, the statistic used, and enough detail to reproduce the procedure</span></label><label><input type="radio" autocomplete="off" name="4f069e4556069a85277388abc9f758a3"><span>Only the sample size</span></label><label><input type="radio" autocomplete="off" name="4f069e4556069a85277388abc9f758a3"><span>Only the largest resampled statistic</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -4045,7 +4062,7 @@ White, Ian R., Patrick Royston, and Angela M. Wood. 2011. <span>‘Multiple Impu
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/mohammedalisharafuddin\.github\.io\/quantitative-analysis-with-small-samples\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
 
 <title>Chapter 12: Methods for Sparse Counts and Short Time Series – Quantitative Analysis with Small Samples</title>
 <style>
@@ -1680,6 +1681,19 @@ globalThis.qwebrExecuteCode = async function (
 </script>
 
 
+<meta property="og:title" content="Chapter 12: Methods for Sparse Counts and Short Time Series – Quantitative Analysis with Small Samples">
+<meta property="og:description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
+<meta property="og:image" content="https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/chapters/part-c-analysis-methods--chapter-12-methods-for-sparse-counts-and-short-time-series_files/figure-html/ch12-forecast-figure-html-1.png">
+<meta property="og:site_name" content="Quantitative Analysis with Small Samples">
+<meta property="og:image:height" content="960">
+<meta property="og:image:width" content="1344">
+<meta name="twitter:title" content="Chapter 12: Methods for Sparse Counts and Short Time Series – Quantitative Analysis with Small Samples">
+<meta name="twitter:description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
+<meta name="twitter:image" content="https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/chapters/part-c-analysis-methods--chapter-12-methods-for-sparse-counts-and-short-time-series_files/figure-html/ch12-forecast-figure-html-1.png">
+<meta name="twitter:image-height" content="960">
+<meta name="twitter:image-width" content="1344">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/chapters/part-c-analysis-methods--chapter-12-methods-for-sparse-counts-and-short-time-series.html">
 </head>
 
 <body class="nav-sidebar floating quarto-light">
@@ -1709,6 +1723,9 @@ globalThis.qwebrExecuteCode = async function (
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Quantitative Analysis with Small Samples</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/MohammedAliSharafuddin/smallsamplelab" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -3655,8 +3672,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 1.</span> When is an exact Poisson test most useful?</p>
-<div id="webex-5f1e0b6fc7fe1a7615bd963a8cfec624" class="webex-radiogroup" data-answer="blYdVBxSGlY+">
-<label><input type="radio" autocomplete="off" name="5f1e0b6fc7fe1a7615bd963a8cfec624"><span>For normally distributed continuous outcomes</span></label><label><input type="radio" autocomplete="off" name="5f1e0b6fc7fe1a7615bd963a8cfec624"><span>For a small observed count compared with a known exposure-adjusted benchmark rate</span></label><label><input type="radio" autocomplete="off" name="5f1e0b6fc7fe1a7615bd963a8cfec624"><span>For estimating a factor model</span></label><label><input type="radio" autocomplete="off" name="5f1e0b6fc7fe1a7615bd963a8cfec624"><span>For checking whether two medians differ</span></label>
+<div id="webex-3273c3801f929a6ed4289071385613af" class="webex-radiogroup" data-answer="aAIbAk8DFABs">
+<label><input type="radio" autocomplete="off" name="3273c3801f929a6ed4289071385613af"><span>For normally distributed continuous outcomes</span></label><label><input type="radio" autocomplete="off" name="3273c3801f929a6ed4289071385613af"><span>For a small observed count compared with a known exposure-adjusted benchmark rate</span></label><label><input type="radio" autocomplete="off" name="3273c3801f929a6ed4289071385613af"><span>For estimating a factor model</span></label><label><input type="radio" autocomplete="off" name="3273c3801f929a6ed4289071385613af"><span>For checking whether two medians differ</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3667,8 +3684,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 2.</span> In the defect example, 15 defects observed across five batches gives what observed rate per batch?</p>
-<div id="webex-b73ad2fbcacbad604811a3456a98ac96" class="webex-radiogroup" data-answer="OQcfUEgCSlI+">
-<label><input type="radio" autocomplete="off" name="b73ad2fbcacbad604811a3456a98ac96"><span>2 defects per batch</span></label><label><input type="radio" autocomplete="off" name="b73ad2fbcacbad604811a3456a98ac96"><span>3 defects per batch</span></label><label><input type="radio" autocomplete="off" name="b73ad2fbcacbad604811a3456a98ac96"><span>5 defects per batch</span></label><label><input type="radio" autocomplete="off" name="b73ad2fbcacbad604811a3456a98ac96"><span>15 defects per batch</span></label>
+<div id="webex-b4f824a79f06d8e7ee6ecffdb9644852" class="webex-radiogroup" data-answer="OQRKCR4ETQdk">
+<label><input type="radio" autocomplete="off" name="b4f824a79f06d8e7ee6ecffdb9644852"><span>2 defects per batch</span></label><label><input type="radio" autocomplete="off" name="b4f824a79f06d8e7ee6ecffdb9644852"><span>3 defects per batch</span></label><label><input type="radio" autocomplete="off" name="b4f824a79f06d8e7ee6ecffdb9644852"><span>5 defects per batch</span></label><label><input type="radio" autocomplete="off" name="b4f824a79f06d8e7ee6ecffdb9644852"><span>15 defects per batch</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3679,8 +3696,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 3.</span> A rate-ratio confidence interval that includes 1 should usually be described as:</p>
-<div id="webex-808cf4652f4a871a2ed43875db45b631" class="webex-radiogroup" data-answer="YwAUUkoEGgVv">
-<label><input type="radio" autocomplete="off" name="808cf4652f4a871a2ed43875db45b631"><span>Clear evidence of different rates</span></label><label><input type="radio" autocomplete="off" name="808cf4652f4a871a2ed43875db45b631"><span>Inconclusive or imprecise evidence for a rate difference</span></label><label><input type="radio" autocomplete="off" name="808cf4652f4a871a2ed43875db45b631"><span>Proof that the rates are identical</span></label><label><input type="radio" autocomplete="off" name="808cf4652f4a871a2ed43875db45b631"><span>A reason to ignore exposure time</span></label>
+<div id="webex-e2cb4e933df5b763524d6af14d9f2ab4" class="webex-radiogroup" data-answer="PgJPUxhVFQNu">
+<label><input type="radio" autocomplete="off" name="e2cb4e933df5b763524d6af14d9f2ab4"><span>Clear evidence of different rates</span></label><label><input type="radio" autocomplete="off" name="e2cb4e933df5b763524d6af14d9f2ab4"><span>Inconclusive or imprecise evidence for a rate difference</span></label><label><input type="radio" autocomplete="off" name="e2cb4e933df5b763524d6af14d9f2ab4"><span>Proof that the rates are identical</span></label><label><input type="radio" autocomplete="off" name="e2cb4e933df5b763524d6af14d9f2ab4"><span>A reason to ignore exposure time</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3691,8 +3708,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 4.</span> Why are ARIMA models risky with very short series?</p>
-<div id="webex-a316830b7ded7aa2a5a96f3cae3374a9" class="webex-radiogroup" data-answer="OgMdBxQDHFJq">
-<label><input type="radio" autocomplete="off" name="a316830b7ded7aa2a5a96f3cae3374a9"><span>They cannot use time as a variable</span></label><label><input type="radio" autocomplete="off" name="a316830b7ded7aa2a5a96f3cae3374a9"><span>There are usually too few observations to estimate autocorrelation structure reliably</span></label><label><input type="radio" autocomplete="off" name="a316830b7ded7aa2a5a96f3cae3374a9"><span>They require binary outcomes</span></label><label><input type="radio" autocomplete="off" name="a316830b7ded7aa2a5a96f3cae3374a9"><span>They always ignore uncertainty</span></label>
+<div id="webex-25c6cea2ca87e1c0abed6e49a90d9f7a" class="webex-radiogroup" data-answer="aQVPB09VTQI+">
+<label><input type="radio" autocomplete="off" name="25c6cea2ca87e1c0abed6e49a90d9f7a"><span>They cannot use time as a variable</span></label><label><input type="radio" autocomplete="off" name="25c6cea2ca87e1c0abed6e49a90d9f7a"><span>There are usually too few observations to estimate autocorrelation structure reliably</span></label><label><input type="radio" autocomplete="off" name="25c6cea2ca87e1c0abed6e49a90d9f7a"><span>They require binary outcomes</span></label><label><input type="radio" autocomplete="off" name="25c6cea2ca87e1c0abed6e49a90d9f7a"><span>They always ignore uncertainty</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3703,8 +3720,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 5.</span> What does overdispersion mean for count data?</p>
-<div id="webex-d6d5b0b8a329a17e7819bbcca625bd26" class="webex-radiogroup" data-answer="PwdIBU4ATgg8">
-<label><input type="radio" autocomplete="off" name="d6d5b0b8a329a17e7819bbcca625bd26"><span>The variance is larger than the mean</span></label><label><input type="radio" autocomplete="off" name="d6d5b0b8a329a17e7819bbcca625bd26"><span>The mean is exactly zero</span></label><label><input type="radio" autocomplete="off" name="d6d5b0b8a329a17e7819bbcca625bd26"><span>Every count is identical</span></label><label><input type="radio" autocomplete="off" name="d6d5b0b8a329a17e7819bbcca625bd26"><span>The data are normally distributed</span></label>
+<div id="webex-25a34b115107baf0e9adbf04584a1801" class="webex-radiogroup" data-answer="aQRNAxhSHQFo">
+<label><input type="radio" autocomplete="off" name="25a34b115107baf0e9adbf04584a1801"><span>The variance is larger than the mean</span></label><label><input type="radio" autocomplete="off" name="25a34b115107baf0e9adbf04584a1801"><span>The mean is exactly zero</span></label><label><input type="radio" autocomplete="off" name="25a34b115107baf0e9adbf04584a1801"><span>Every count is identical</span></label><label><input type="radio" autocomplete="off" name="25a34b115107baf0e9adbf04584a1801"><span>The data are normally distributed</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3715,8 +3732,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 6.</span> What does the quasi-Poisson model change compared with standard Poisson regression?</p>
-<div id="webex-0bee89e2e06c985a50028f8baab900af" class="webex-radiogroup" data-answer="a1JJVBQJSQI4">
-<label><input type="radio" autocomplete="off" name="0bee89e2e06c985a50028f8baab900af"><span>It changes the outcome from counts to ranks</span></label><label><input type="radio" autocomplete="off" name="0bee89e2e06c985a50028f8baab900af"><span>It estimates a dispersion parameter and adjusts standard errors</span></label><label><input type="radio" autocomplete="off" name="0bee89e2e06c985a50028f8baab900af"><span>It removes all zero counts</span></label><label><input type="radio" autocomplete="off" name="0bee89e2e06c985a50028f8baab900af"><span>It requires no exposure information</span></label>
+<div id="webex-ed4104b334d46ef5c499f5526c6ed316" class="webex-radiogroup" data-answer="PlQYABwETgNu">
+<label><input type="radio" autocomplete="off" name="ed4104b334d46ef5c499f5526c6ed316"><span>It changes the outcome from counts to ranks</span></label><label><input type="radio" autocomplete="off" name="ed4104b334d46ef5c499f5526c6ed316"><span>It estimates a dispersion parameter and adjusts standard errors</span></label><label><input type="radio" autocomplete="off" name="ed4104b334d46ef5c499f5526c6ed316"><span>It removes all zero counts</span></label><label><input type="radio" autocomplete="off" name="ed4104b334d46ef5c499f5526c6ed316"><span>It requires no exposure information</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3727,8 +3744,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 7.</span> Why are zero-inflated models difficult in very small samples?</p>
-<div id="webex-2fa7ed3a684d2e8bca2c7e4e7340531a" class="webex-radiogroup" data-answer="aVdNB0lUH1Fr">
-<label><input type="radio" autocomplete="off" name="2fa7ed3a684d2e8bca2c7e4e7340531a"><span>They estimate both a zero process and a count process</span></label><label><input type="radio" autocomplete="off" name="2fa7ed3a684d2e8bca2c7e4e7340531a"><span>They cannot represent zeros</span></label><label><input type="radio" autocomplete="off" name="2fa7ed3a684d2e8bca2c7e4e7340531a"><span>They require normally distributed residuals</span></label><label><input type="radio" autocomplete="off" name="2fa7ed3a684d2e8bca2c7e4e7340531a"><span>They are identical to exact Poisson tests</span></label>
+<div id="webex-1a4b7a8254c3f4767d8f73f4e9916116" class="webex-radiogroup" data-answer="alAYUhtRFAJo">
+<label><input type="radio" autocomplete="off" name="1a4b7a8254c3f4767d8f73f4e9916116"><span>They estimate both a zero process and a count process</span></label><label><input type="radio" autocomplete="off" name="1a4b7a8254c3f4767d8f73f4e9916116"><span>They cannot represent zeros</span></label><label><input type="radio" autocomplete="off" name="1a4b7a8254c3f4767d8f73f4e9916116"><span>They require normally distributed residuals</span></label><label><input type="radio" autocomplete="off" name="1a4b7a8254c3f4767d8f73f4e9916116"><span>They are identical to exact Poisson tests</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3739,8 +3756,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 8.</span> A residual-bootstrap forecast interval for a 12-point time series should be reported as:</p>
-<div id="webex-759232a8a7bc694676b8fd0da17bb9ff" class="webex-radiogroup" data-answer="bAUVAx8CTQg8">
-<label><input type="radio" autocomplete="off" name="759232a8a7bc694676b8fd0da17bb9ff"><span>A definitive prediction interval with no caveats</span></label><label><input type="radio" autocomplete="off" name="759232a8a7bc694676b8fd0da17bb9ff"><span>A transparent exploratory interval that may not capture all model uncertainty</span></label><label><input type="radio" autocomplete="off" name="759232a8a7bc694676b8fd0da17bb9ff"><span>Invalid because bootstrap methods cannot use time series</span></label><label><input type="radio" autocomplete="off" name="759232a8a7bc694676b8fd0da17bb9ff"><span>Equivalent to a structural time-series model</span></label>
+<div id="webex-4f5626e07f9098f3812926f0e3b6dfb3" class="webex-radiogroup" data-answer="b1YZBx4GSQBq">
+<label><input type="radio" autocomplete="off" name="4f5626e07f9098f3812926f0e3b6dfb3"><span>A definitive prediction interval with no caveats</span></label><label><input type="radio" autocomplete="off" name="4f5626e07f9098f3812926f0e3b6dfb3"><span>A transparent exploratory interval that may not capture all model uncertainty</span></label><label><input type="radio" autocomplete="off" name="4f5626e07f9098f3812926f0e3b6dfb3"><span>Invalid because bootstrap methods cannot use time series</span></label><label><input type="radio" autocomplete="off" name="4f5626e07f9098f3812926f0e3b6dfb3"><span>Equivalent to a structural time-series model</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -4059,7 +4076,7 @@ White, Ian R., Patrick Royston, and Angela M. Wood. 2011. <span>‘Multiple Impu
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/mohammedalisharafuddin\.github\.io\/quantitative-analysis-with-small-samples\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

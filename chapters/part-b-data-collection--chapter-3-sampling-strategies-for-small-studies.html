@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
 
 <title>Chapter 3: Sampling Strategies for Small Studies – Quantitative Analysis with Small Samples</title>
 <style>
@@ -1680,6 +1681,19 @@ globalThis.qwebrExecuteCode = async function (
 </script>
 
 
+<meta property="og:title" content="Chapter 3: Sampling Strategies for Small Studies – Quantitative Analysis with Small Samples">
+<meta property="og:description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
+<meta property="og:image" content="https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/chapters/part-b-data-collection--chapter-3-sampling-strategies-for-small-studies_files/figure-html/qfig-ch3-sample-size-workflow-1.png">
+<meta property="og:site_name" content="Quantitative Analysis with Small Samples">
+<meta property="og:image:height" content="1536">
+<meta property="og:image:width" content="1344">
+<meta name="twitter:title" content="Chapter 3: Sampling Strategies for Small Studies – Quantitative Analysis with Small Samples">
+<meta name="twitter:description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
+<meta name="twitter:image" content="https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/chapters/part-b-data-collection--chapter-3-sampling-strategies-for-small-studies_files/figure-html/qfig-ch3-sample-size-workflow-1.png">
+<meta name="twitter:image-height" content="1536">
+<meta name="twitter:image-width" content="1344">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/chapters/part-b-data-collection--chapter-3-sampling-strategies-for-small-studies.html">
 </head>
 
 <body class="nav-sidebar floating quarto-light">
@@ -1709,6 +1723,9 @@ globalThis.qwebrExecuteCode = async function (
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Quantitative Analysis with Small Samples</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/MohammedAliSharafuddin/smallsamplelab" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -3459,8 +3476,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 1.</span> A researcher uses a “rule of thumb” of n=30 per group for all studies. What is the primary problem with this approach?</p>
-<div id="webex-fcf4591722a2ab264f8203b53499de1b" class="webex-radiogroup" data-answer="PVNKBRkJHQdv">
-<label><input type="radio" autocomplete="off" name="fcf4591722a2ab264f8203b53499de1b"><span>n=30 is always too small</span></label><label><input type="radio" autocomplete="off" name="fcf4591722a2ab264f8203b53499de1b"><span>Sample size should depend on effect size, power, and research question—not arbitrary rules</span></label><label><input type="radio" autocomplete="off" name="fcf4591722a2ab264f8203b53499de1b"><span>n=30 is always too large</span></label><label><input type="radio" autocomplete="off" name="fcf4591722a2ab264f8203b53499de1b"><span>Rules of thumb are always correct</span></label>
+<div id="webex-d51d1cf38449a2ea1fcf1a4cefe4a167" class="webex-radiogroup" data-answer="PwUdVR1TSgNl">
+<label><input type="radio" autocomplete="off" name="d51d1cf38449a2ea1fcf1a4cefe4a167"><span>n=30 is always too small</span></label><label><input type="radio" autocomplete="off" name="d51d1cf38449a2ea1fcf1a4cefe4a167"><span>Sample size should depend on effect size, power, and research question—not arbitrary rules</span></label><label><input type="radio" autocomplete="off" name="d51d1cf38449a2ea1fcf1a4cefe4a167"><span>n=30 is always too large</span></label><label><input type="radio" autocomplete="off" name="d51d1cf38449a2ea1fcf1a4cefe4a167"><span>Rules of thumb are always correct</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3471,8 +3488,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 2.</span> Stratified sampling is most useful when:</p>
-<div id="webex-74f96173e7f94f218b2584165f00adeb" class="webex-radiogroup" data-answer="bARKCBoBGwM4">
-<label><input type="radio" autocomplete="off" name="74f96173e7f94f218b2584165f00adeb"><span>The population is homogeneous</span></label><label><input type="radio" autocomplete="off" name="74f96173e7f94f218b2584165f00adeb"><span>You want to ensure representation of key subgroups that differ on the outcome</span></label><label><input type="radio" autocomplete="off" name="74f96173e7f94f218b2584165f00adeb"><span>Random selection is impossible</span></label><label><input type="radio" autocomplete="off" name="74f96173e7f94f218b2584165f00adeb"><span>Sample size exceeds 1,000</span></label>
+<div id="webex-9e8090db588062b63643d16c03abdf93" class="webex-radiogroup" data-answer="YlUUARUASFJo">
+<label><input type="radio" autocomplete="off" name="9e8090db588062b63643d16c03abdf93"><span>The population is homogeneous</span></label><label><input type="radio" autocomplete="off" name="9e8090db588062b63643d16c03abdf93"><span>You want to ensure representation of key subgroups that differ on the outcome</span></label><label><input type="radio" autocomplete="off" name="9e8090db588062b63643d16c03abdf93"><span>Random selection is impossible</span></label><label><input type="radio" autocomplete="off" name="9e8090db588062b63643d16c03abdf93"><span>Sample size exceeds 1,000</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3483,8 +3500,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 3.</span> Power analysis reveals you need n=50 per group, but only n=20 is feasible. What should you do?</p>
-<div id="webex-5fd987208048790093451ff75624b31a" class="webex-radiogroup" data-answer="blZICBQHHgBl">
-<label><input type="radio" autocomplete="off" name="5fd987208048790093451ff75624b31a"><span>Abandon the study</span></label><label><input type="radio" autocomplete="off" name="5fd987208048790093451ff75624b31a"><span>Proceed, but report the study as exploratory/pilot and calculate minimum detectable effect (MDE)</span></label><label><input type="radio" autocomplete="off" name="5fd987208048790093451ff75624b31a"><span>Proceed and claim the same statistical power</span></label><label><input type="radio" autocomplete="off" name="5fd987208048790093451ff75624b31a"><span>Ignore power entirely</span></label>
+<div id="webex-fa0d58c5b52c8b1a6a72386737d5c68f" class="webex-radiogroup" data-answer="PVEcVRkITwU/">
+<label><input type="radio" autocomplete="off" name="fa0d58c5b52c8b1a6a72386737d5c68f"><span>Abandon the study</span></label><label><input type="radio" autocomplete="off" name="fa0d58c5b52c8b1a6a72386737d5c68f"><span>Proceed, but report the study as exploratory/pilot and calculate minimum detectable effect (MDE)</span></label><label><input type="radio" autocomplete="off" name="fa0d58c5b52c8b1a6a72386737d5c68f"><span>Proceed and claim the same statistical power</span></label><label><input type="radio" autocomplete="off" name="fa0d58c5b52c8b1a6a72386737d5c68f"><span>Ignore power entirely</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3495,8 +3512,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 4.</span> Which sampling method allows probabilistic generalization to a target population?</p>
-<div id="webex-cb9064981a7004032d1cdf1973f7cdd5" class="webex-radiogroup" data-answer="OFIVABoFFQhs">
-<label><input type="radio" autocomplete="off" name="cb9064981a7004032d1cdf1973f7cdd5"><span>Convenience sampling</span></label><label><input type="radio" autocomplete="off" name="cb9064981a7004032d1cdf1973f7cdd5"><span>Purposive sampling</span></label><label><input type="radio" autocomplete="off" name="cb9064981a7004032d1cdf1973f7cdd5"><span>Simple random sampling</span></label><label><input type="radio" autocomplete="off" name="cb9064981a7004032d1cdf1973f7cdd5"><span>Snowball sampling</span></label>
+<div id="webex-5a09eb373c1a01ab8c93b84bb44ee4d4" class="webex-radiogroup" data-answer="blEcCUlTHwdu">
+<label><input type="radio" autocomplete="off" name="5a09eb373c1a01ab8c93b84bb44ee4d4"><span>Convenience sampling</span></label><label><input type="radio" autocomplete="off" name="5a09eb373c1a01ab8c93b84bb44ee4d4"><span>Purposive sampling</span></label><label><input type="radio" autocomplete="off" name="5a09eb373c1a01ab8c93b84bb44ee4d4"><span>Simple random sampling</span></label><label><input type="radio" autocomplete="off" name="5a09eb373c1a01ab8c93b84bb44ee4d4"><span>Snowball sampling</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3507,8 +3524,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 5.</span> Quota sampling differs from stratified sampling in that:</p>
-<div id="webex-83ee5626ee4f016237ebb1ba8eafba8e" class="webex-radiogroup" data-answer="YwNJVBkGHgY4">
-<label><input type="radio" autocomplete="off" name="83ee5626ee4f016237ebb1ba8eafba8e"><span>It uses random selection within strata</span></label><label><input type="radio" autocomplete="off" name="83ee5626ee4f016237ebb1ba8eafba8e"><span>It matches population proportions but does not use random selection</span></label><label><input type="radio" autocomplete="off" name="83ee5626ee4f016237ebb1ba8eafba8e"><span>It requires a sampling frame</span></label><label><input type="radio" autocomplete="off" name="83ee5626ee4f016237ebb1ba8eafba8e"><span>It is always more accurate</span></label>
+<div id="webex-6f7b3296f4becdb2d4caff8b1dba1315" class="webex-radiogroup" data-answer="bVYbUx8CFQY7">
+<label><input type="radio" autocomplete="off" name="6f7b3296f4becdb2d4caff8b1dba1315"><span>It uses random selection within strata</span></label><label><input type="radio" autocomplete="off" name="6f7b3296f4becdb2d4caff8b1dba1315"><span>It matches population proportions but does not use random selection</span></label><label><input type="radio" autocomplete="off" name="6f7b3296f4becdb2d4caff8b1dba1315"><span>It requires a sampling frame</span></label><label><input type="radio" autocomplete="off" name="6f7b3296f4becdb2d4caff8b1dba1315"><span>It is always more accurate</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3519,8 +3536,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 6.</span> A study with n=15 per group has about 25% power to detect d=0.5. The researcher should report:</p>
-<div id="webex-977b3a8e4c778917f9d74229db5adac3" class="webex-radiogroup" data-answer="YgcbUx9RFFVp">
-<label><input type="radio" autocomplete="off" name="977b3a8e4c778917f9d74229db5adac3"><span>“The study was adequately powered”</span></label><label><input type="radio" autocomplete="off" name="977b3a8e4c778917f9d74229db5adac3"><span>“The study was underpowered to detect medium effects; only very large effects (around d = 1.06) could be reliably detected”</span></label><label><input type="radio" autocomplete="off" name="977b3a8e4c778917f9d74229db5adac3"><span>“Power is irrelevant with small samples”</span></label><label><input type="radio" autocomplete="off" name="977b3a8e4c778917f9d74229db5adac3"><span>“Non-significant results prove no effect exists”</span></label>
+<div id="webex-2e974c15d5c6a1f05af35195b1f30968" class="webex-radiogroup" data-answer="aVUVBhhTHQU5">
+<label><input type="radio" autocomplete="off" name="2e974c15d5c6a1f05af35195b1f30968"><span>“The study was adequately powered”</span></label><label><input type="radio" autocomplete="off" name="2e974c15d5c6a1f05af35195b1f30968"><span>“The study was underpowered to detect medium effects; only very large effects (around d = 1.06) could be reliably detected”</span></label><label><input type="radio" autocomplete="off" name="2e974c15d5c6a1f05af35195b1f30968"><span>“Power is irrelevant with small samples”</span></label><label><input type="radio" autocomplete="off" name="2e974c15d5c6a1f05af35195b1f30968"><span>“Non-significant results prove no effect exists”</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3531,8 +3548,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 7.</span> The finite population correction (FPC) is relevant when:</p>
-<div id="webex-70a6a5020bc3f60cf433850769760910" class="webex-radiogroup" data-answer="bABNB00FHAJt">
-<label><input type="radio" autocomplete="off" name="70a6a5020bc3f60cf433850769760910"><span>Sampling with replacement from an infinite population</span></label><label><input type="radio" autocomplete="off" name="70a6a5020bc3f60cf433850769760910"><span>Sampling without replacement from a small, known population (e.g., N=100)</span></label><label><input type="radio" autocomplete="off" name="70a6a5020bc3f60cf433850769760910"><span>Sample size exceeds population size</span></label><label><input type="radio" autocomplete="off" name="70a6a5020bc3f60cf433850769760910"><span>Using convenience sampling</span></label>
+<div id="webex-c135d0791c5eb1dbe8e87211cb859fab" class="webex-radiogroup" data-answer="OAEfBEgAGwls">
+<label><input type="radio" autocomplete="off" name="c135d0791c5eb1dbe8e87211cb859fab"><span>Sampling with replacement from an infinite population</span></label><label><input type="radio" autocomplete="off" name="c135d0791c5eb1dbe8e87211cb859fab"><span>Sampling without replacement from a small, known population (e.g., N=100)</span></label><label><input type="radio" autocomplete="off" name="c135d0791c5eb1dbe8e87211cb859fab"><span>Sample size exceeds population size</span></label><label><input type="radio" autocomplete="off" name="c135d0791c5eb1dbe8e87211cb859fab"><span>Using convenience sampling</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3543,8 +3560,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 8.</span> Sequential sampling allows researchers to:</p>
-<div id="webex-4db56d82880418be6f5a3132805e115c" class="webex-radiogroup" data-answer="b1ROBBpUFAJl">
-<label><input type="radio" autocomplete="off" name="4db56d82880418be6f5a3132805e115c"><span>Collect all data simultaneously</span></label><label><input type="radio" autocomplete="off" name="4db56d82880418be6f5a3132805e115c"><span>Stop early if interim results show sufficient precision or evidence</span></label><label><input type="radio" autocomplete="off" name="4db56d82880418be6f5a3132805e115c"><span>Ignore power analysis</span></label><label><input type="radio" autocomplete="off" name="4db56d82880418be6f5a3132805e115c"><span>Change hypotheses after seeing data</span></label>
+<div id="webex-2a1475a7dae05912179653c2a5e47179" class="webex-radiogroup" data-answer="aVEdBRsFTQc5">
+<label><input type="radio" autocomplete="off" name="2a1475a7dae05912179653c2a5e47179"><span>Collect all data simultaneously</span></label><label><input type="radio" autocomplete="off" name="2a1475a7dae05912179653c2a5e47179"><span>Stop early if interim results show sufficient precision or evidence</span></label><label><input type="radio" autocomplete="off" name="2a1475a7dae05912179653c2a5e47179"><span>Ignore power analysis</span></label><label><input type="radio" autocomplete="off" name="2a1475a7dae05912179653c2a5e47179"><span>Change hypotheses after seeing data</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3555,8 +3572,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 9.</span> A convenience sample from one university is used to test a new teaching method. Which statement is TRUE?</p>
-<div id="webex-df0e670f610d341844bbe5cf3baf11f0" class="webex-radiogroup" data-answer="P1YcVBoHHFZr">
-<label><input type="radio" autocomplete="off" name="df0e670f610d341844bbe5cf3baf11f0"><span>Results generalise to all universities</span></label><label><input type="radio" autocomplete="off" name="df0e670f610d341844bbe5cf3baf11f0"><span>Results are context-specific and require replication</span></label><label><input type="radio" autocomplete="off" name="df0e670f610d341844bbe5cf3baf11f0"><span>Convenience sampling is never acceptable</span></label><label><input type="radio" autocomplete="off" name="df0e670f610d341844bbe5cf3baf11f0"><span>Results are as valid as random sampling</span></label>
+<div id="webex-91203acf217effa1de6afa0de37e2989" class="webex-radiogroup" data-answer="YgEeAR9RT1Zv">
+<label><input type="radio" autocomplete="off" name="91203acf217effa1de6afa0de37e2989"><span>Results generalise to all universities</span></label><label><input type="radio" autocomplete="off" name="91203acf217effa1de6afa0de37e2989"><span>Results are context-specific and require replication</span></label><label><input type="radio" autocomplete="off" name="91203acf217effa1de6afa0de37e2989"><span>Convenience sampling is never acceptable</span></label><label><input type="radio" autocomplete="off" name="91203acf217effa1de6afa0de37e2989"><span>Results are as valid as random sampling</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3567,8 +3584,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 10.</span> Minimum Detectable Effect (MDE) refers to:</p>
-<div id="webex-4da941c4c0166c0f266af1c3a27f8b5f" class="webex-radiogroup" data-answer="b1RNCBgBTwQ+">
-<label><input type="radio" autocomplete="off" name="4da941c4c0166c0f266af1c3a27f8b5f"><span>The smallest effect that exists in the population</span></label><label><input type="radio" autocomplete="off" name="4da941c4c0166c0f266af1c3a27f8b5f"><span>The smallest effect the study can detect with specified power (e.g., 80%)</span></label><label><input type="radio" autocomplete="off" name="4da941c4c0166c0f266af1c3a27f8b5f"><span>The p-value threshold</span></label><label><input type="radio" autocomplete="off" name="4da941c4c0166c0f266af1c3a27f8b5f"><span>The confidence interval width</span></label>
+<div id="webex-64b714d5037e66acd870e34d779d8dab" class="webex-radiogroup" data-answer="bQROBh0ESAVt">
+<label><input type="radio" autocomplete="off" name="64b714d5037e66acd870e34d779d8dab"><span>The smallest effect that exists in the population</span></label><label><input type="radio" autocomplete="off" name="64b714d5037e66acd870e34d779d8dab"><span>The smallest effect the study can detect with specified power (e.g., 80%)</span></label><label><input type="radio" autocomplete="off" name="64b714d5037e66acd870e34d779d8dab"><span>The p-value threshold</span></label><label><input type="radio" autocomplete="off" name="64b714d5037e66acd870e34d779d8dab"><span>The confidence interval width</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3887,7 +3904,7 @@ White, Ian R., Patrick Royston, and Angela M. Wood. 2011. <span>‘Multiple Impu
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/mohammedalisharafuddin\.github\.io\/quantitative-analysis-with-small-samples\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

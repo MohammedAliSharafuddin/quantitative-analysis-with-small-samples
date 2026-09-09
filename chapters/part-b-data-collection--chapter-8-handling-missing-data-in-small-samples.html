@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
 
 <title>Chapter 8: Handling Missing Data in Small Samples – Quantitative Analysis with Small Samples</title>
 <style>
@@ -1680,6 +1681,19 @@ globalThis.qwebrExecuteCode = async function (
 </script>
 
 
+<meta property="og:title" content="Chapter 8: Handling Missing Data in Small Samples – Quantitative Analysis with Small Samples">
+<meta property="og:description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
+<meta property="og:image" content="https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/chapters/part-b-data-collection--chapter-8-handling-missing-data-in-small-samples_files/figure-html/part-b-chunk-15a-html-1.png">
+<meta property="og:site_name" content="Quantitative Analysis with Small Samples">
+<meta property="og:image:height" content="960">
+<meta property="og:image:width" content="1344">
+<meta name="twitter:title" content="Chapter 8: Handling Missing Data in Small Samples – Quantitative Analysis with Small Samples">
+<meta name="twitter:description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
+<meta name="twitter:image" content="https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/chapters/part-b-data-collection--chapter-8-handling-missing-data-in-small-samples_files/figure-html/part-b-chunk-15a-html-1.png">
+<meta name="twitter:image-height" content="960">
+<meta name="twitter:image-width" content="1344">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/chapters/part-b-data-collection--chapter-8-handling-missing-data-in-small-samples.html">
 </head>
 
 <body class="nav-sidebar floating quarto-light">
@@ -1709,6 +1723,9 @@ globalThis.qwebrExecuteCode = async function (
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Quantitative Analysis with Small Samples</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/MohammedAliSharafuddin/smallsamplelab" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -3808,8 +3825,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 1.</span> What is the key distinction between MCAR and MAR?</p>
-<div id="webex-aba8cf214e41a90902a3695884b1afe7" class="webex-radiogroup" data-answer="OlJNCU9WHgFp">
-<label><input type="radio" autocomplete="off" name="aba8cf214e41a90902a3695884b1afe7"><span>MCAR means no data are missing; MAR means some data are missing</span></label><label><input type="radio" autocomplete="off" name="aba8cf214e41a90902a3695884b1afe7"><span>MCAR means missingness is unrelated to observed or unobserved data, whereas MAR allows missingness to depend on observed variables</span></label><label><input type="radio" autocomplete="off" name="aba8cf214e41a90902a3695884b1afe7"><span>MCAR applies only to experiments; MAR applies only to surveys</span></label><label><input type="radio" autocomplete="off" name="aba8cf214e41a90902a3695884b1afe7"><span>There is no practical difference between them</span></label>
+<div id="webex-ee1c219c43c4597372c4e556864cd29e" class="webex-radiogroup" data-answer="PlUdUh4BFVNp">
+<label><input type="radio" autocomplete="off" name="ee1c219c43c4597372c4e556864cd29e"><span>MCAR means no data are missing; MAR means some data are missing</span></label><label><input type="radio" autocomplete="off" name="ee1c219c43c4597372c4e556864cd29e"><span>MCAR means missingness is unrelated to observed or unobserved data, whereas MAR allows missingness to depend on observed variables</span></label><label><input type="radio" autocomplete="off" name="ee1c219c43c4597372c4e556864cd29e"><span>MCAR applies only to experiments; MAR applies only to surveys</span></label><label><input type="radio" autocomplete="off" name="ee1c219c43c4597372c4e556864cd29e"><span>There is no practical difference between them</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3820,8 +3837,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 2.</span> Why can listwise deletion still be a poor choice even when MCAR is plausible?</p>
-<div id="webex-edb62efc335a9e5892161d55c52b6c75" class="webex-radiogroup" data-answer="PlROBx5VSlNu">
-<label><input type="radio" autocomplete="off" name="edb62efc335a9e5892161d55c52b6c75"><span>It always creates impossible values</span></label><label><input type="radio" autocomplete="off" name="edb62efc335a9e5892161d55c52b6c75"><span>It can throw away many cases and sharply reduce power, especially when missingness occurs on multiple variables</span></label><label><input type="radio" autocomplete="off" name="edb62efc335a9e5892161d55c52b6c75"><span>It is only allowed in Bayesian analysis</span></label><label><input type="radio" autocomplete="off" name="edb62efc335a9e5892161d55c52b6c75"><span>It automatically changes MAR data into MNAR data</span></label>
+<div id="webex-def9656580641b36766debead73e2295" class="webex-radiogroup" data-answer="P1VKCBoFGgVl">
+<label><input type="radio" autocomplete="off" name="def9656580641b36766debead73e2295"><span>It always creates impossible values</span></label><label><input type="radio" autocomplete="off" name="def9656580641b36766debead73e2295"><span>It can throw away many cases and sharply reduce power, especially when missingness occurs on multiple variables</span></label><label><input type="radio" autocomplete="off" name="def9656580641b36766debead73e2295"><span>It is only allowed in Bayesian analysis</span></label><label><input type="radio" autocomplete="off" name="def9656580641b36766debead73e2295"><span>It automatically changes MAR data into MNAR data</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3832,8 +3849,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 3.</span> Why is mean imputation generally not recommended?</p>
-<div id="webex-86d02f4287c39c11d88be9b4e1b05e77" class="webex-radiogroup" data-answer="YwZIAR5WGAJl">
-<label><input type="radio" autocomplete="off" name="86d02f4287c39c11d88be9b4e1b05e77"><span>It is too computationally expensive</span></label><label><input type="radio" autocomplete="off" name="86d02f4287c39c11d88be9b4e1b05e77"><span>It artificially reduces variance and distorts associations between variables</span></label><label><input type="radio" autocomplete="off" name="86d02f4287c39c11d88be9b4e1b05e77"><span>It requires a larger sample than multiple imputation</span></label><label><input type="radio" autocomplete="off" name="86d02f4287c39c11d88be9b4e1b05e77"><span>It only works for binary outcomes</span></label>
+<div id="webex-ca14197a8077d935856a9be3af8ee85f" class="webex-radiogroup" data-answer="OFEdBR0JG1Fl">
+<label><input type="radio" autocomplete="off" name="ca14197a8077d935856a9be3af8ee85f"><span>It is too computationally expensive</span></label><label><input type="radio" autocomplete="off" name="ca14197a8077d935856a9be3af8ee85f"><span>It artificially reduces variance and distorts associations between variables</span></label><label><input type="radio" autocomplete="off" name="ca14197a8077d935856a9be3af8ee85f"><span>It requires a larger sample than multiple imputation</span></label><label><input type="radio" autocomplete="off" name="ca14197a8077d935856a9be3af8ee85f"><span>It only works for binary outcomes</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3844,8 +3861,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 4.</span> When is multiple imputation most defensible in this chapter’s guidance?</p>
-<div id="webex-fee5e8e79d06f2f039c9069978318922" class="webex-radiogroup" data-answer="PVRJBUkISQdk">
-<label><input type="radio" autocomplete="off" name="fee5e8e79d06f2f039c9069978318922"><span>When n is moderate, missingness is not too extensive, and MAR is plausible</span></label><label><input type="radio" autocomplete="off" name="fee5e8e79d06f2f039c9069978318922"><span>Whenever a dataset contains any missing value at all</span></label><label><input type="radio" autocomplete="off" name="fee5e8e79d06f2f039c9069978318922"><span>Only when data are MNAR</span></label><label><input type="radio" autocomplete="off" name="fee5e8e79d06f2f039c9069978318922"><span>Only when the outcome is binary</span></label>
+<div id="webex-2283a15584613ef7651a901a447a7723" class="webex-radiogroup" data-answer="aQMUA00BGQVl">
+<label><input type="radio" autocomplete="off" name="2283a15584613ef7651a901a447a7723"><span>When n is moderate, missingness is not too extensive, and MAR is plausible</span></label><label><input type="radio" autocomplete="off" name="2283a15584613ef7651a901a447a7723"><span>Whenever a dataset contains any missing value at all</span></label><label><input type="radio" autocomplete="off" name="2283a15584613ef7651a901a447a7723"><span>Only when data are MNAR</span></label><label><input type="radio" autocomplete="off" name="2283a15584613ef7651a901a447a7723"><span>Only when the outcome is binary</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3856,8 +3873,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 5.</span> Why is last observation carried forward (LOCF) usually a weak solution to missing follow-up data?</p>
-<div id="webex-2be3f5590c77d0413b1676fcfd088145" class="webex-radiogroup" data-answer="aVNJA0oFGQlt">
-<label><input type="radio" autocomplete="off" name="2be3f5590c77d0413b1676fcfd088145"><span>Because it assumes no meaningful change after the last observed value</span></label><label><input type="radio" autocomplete="off" name="2be3f5590c77d0413b1676fcfd088145"><span>Because it can only be used with binary outcomes</span></label><label><input type="radio" autocomplete="off" name="2be3f5590c77d0413b1676fcfd088145"><span>Because it always increases statistical power</span></label><label><input type="radio" autocomplete="off" name="2be3f5590c77d0413b1676fcfd088145"><span>Because it requires Bayesian software</span></label>
+<div id="webex-74ab5e521758bada16c50e02ab84bea7" class="webex-radiogroup" data-answer="bAVNUhlVGQJs">
+<label><input type="radio" autocomplete="off" name="74ab5e521758bada16c50e02ab84bea7"><span>Because it assumes no meaningful change after the last observed value</span></label><label><input type="radio" autocomplete="off" name="74ab5e521758bada16c50e02ab84bea7"><span>Because it can only be used with binary outcomes</span></label><label><input type="radio" autocomplete="off" name="74ab5e521758bada16c50e02ab84bea7"><span>Because it always increases statistical power</span></label><label><input type="radio" autocomplete="off" name="74ab5e521758bada16c50e02ab84bea7"><span>Because it requires Bayesian software</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3868,8 +3885,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 6.</span> What does Little’s MCAR test evaluate?</p>
-<div id="webex-6c02a4e9d340f0ed1391082417523c3a" class="webex-radiogroup" data-answer="bVIcAk0ESQk5">
-<label><input type="radio" autocomplete="off" name="6c02a4e9d340f0ed1391082417523c3a"><span>Whether missingness is consistent with a completely-random mechanism</span></label><label><input type="radio" autocomplete="off" name="6c02a4e9d340f0ed1391082417523c3a"><span>Whether multiple imputation has converged</span></label><label><input type="radio" autocomplete="off" name="6c02a4e9d340f0ed1391082417523c3a"><span>Whether the outcome is normally distributed</span></label><label><input type="radio" autocomplete="off" name="6c02a4e9d340f0ed1391082417523c3a"><span>Whether LOCF is acceptable</span></label>
+<div id="webex-2e188880ee21de0d948f3c958465f72d" class="webex-radiogroup" data-answer="aVQdCBQIFAA4">
+<label><input type="radio" autocomplete="off" name="2e188880ee21de0d948f3c958465f72d"><span>Whether missingness is consistent with a completely-random mechanism</span></label><label><input type="radio" autocomplete="off" name="2e188880ee21de0d948f3c958465f72d"><span>Whether multiple imputation has converged</span></label><label><input type="radio" autocomplete="off" name="2e188880ee21de0d948f3c958465f72d"><span>Whether the outcome is normally distributed</span></label><label><input type="radio" autocomplete="off" name="2e188880ee21de0d948f3c958465f72d"><span>Whether LOCF is acceptable</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3880,8 +3897,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 7.</span> Why are sensitivity analyses important for missing-data work?</p>
-<div id="webex-539518daf8064906132f5559093689a3" class="webex-radiogroup" data-answer="bgMVBB0ISFE7">
-<label><input type="radio" autocomplete="off" name="539518daf8064906132f5559093689a3"><span>They prove which missingness mechanism is correct</span></label><label><input type="radio" autocomplete="off" name="539518daf8064906132f5559093689a3"><span>They show whether conclusions depend heavily on the assumptions used to handle missing data</span></label><label><input type="radio" autocomplete="off" name="539518daf8064906132f5559093689a3"><span>They eliminate the need to describe missingness patterns</span></label><label><input type="radio" autocomplete="off" name="539518daf8064906132f5559093689a3"><span>They allow you to ignore complete-case results</span></label>
+<div id="webex-a5e3d5bf96db052b9f426f8acfbc5546" class="webex-radiogroup" data-answer="OgVJAkgFTlZk">
+<label><input type="radio" autocomplete="off" name="a5e3d5bf96db052b9f426f8acfbc5546"><span>They prove which missingness mechanism is correct</span></label><label><input type="radio" autocomplete="off" name="a5e3d5bf96db052b9f426f8acfbc5546"><span>They show whether conclusions depend heavily on the assumptions used to handle missing data</span></label><label><input type="radio" autocomplete="off" name="a5e3d5bf96db052b9f426f8acfbc5546"><span>They eliminate the need to describe missingness patterns</span></label><label><input type="radio" autocomplete="off" name="a5e3d5bf96db052b9f426f8acfbc5546"><span>They allow you to ignore complete-case results</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3892,8 +3909,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 8.</span> What is the best overall strategy for dealing with missing data in small-sample studies?</p>
-<div id="webex-83bd268fcac391176b9ac70d0bbf1ac7" class="webex-radiogroup" data-answer="YwJOVB4GFFY+">
-<label><input type="radio" autocomplete="off" name="83bd268fcac391176b9ac70d0bbf1ac7"><span>Prevent as much missingness as possible through study design and follow-up</span></label><label><input type="radio" autocomplete="off" name="83bd268fcac391176b9ac70d0bbf1ac7"><span>Default to mean imputation because it is simple</span></label><label><input type="radio" autocomplete="off" name="83bd268fcac391176b9ac70d0bbf1ac7"><span>Always drop incomplete cases regardless of context</span></label><label><input type="radio" autocomplete="off" name="83bd268fcac391176b9ac70d0bbf1ac7"><span>Assume MCAR unless the sample is very large</span></label>
+<div id="webex-7efaacb307445d33db9c3c94db32e559" class="webex-radiogroup" data-answer="bFRKUU1TTgNt">
+<label><input type="radio" autocomplete="off" name="7efaacb307445d33db9c3c94db32e559"><span>Prevent as much missingness as possible through study design and follow-up</span></label><label><input type="radio" autocomplete="off" name="7efaacb307445d33db9c3c94db32e559"><span>Default to mean imputation because it is simple</span></label><label><input type="radio" autocomplete="off" name="7efaacb307445d33db9c3c94db32e559"><span>Always drop incomplete cases regardless of context</span></label><label><input type="radio" autocomplete="off" name="7efaacb307445d33db9c3c94db32e559"><span>Assume MCAR unless the sample is very large</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -4212,7 +4229,7 @@ White, Ian R., Patrick Royston, and Angela M. Wood. 2011. <span>‘Multiple Impu
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/mohammedalisharafuddin\.github\.io\/quantitative-analysis-with-small-samples\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
 
 <title>Chapter 9: Assessing Multiple Imputation Quality – Quantitative Analysis with Small Samples</title>
 <style>
@@ -1709,6 +1710,19 @@ window.Quarto = {
 };
 </script>
 
+<meta property="og:title" content="Chapter 9: Assessing Multiple Imputation Quality – Quantitative Analysis with Small Samples">
+<meta property="og:description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
+<meta property="og:image" content="https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/chapters/part-b-data-collection--chapter-9-assessing-multiple-imputation-quality_files/figure-html/part-b-mi-diag-1-html-1.png">
+<meta property="og:site_name" content="Quantitative Analysis with Small Samples">
+<meta property="og:image:height" content="960">
+<meta property="og:image:width" content="1344">
+<meta name="twitter:title" content="Chapter 9: Assessing Multiple Imputation Quality – Quantitative Analysis with Small Samples">
+<meta name="twitter:description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
+<meta name="twitter:image" content="https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/chapters/part-b-data-collection--chapter-9-assessing-multiple-imputation-quality_files/figure-html/part-b-mi-diag-1-html-1.png">
+<meta name="twitter:image-height" content="960">
+<meta name="twitter:image-width" content="1344">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/chapters/part-b-data-collection--chapter-9-assessing-multiple-imputation-quality.html">
 </head>
 
 <body class="nav-sidebar floating quarto-light">
@@ -1738,6 +1752,9 @@ window.Quarto = {
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Quantitative Analysis with Small Samples</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/MohammedAliSharafuddin/smallsamplelab" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -3808,8 +3825,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 1.</span> What is the main purpose of a trace plot in multiple-imputation diagnostics?</p>
-<div id="webex-bccc2632fb8c210d91cf1be272be7176" class="webex-radiogroup" data-answer="OVJPUx4GHwI7">
-<label><input type="radio" autocomplete="off" name="bccc2632fb8c210d91cf1be272be7176"><span>To check whether the imputation chains have stabilised across iterations</span></label><label><input type="radio" autocomplete="off" name="bccc2632fb8c210d91cf1be272be7176"><span>To count the number of missing values in each variable</span></label><label><input type="radio" autocomplete="off" name="bccc2632fb8c210d91cf1be272be7176"><span>To show the final pooled regression coefficients</span></label><label><input type="radio" autocomplete="off" name="bccc2632fb8c210d91cf1be272be7176"><span>To choose between complete-case analysis and LOCF</span></label>
+<div id="webex-91b312031415ffe8d5ba5d39302112f7" class="webex-radiogroup" data-answer="YgBOAx0CHANs">
+<label><input type="radio" autocomplete="off" name="91b312031415ffe8d5ba5d39302112f7"><span>To check whether the imputation chains have stabilised across iterations</span></label><label><input type="radio" autocomplete="off" name="91b312031415ffe8d5ba5d39302112f7"><span>To count the number of missing values in each variable</span></label><label><input type="radio" autocomplete="off" name="91b312031415ffe8d5ba5d39302112f7"><span>To show the final pooled regression coefficients</span></label><label><input type="radio" autocomplete="off" name="91b312031415ffe8d5ba5d39302112f7"><span>To choose between complete-case analysis and LOCF</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3820,8 +3837,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 2.</span> What pattern in a trace plot would most strongly suggest that <code>maxit</code> should be increased?</p>
-<div id="webex-1cd25487a0535b9f27c82280110c2bba" class="webex-radiogroup" data-answer="alJIAhkEFAc8">
-<label><input type="radio" autocomplete="off" name="1cd25487a0535b9f27c82280110c2bba"><span>A systematic upward or downward drift across iterations</span></label><label><input type="radio" autocomplete="off" name="1cd25487a0535b9f27c82280110c2bba"><span>Random fluctuation around a stable mean</span></label><label><input type="radio" autocomplete="off" name="1cd25487a0535b9f27c82280110c2bba"><span>Several chains overlapping each other</span></label><label><input type="radio" autocomplete="off" name="1cd25487a0535b9f27c82280110c2bba"><span>Slightly different starting values for each chain</span></label>
+<div id="webex-4313a4f3dbca340ce205d72d410a865d" class="webex-radiogroup" data-answer="bwIdA00ESgM5">
+<label><input type="radio" autocomplete="off" name="4313a4f3dbca340ce205d72d410a865d"><span>A systematic upward or downward drift across iterations</span></label><label><input type="radio" autocomplete="off" name="4313a4f3dbca340ce205d72d410a865d"><span>Random fluctuation around a stable mean</span></label><label><input type="radio" autocomplete="off" name="4313a4f3dbca340ce205d72d410a865d"><span>Several chains overlapping each other</span></label><label><input type="radio" autocomplete="off" name="4313a4f3dbca340ce205d72d410a865d"><span>Slightly different starting values for each chain</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3832,8 +3849,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 3.</span> What is the main diagnostic question answered by a density plot of observed and imputed values?</p>
-<div id="webex-01cd080df33fd738669a29777b2e6b86" class="webex-radiogroup" data-answer="awBPVBwIHFQ7">
-<label><input type="radio" autocomplete="off" name="01cd080df33fd738669a29777b2e6b86"><span>Whether the imputed values are plausible relative to the observed distribution</span></label><label><input type="radio" autocomplete="off" name="01cd080df33fd738669a29777b2e6b86"><span>Whether the predictor matrix contains enough zeros</span></label><label><input type="radio" autocomplete="off" name="01cd080df33fd738669a29777b2e6b86"><span>Whether the sample size exceeds 100</span></label><label><input type="radio" autocomplete="off" name="01cd080df33fd738669a29777b2e6b86"><span>Whether Little’s MCAR test is significant</span></label>
+<div id="webex-9940ef435f3601f539e4088c42c21d3e" class="webex-radiogroup" data-answer="YggYAElWGANo">
+<label><input type="radio" autocomplete="off" name="9940ef435f3601f539e4088c42c21d3e"><span>Whether the imputed values are plausible relative to the observed distribution</span></label><label><input type="radio" autocomplete="off" name="9940ef435f3601f539e4088c42c21d3e"><span>Whether the predictor matrix contains enough zeros</span></label><label><input type="radio" autocomplete="off" name="9940ef435f3601f539e4088c42c21d3e"><span>Whether the sample size exceeds 100</span></label><label><input type="radio" autocomplete="off" name="9940ef435f3601f539e4088c42c21d3e"><span>Whether Little’s MCAR test is significant</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3844,8 +3861,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 4.</span> In a strip plot, what would count as a red flag?</p>
-<div id="webex-ec9b119ba0310b2e74033824c73d7715" class="webex-radiogroup" data-answer="PlIVUh0BFVI8">
-<label><input type="radio" autocomplete="off" name="ec9b119ba0310b2e74033824c73d7715"><span>Imputed values falling well outside the observed range</span></label><label><input type="radio" autocomplete="off" name="ec9b119ba0310b2e74033824c73d7715"><span>Observed and imputed points using different colors</span></label><label><input type="radio" autocomplete="off" name="ec9b119ba0310b2e74033824c73d7715"><span>The x-axis being labelled by imputation number</span></label><label><input type="radio" autocomplete="off" name="ec9b119ba0310b2e74033824c73d7715"><span>Having more than one imputed dataset</span></label>
+<div id="webex-98ed5c97716d3ea024d1f55a48a1c14b" class="webex-radiogroup" data-answer="YglJVBlTFQdq">
+<label><input type="radio" autocomplete="off" name="98ed5c97716d3ea024d1f55a48a1c14b"><span>Imputed values falling well outside the observed range</span></label><label><input type="radio" autocomplete="off" name="98ed5c97716d3ea024d1f55a48a1c14b"><span>Observed and imputed points using different colors</span></label><label><input type="radio" autocomplete="off" name="98ed5c97716d3ea024d1f55a48a1c14b"><span>The x-axis being labelled by imputation number</span></label><label><input type="radio" autocomplete="off" name="98ed5c97716d3ea024d1f55a48a1c14b"><span>Having more than one imputed dataset</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3856,8 +3873,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 5.</span> Why does the chapter compare pooled results across <code>m = 5</code>, <code>20</code>, and <code>50</code>?</p>
-<div id="webex-d8d6cb07e66ebcd9c5a23e19bc8d3be4" class="webex-radiogroup" data-answer="PwlIBk9SHAc4">
-<label><input type="radio" autocomplete="off" name="d8d6cb07e66ebcd9c5a23e19bc8d3be4"><span>To check whether the estimates are stable as Monte Carlo error is reduced</span></label><label><input type="radio" autocomplete="off" name="d8d6cb07e66ebcd9c5a23e19bc8d3be4"><span>To prove that larger m always changes the coefficient direction</span></label><label><input type="radio" autocomplete="off" name="d8d6cb07e66ebcd9c5a23e19bc8d3be4"><span>To replace the need for FMI</span></label><label><input type="radio" autocomplete="off" name="d8d6cb07e66ebcd9c5a23e19bc8d3be4"><span>To test whether the outcome is normally distributed</span></label>
+<div id="webex-3fae10b1323675414d8dbf9fcc1207b1" class="webex-radiogroup" data-answer="aFdNVR0ATgFu">
+<label><input type="radio" autocomplete="off" name="3fae10b1323675414d8dbf9fcc1207b1"><span>To check whether the estimates are stable as Monte Carlo error is reduced</span></label><label><input type="radio" autocomplete="off" name="3fae10b1323675414d8dbf9fcc1207b1"><span>To prove that larger m always changes the coefficient direction</span></label><label><input type="radio" autocomplete="off" name="3fae10b1323675414d8dbf9fcc1207b1"><span>To replace the need for FMI</span></label><label><input type="radio" autocomplete="off" name="3fae10b1323675414d8dbf9fcc1207b1"><span>To test whether the outcome is normally distributed</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3868,8 +3885,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 6.</span> What is the rule of thumb from White, Royston, and Wood (2011) for choosing <code>m</code>?</p>
-<div id="webex-ed53597781f6de718650517cde1a488e" class="webex-radiogroup" data-answer="PlUZAxkJGwdl">
-<label><input type="radio" autocomplete="off" name="ed53597781f6de718650517cde1a488e"><span>Use m ≥ 100 × FMI</span></label><label><input type="radio" autocomplete="off" name="ed53597781f6de718650517cde1a488e"><span>Always use m = 5</span></label><label><input type="radio" autocomplete="off" name="ed53597781f6de718650517cde1a488e"><span>Set m equal to the sample size</span></label><label><input type="radio" autocomplete="off" name="ed53597781f6de718650517cde1a488e"><span>Use m = 2 whenever missingness is below 10%</span></label>
+<div id="webex-b53d139233b37f1c4a14e52fbb478a4c" class="webex-radiogroup" data-answer="OQQfVB0DFQJu">
+<label><input type="radio" autocomplete="off" name="b53d139233b37f1c4a14e52fbb478a4c"><span>Use m ≥ 100 × FMI</span></label><label><input type="radio" autocomplete="off" name="b53d139233b37f1c4a14e52fbb478a4c"><span>Always use m = 5</span></label><label><input type="radio" autocomplete="off" name="b53d139233b37f1c4a14e52fbb478a4c"><span>Set m equal to the sample size</span></label><label><input type="radio" autocomplete="off" name="b53d139233b37f1c4a14e52fbb478a4c"><span>Use m = 2 whenever missingness is below 10%</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3880,8 +3897,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 7.</span> What does the predictor matrix tell you in a <code>mice</code> analysis?</p>
-<div id="webex-7e0f7e60b7c70b8c66169de93d5962b6" class="webex-radiogroup" data-answer="bFQcVhtVGgA/">
-<label><input type="radio" autocomplete="off" name="7e0f7e60b7c70b8c66169de93d5962b6"><span>Which variables are used to predict each imputed variable</span></label><label><input type="radio" autocomplete="off" name="7e0f7e60b7c70b8c66169de93d5962b6"><span>Which cases were dropped before imputation</span></label><label><input type="radio" autocomplete="off" name="7e0f7e60b7c70b8c66169de93d5962b6"><span>How many imputations are needed</span></label><label><input type="radio" autocomplete="off" name="7e0f7e60b7c70b8c66169de93d5962b6"><span>Whether the pooled p-values are significant</span></label>
+<div id="webex-fd80156c1e73d9d8541bda4d16c0b97f" class="webex-radiogroup" data-answer="PVUUAB0FGlNs">
+<label><input type="radio" autocomplete="off" name="fd80156c1e73d9d8541bda4d16c0b97f"><span>Which variables are used to predict each imputed variable</span></label><label><input type="radio" autocomplete="off" name="fd80156c1e73d9d8541bda4d16c0b97f"><span>Which cases were dropped before imputation</span></label><label><input type="radio" autocomplete="off" name="fd80156c1e73d9d8541bda4d16c0b97f"><span>How many imputations are needed</span></label><label><input type="radio" autocomplete="off" name="fd80156c1e73d9d8541bda4d16c0b97f"><span>Whether the pooled p-values are significant</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3892,8 +3909,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 8.</span> Why is predictive mean matching (<code>pmm</code>) often preferred to <code>norm</code> for continuous variables in small samples?</p>
-<div id="webex-c0d9f31d053c0631e05e5e9b752eb697" class="webex-radiogroup" data-answer="OAFICUoDHVRt">
-<label><input type="radio" autocomplete="off" name="c0d9f31d053c0631e05e5e9b752eb697"><span>Because <code>pmm</code> preserves plausible observed values and is less dependent on strict normality</span></label><label><input type="radio" autocomplete="off" name="c0d9f31d053c0631e05e5e9b752eb697"><span>Because <code>pmm</code> requires no predictors</span></label><label><input type="radio" autocomplete="off" name="c0d9f31d053c0631e05e5e9b752eb697"><span>Because <code>norm</code> only works for binary data</span></label><label><input type="radio" autocomplete="off" name="c0d9f31d053c0631e05e5e9b752eb697"><span>Because <code>pmm</code> guarantees narrower confidence intervals</span></label>
+<div id="webex-61732338d3451f7781c9f6aa6b31ffbc" class="webex-radiogroup" data-answer="bQAbAx4DHwg5">
+<label><input type="radio" autocomplete="off" name="61732338d3451f7781c9f6aa6b31ffbc"><span>Because <code>pmm</code> preserves plausible observed values and is less dependent on strict normality</span></label><label><input type="radio" autocomplete="off" name="61732338d3451f7781c9f6aa6b31ffbc"><span>Because <code>pmm</code> requires no predictors</span></label><label><input type="radio" autocomplete="off" name="61732338d3451f7781c9f6aa6b31ffbc"><span>Because <code>norm</code> only works for binary data</span></label><label><input type="radio" autocomplete="off" name="61732338d3451f7781c9f6aa6b31ffbc"><span>Because <code>pmm</code> guarantees narrower confidence intervals</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3904,8 +3921,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 9.</span> What does a high FMI value mean for a pooled coefficient?</p>
-<div id="webex-ab416caedd14a76a5c8e5e2a363c145a" class="webex-radiogroup" data-answer="OlMYARpTTVU5">
-<label><input type="radio" autocomplete="off" name="ab416caedd14a76a5c8e5e2a363c145a"><span>That missingness is contributing substantially to uncertainty in that estimate</span></label><label><input type="radio" autocomplete="off" name="ab416caedd14a76a5c8e5e2a363c145a"><span>That the predictor matrix is incorrect</span></label><label><input type="radio" autocomplete="off" name="ab416caedd14a76a5c8e5e2a363c145a"><span>That the data are definitely MNAR</span></label><label><input type="radio" autocomplete="off" name="ab416caedd14a76a5c8e5e2a363c145a"><span>That convergence has failed</span></label>
+<div id="webex-a173d8eed343c463dbd09a31eb78f378" class="webex-radiogroup" data-answer="OgAbA0gISVU5">
+<label><input type="radio" autocomplete="off" name="a173d8eed343c463dbd09a31eb78f378"><span>That missingness is contributing substantially to uncertainty in that estimate</span></label><label><input type="radio" autocomplete="off" name="a173d8eed343c463dbd09a31eb78f378"><span>That the predictor matrix is incorrect</span></label><label><input type="radio" autocomplete="off" name="a173d8eed343c463dbd09a31eb78f378"><span>That the data are definitely MNAR</span></label><label><input type="radio" autocomplete="off" name="a173d8eed343c463dbd09a31eb78f378"><span>That convergence has failed</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3916,8 +3933,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 10.</span> What should you do if the MI results differ materially from the complete-case results?</p>
-<div id="webex-4b453fccc8635ca28e7976b9ef329a57" class="webex-radiogroup" data-answer="b1MYBR9WT1M+">
-<label><input type="radio" autocomplete="off" name="4b453fccc8635ca28e7976b9ef329a57"><span>Report both and discuss the sensitivity of the conclusion to the missing-data assumptions</span></label><label><input type="radio" autocomplete="off" name="4b453fccc8635ca28e7976b9ef329a57"><span>Automatically prefer the imputed result</span></label><label><input type="radio" autocomplete="off" name="4b453fccc8635ca28e7976b9ef329a57"><span>Delete the complete-case analysis from the paper</span></label><label><input type="radio" autocomplete="off" name="4b453fccc8635ca28e7976b9ef329a57"><span>Increase the significance threshold</span></label>
+<div id="webex-f6a09adb94290c31d1bf2afdd0515556" class="webex-radiogroup" data-answer="PQdNABVRSFJk">
+<label><input type="radio" autocomplete="off" name="f6a09adb94290c31d1bf2afdd0515556"><span>Report both and discuss the sensitivity of the conclusion to the missing-data assumptions</span></label><label><input type="radio" autocomplete="off" name="f6a09adb94290c31d1bf2afdd0515556"><span>Automatically prefer the imputed result</span></label><label><input type="radio" autocomplete="off" name="f6a09adb94290c31d1bf2afdd0515556"><span>Delete the complete-case analysis from the paper</span></label><label><input type="radio" autocomplete="off" name="f6a09adb94290c31d1bf2afdd0515556"><span>Increase the significance threshold</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3928,8 +3945,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 11.</span> What information should appear in a transparent write-up of an MI analysis?</p>
-<div id="webex-1efb53e71f5d092c01bcc068b24928df" class="webex-radiogroup" data-answer="alRKUhkDSQds">
-<label><input type="radio" autocomplete="off" name="1efb53e71f5d092c01bcc068b24928df"><span>The imputation method, the number of imputations, the convergence/plausibility checks, and the FMI summary</span></label><label><input type="radio" autocomplete="off" name="1efb53e71f5d092c01bcc068b24928df"><span>Only the final p-values from the pooled model</span></label><label><input type="radio" autocomplete="off" name="1efb53e71f5d092c01bcc068b24928df"><span>Only the percentage of missing values</span></label><label><input type="radio" autocomplete="off" name="1efb53e71f5d092c01bcc068b24928df"><span>Only the complete-case results</span></label>
+<div id="webex-1fcd715ed75a4431e3669cbea4102026" class="webex-radiogroup" data-answer="aldPVBsBGVU5">
+<label><input type="radio" autocomplete="off" name="1fcd715ed75a4431e3669cbea4102026"><span>The imputation method, the number of imputations, the convergence/plausibility checks, and the FMI summary</span></label><label><input type="radio" autocomplete="off" name="1fcd715ed75a4431e3669cbea4102026"><span>Only the final p-values from the pooled model</span></label><label><input type="radio" autocomplete="off" name="1fcd715ed75a4431e3669cbea4102026"><span>Only the percentage of missing values</span></label><label><input type="radio" autocomplete="off" name="1fcd715ed75a4431e3669cbea4102026"><span>Only the complete-case results</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -4248,7 +4265,7 @@ White, Ian R., Patrick Royston, and Angela M. Wood. 2011. <span>‘Multiple Impu
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/mohammedalisharafuddin\.github\.io\/quantitative-analysis-with-small-samples\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

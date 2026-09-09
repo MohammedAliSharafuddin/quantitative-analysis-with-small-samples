@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
 
 <title>Chapter 7: Data Screening and Diagnostic Checks – Quantitative Analysis with Small Samples</title>
 <style>
@@ -1680,6 +1681,19 @@ globalThis.qwebrExecuteCode = async function (
 </script>
 
 
+<meta property="og:title" content="Chapter 7: Data Screening and Diagnostic Checks – Quantitative Analysis with Small Samples">
+<meta property="og:description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
+<meta property="og:image" content="https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/chapters/part-b-data-collection--chapter-7-data-screening-and-diagnostic-checks_files/figure-html/part-b-chunk-10-html-1.png">
+<meta property="og:site_name" content="Quantitative Analysis with Small Samples">
+<meta property="og:image:height" content="960">
+<meta property="og:image:width" content="1344">
+<meta name="twitter:title" content="Chapter 7: Data Screening and Diagnostic Checks – Quantitative Analysis with Small Samples">
+<meta name="twitter:description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
+<meta name="twitter:image" content="https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/chapters/part-b-data-collection--chapter-7-data-screening-and-diagnostic-checks_files/figure-html/part-b-chunk-10-html-1.png">
+<meta name="twitter:image-height" content="960">
+<meta name="twitter:image-width" content="1344">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/chapters/part-b-data-collection--chapter-7-data-screening-and-diagnostic-checks.html">
 </head>
 
 <body class="nav-sidebar floating quarto-light">
@@ -1709,6 +1723,9 @@ globalThis.qwebrExecuteCode = async function (
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Quantitative Analysis with Small Samples</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/MohammedAliSharafuddin/smallsamplelab" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -3860,8 +3877,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 1.</span> Why are outliers particularly problematic in small-sample research?</p>
-<div id="webex-a285ea55d4dfc1133fe2417cbe4eef4b" class="webex-radiogroup" data-answer="OgIUBElRGQU5">
-<label><input type="radio" autocomplete="off" name="a285ea55d4dfc1133fe2417cbe4eef4b"><span>They are easier to detect visually</span></label><label><input type="radio" autocomplete="off" name="a285ea55d4dfc1133fe2417cbe4eef4b"><span>They can have disproportionate influence on results due to the limited number of observations</span></label><label><input type="radio" autocomplete="off" name="a285ea55d4dfc1133fe2417cbe4eef4b"><span>Small samples always have more outliers than large samples</span></label><label><input type="radio" autocomplete="off" name="a285ea55d4dfc1133fe2417cbe4eef4b"><span>Outliers are impossible to detect with small samples</span></label>
+<div id="webex-c04a581af3e491e1d4887f2d1ed5a9b8" class="webex-radiogroup" data-answer="OAAYUBkIHVE7">
+<label><input type="radio" autocomplete="off" name="c04a581af3e491e1d4887f2d1ed5a9b8"><span>They are easier to detect visually</span></label><label><input type="radio" autocomplete="off" name="c04a581af3e491e1d4887f2d1ed5a9b8"><span>They can have disproportionate influence on results due to the limited number of observations</span></label><label><input type="radio" autocomplete="off" name="c04a581af3e491e1d4887f2d1ed5a9b8"><span>Small samples always have more outliers than large samples</span></label><label><input type="radio" autocomplete="off" name="c04a581af3e491e1d4887f2d1ed5a9b8"><span>Outliers are impossible to detect with small samples</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3872,8 +3889,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 2.</span> What is the primary advantage of Mahalanobis distance over univariate outlier detection methods?</p>
-<div id="webex-d139af5b8cbc335fedc8cefc0224d5c5" class="webex-radiogroup" data-answer="PwEfCE1WGVJl">
-<label><input type="radio" autocomplete="off" name="d139af5b8cbc335fedc8cefc0224d5c5"><span>It is faster to compute</span></label><label><input type="radio" autocomplete="off" name="d139af5b8cbc335fedc8cefc0224d5c5"><span>It measures how far an observation lies from the multivariate centre, accounting for covariances among variables</span></label><label><input type="radio" autocomplete="off" name="d139af5b8cbc335fedc8cefc0224d5c5"><span>It only works with large samples</span></label><label><input type="radio" autocomplete="off" name="d139af5b8cbc335fedc8cefc0224d5c5"><span>It automatically removes all outliers</span></label>
+<div id="webex-123205d2d470ee4651f76b0c22c56fc7" class="webex-radiogroup" data-answer="agIfAxwFSAI5">
+<label><input type="radio" autocomplete="off" name="123205d2d470ee4651f76b0c22c56fc7"><span>It is faster to compute</span></label><label><input type="radio" autocomplete="off" name="123205d2d470ee4651f76b0c22c56fc7"><span>It measures how far an observation lies from the multivariate centre, accounting for covariances among variables</span></label><label><input type="radio" autocomplete="off" name="123205d2d470ee4651f76b0c22c56fc7"><span>It only works with large samples</span></label><label><input type="radio" autocomplete="off" name="123205d2d470ee4651f76b0c22c56fc7"><span>It automatically removes all outliers</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3884,8 +3901,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 3.</span> According to Tukey’s fences method, an observation is flagged as a potential outlier if it falls:</p>
-<div id="webex-812487ea0ce64bf01ef12b5e784468eb" class="webex-radiogroup" data-answer="YwEeBBQGSVFt">
-<label><input type="radio" autocomplete="off" name="812487ea0ce64bf01ef12b5e784468eb"><span>Within 1.5 × IQR from the quartiles</span></label><label><input type="radio" autocomplete="off" name="812487ea0ce64bf01ef12b5e784468eb"><span>Beyond ±2 standard deviations from the mean</span></label><label><input type="radio" autocomplete="off" name="812487ea0ce64bf01ef12b5e784468eb"><span>Beyond 1.5 × IQR from the quartiles</span></label><label><input type="radio" autocomplete="off" name="812487ea0ce64bf01ef12b5e784468eb"><span>Exactly at the median</span></label>
+<div id="webex-d71e5ca83aa2b8b9a5ed297a2893217b" class="webex-radiogroup" data-answer="PwcdVRlSTQhu">
+<label><input type="radio" autocomplete="off" name="d71e5ca83aa2b8b9a5ed297a2893217b"><span>Within 1.5 × IQR from the quartiles</span></label><label><input type="radio" autocomplete="off" name="d71e5ca83aa2b8b9a5ed297a2893217b"><span>Beyond ±2 standard deviations from the mean</span></label><label><input type="radio" autocomplete="off" name="d71e5ca83aa2b8b9a5ed297a2893217b"><span>Beyond 1.5 × IQR from the quartiles</span></label><label><input type="radio" autocomplete="off" name="d71e5ca83aa2b8b9a5ed297a2893217b"><span>Exactly at the median</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3896,8 +3913,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 4.</span> Why are visual diagnostics (Q-Q plots, boxplots) preferred over formal normality tests (Shapiro–Wilk) for small samples?</p>
-<div id="webex-3e0e52209c25aa7d06646d76c6e84519" class="webex-radiogroup" data-answer="aFUcVBkCHgBk">
-<label><input type="radio" autocomplete="off" name="3e0e52209c25aa7d06646d76c6e84519"><span>Visual diagnostics are more statistically rigorous</span></label><label><input type="radio" autocomplete="off" name="3e0e52209c25aa7d06646d76c6e84519"><span>Normality tests have low power with small samples and may not detect departures; visual checks provide more insight</span></label><label><input type="radio" autocomplete="off" name="3e0e52209c25aa7d06646d76c6e84519"><span>Normality tests are too expensive</span></label><label><input type="radio" autocomplete="off" name="3e0e52209c25aa7d06646d76c6e84519"><span>Visual diagnostics automatically calculate p-values</span></label>
+<div id="webex-64a218fb5400c9dd0ff79af8715002cc" class="webex-radiogroup" data-answer="bQRNAx0ISlJo">
+<label><input type="radio" autocomplete="off" name="64a218fb5400c9dd0ff79af8715002cc"><span>Visual diagnostics are more statistically rigorous</span></label><label><input type="radio" autocomplete="off" name="64a218fb5400c9dd0ff79af8715002cc"><span>Normality tests have low power with small samples and may not detect departures; visual checks provide more insight</span></label><label><input type="radio" autocomplete="off" name="64a218fb5400c9dd0ff79af8715002cc"><span>Normality tests are too expensive</span></label><label><input type="radio" autocomplete="off" name="64a218fb5400c9dd0ff79af8715002cc"><span>Visual diagnostics automatically calculate p-values</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3908,8 +3925,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 5.</span> In a regression diagnostic plot of “Residuals vs Fitted Values,” what does a funnel-shaped pattern indicate?</p>
-<div id="webex-a4c01e0dd350d70222c28931767aaf6e" class="webex-radiogroup" data-answer="OgRPAR1VHFQ5">
-<label><input type="radio" autocomplete="off" name="a4c01e0dd350d70222c28931767aaf6e"><span>Perfect homoscedasticity</span></label><label><input type="radio" autocomplete="off" name="a4c01e0dd350d70222c28931767aaf6e"><span>Heteroscedasticity—residual variance changes with fitted values</span></label><label><input type="radio" autocomplete="off" name="a4c01e0dd350d70222c28931767aaf6e"><span>Normality of residuals</span></label><label><input type="radio" autocomplete="off" name="a4c01e0dd350d70222c28931767aaf6e"><span>High collinearity among predictors</span></label>
+<div id="webex-3b683359ac684680504b70a619a49e63" class="webex-radiogroup" data-answer="aFIaCR8DGQk8">
+<label><input type="radio" autocomplete="off" name="3b683359ac684680504b70a619a49e63"><span>Perfect homoscedasticity</span></label><label><input type="radio" autocomplete="off" name="3b683359ac684680504b70a619a49e63"><span>Heteroscedasticity—residual variance changes with fitted values</span></label><label><input type="radio" autocomplete="off" name="3b683359ac684680504b70a619a49e63"><span>Normality of residuals</span></label><label><input type="radio" autocomplete="off" name="3b683359ac684680504b70a619a49e63"><span>High collinearity among predictors</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3920,8 +3937,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 6.</span> What does Cook’s distance measure in regression diagnostics?</p>
-<div id="webex-5aca25aba6202cbcb325ecc1db91bc51" class="webex-radiogroup" data-answer="blFPUB4FTVI8">
-<label><input type="radio" autocomplete="off" name="5aca25aba6202cbcb325ecc1db91bc51"><span>The distance between two data points</span></label><label><input type="radio" autocomplete="off" name="5aca25aba6202cbcb325ecc1db91bc51"><span>The influence of each observation on the regression coefficients; high values indicate influential observations</span></label><label><input type="radio" autocomplete="off" name="5aca25aba6202cbcb325ecc1db91bc51"><span>The correlation between predictors</span></label><label><input type="radio" autocomplete="off" name="5aca25aba6202cbcb325ecc1db91bc51"><span>The degree of multicollinearity</span></label>
+<div id="webex-e60f377b9b5ad081dea45f2b450dc6d7" class="webex-radiogroup" data-answer="PgYcVx8HG1Jk">
+<label><input type="radio" autocomplete="off" name="e60f377b9b5ad081dea45f2b450dc6d7"><span>The distance between two data points</span></label><label><input type="radio" autocomplete="off" name="e60f377b9b5ad081dea45f2b450dc6d7"><span>The influence of each observation on the regression coefficients; high values indicate influential observations</span></label><label><input type="radio" autocomplete="off" name="e60f377b9b5ad081dea45f2b450dc6d7"><span>The correlation between predictors</span></label><label><input type="radio" autocomplete="off" name="e60f377b9b5ad081dea45f2b450dc6d7"><span>The degree of multicollinearity</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3932,8 +3949,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 7.</span> When should an outlier be removed from analysis?</p>
-<div id="webex-3625aa19e1d37e866515ed22569951ba" class="webex-radiogroup" data-answer="aAYeBU1QHQk4">
-<label><input type="radio" autocomplete="off" name="3625aa19e1d37e866515ed22569951ba"><span>Always, because outliers are bad</span></label><label><input type="radio" autocomplete="off" name="3625aa19e1d37e866515ed22569951ba"><span>Never, because all data points are valuable</span></label><label><input type="radio" autocomplete="off" name="3625aa19e1d37e866515ed22569951ba"><span>Only if there is clear evidence of data entry error or the observation does not belong to the target population</span></label><label><input type="radio" autocomplete="off" name="3625aa19e1d37e866515ed22569951ba"><span>Whenever it makes the results statistically significant</span></label>
+<div id="webex-f926ecdfb61adac7785fd889168e8e94" class="webex-radiogroup" data-answer="PQkeBklSSFY/">
+<label><input type="radio" autocomplete="off" name="f926ecdfb61adac7785fd889168e8e94"><span>Always, because outliers are bad</span></label><label><input type="radio" autocomplete="off" name="f926ecdfb61adac7785fd889168e8e94"><span>Never, because all data points are valuable</span></label><label><input type="radio" autocomplete="off" name="f926ecdfb61adac7785fd889168e8e94"><span>Only if there is clear evidence of data entry error or the observation does not belong to the target population</span></label><label><input type="radio" autocomplete="off" name="f926ecdfb61adac7785fd889168e8e94"><span>Whenever it makes the results statistically significant</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3944,8 +3961,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 8.</span> What is an example of a data entry error that should be flagged during data screening?</p>
-<div id="webex-b3ddf12f7610fc955efd7907f405c06c" class="webex-radiogroup" data-answer="OQNIVUoBHlZq">
-<label><input type="radio" autocomplete="off" name="b3ddf12f7610fc955efd7907f405c06c"><span>A participant with a high test score</span></label><label><input type="radio" autocomplete="off" name="b3ddf12f7610fc955efd7907f405c06c"><span>A Likert response of 8 on a 1–7 scale</span></label><label><input type="radio" autocomplete="off" name="b3ddf12f7610fc955efd7907f405c06c"><span>A missing value in a survey</span></label><label><input type="radio" autocomplete="off" name="b3ddf12f7610fc955efd7907f405c06c"><span>A participant who completed all questions</span></label>
+<div id="webex-99bb62560f7d77b976ed8a6408b58b94" class="webex-radiogroup" data-answer="YglOUxoCGQZt">
+<label><input type="radio" autocomplete="off" name="99bb62560f7d77b976ed8a6408b58b94"><span>A participant with a high test score</span></label><label><input type="radio" autocomplete="off" name="99bb62560f7d77b976ed8a6408b58b94"><span>A Likert response of 8 on a 1–7 scale</span></label><label><input type="radio" autocomplete="off" name="99bb62560f7d77b976ed8a6408b58b94"><span>A missing value in a survey</span></label><label><input type="radio" autocomplete="off" name="99bb62560f7d77b976ed8a6408b58b94"><span>A participant who completed all questions</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3956,8 +3973,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 9.</span> Why is documenting data cleaning decisions in a reproducible script important?</p>
-<div id="webex-090ce9733c3ce8b14e2bcee6f1b41c59" class="webex-radiogroup" data-answer="awgcU0kJGwNu">
-<label><input type="radio" autocomplete="off" name="090ce9733c3ce8b14e2bcee6f1b41c59"><span>It allows others to verify exclusions and understand how the cleaned dataset was produced</span></label><label><input type="radio" autocomplete="off" name="090ce9733c3ce8b14e2bcee6f1b41c59"><span>It makes the analysis run faster</span></label><label><input type="radio" autocomplete="off" name="090ce9733c3ce8b14e2bcee6f1b41c59"><span>It is required by all statistical software</span></label><label><input type="radio" autocomplete="off" name="090ce9733c3ce8b14e2bcee6f1b41c59"><span>It prevents missing data from occurring</span></label>
+<div id="webex-039a612c05d2b33cde644026a4812faa" class="webex-radiogroup" data-answer="awIVURoBHlNt">
+<label><input type="radio" autocomplete="off" name="039a612c05d2b33cde644026a4812faa"><span>It allows others to verify exclusions and understand how the cleaned dataset was produced</span></label><label><input type="radio" autocomplete="off" name="039a612c05d2b33cde644026a4812faa"><span>It makes the analysis run faster</span></label><label><input type="radio" autocomplete="off" name="039a612c05d2b33cde644026a4812faa"><span>It is required by all statistical software</span></label><label><input type="radio" autocomplete="off" name="039a612c05d2b33cde644026a4812faa"><span>It prevents missing data from occurring</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3968,8 +3985,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 10.</span> In a Q-Q plot, if the points deviate substantially from the diagonal line at the tails, what does this suggest?</p>
-<div id="webex-094679fc8b659f2647bb08e9cad4c90e" class="webex-radiogroup" data-answer="awkYBxsJSlNl">
-<label><input type="radio" autocomplete="off" name="094679fc8b659f2647bb08e9cad4c90e"><span>The data are perfectly normally distributed</span></label><label><input type="radio" autocomplete="off" name="094679fc8b659f2647bb08e9cad4c90e"><span>The data may have skewness or heavy tails</span></label><label><input type="radio" autocomplete="off" name="094679fc8b659f2647bb08e9cad4c90e"><span>The sample size is too large</span></label><label><input type="radio" autocomplete="off" name="094679fc8b659f2647bb08e9cad4c90e"><span>There are no outliers present</span></label>
+<div id="webex-2ec99bf6386bd44d9242d552ee52f38a" class="webex-radiogroup" data-answer="aVVPCBVSSgZu">
+<label><input type="radio" autocomplete="off" name="2ec99bf6386bd44d9242d552ee52f38a"><span>The data are perfectly normally distributed</span></label><label><input type="radio" autocomplete="off" name="2ec99bf6386bd44d9242d552ee52f38a"><span>The data may have skewness or heavy tails</span></label><label><input type="radio" autocomplete="off" name="2ec99bf6386bd44d9242d552ee52f38a"><span>The sample size is too large</span></label><label><input type="radio" autocomplete="off" name="2ec99bf6386bd44d9242d552ee52f38a"><span>There are no outliers present</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -4288,7 +4305,7 @@ White, Ian R., Patrick Royston, and Angela M. Wood. 2011. <span>‘Multiple Impu
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/mohammedalisharafuddin\.github\.io\/quantitative-analysis-with-small-samples\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

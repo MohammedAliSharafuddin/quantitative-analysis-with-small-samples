@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
 
 <title>Chapter 17: Transparent Reporting of Methods and Limitations – Quantitative Analysis with Small Samples</title>
 <style>
@@ -1709,6 +1710,13 @@ window.Quarto = {
 };
 </script>
 
+<meta property="og:title" content="Chapter 17: Transparent Reporting of Methods and Limitations – Quantitative Analysis with Small Samples">
+<meta property="og:description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
+<meta property="og:site_name" content="Quantitative Analysis with Small Samples">
+<meta name="twitter:title" content="Chapter 17: Transparent Reporting of Methods and Limitations – Quantitative Analysis with Small Samples">
+<meta name="twitter:description" content="An open textbook for students and early-career researchers on designing, analysing, interpreting, and reporting small-sample studies. Covers measurement quality, diagnostic checks, exact and resampling methods, nonparametric procedures, sparse counts, short time series, penalised and Bayesian regression, MCDM, uncertainty visualisation, and transparent reporting, with 5 worked R projects.">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://mohammedalisharafuddin.github.io/quantitative-analysis-with-small-samples/chapters/part-d-reporting--chapter-17-transparent-reporting-of-methods-and-limitations.html">
 </head>
 
 <body class="nav-sidebar floating quarto-light">
@@ -1738,6 +1746,9 @@ window.Quarto = {
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Quantitative Analysis with Small Samples</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/MohammedAliSharafuddin/smallsamplelab" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -2441,20 +2452,20 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>       id             campaign   satisfaction      age_group    prior_purchase
- Min.   : 1.00   Length   :30   Min.   :1.00   Length   :30   Length   :30    
- 1st Qu.: 8.25   N.unique : 2   1st Qu.:3.00   N.unique : 3   N.unique : 2    
- Median :15.50   N.blank  : 0   Median :4.00   N.blank  : 0   N.blank  : 0    
- Mean   :15.50   Min.nchar: 5   Mean   :3.57   Min.nchar: 3   Min.nchar: 2    
- 3rd Qu.:22.75   Max.nchar: 6   3rd Qu.:4.00   Max.nchar: 5   Max.nchar: 3    
- Max.   :30.00                  Max.   :5.00                                  </code></pre>
+<pre><code>       id             campaign   satisfaction       age_group    prior_purchase
+ Min.   : 1.00   Length   :30   Min.   :1.000   Length   :30   Length   :30    
+ 1st Qu.: 8.25   N.unique : 2   1st Qu.:3.000   N.unique : 3   N.unique : 2    
+ Median :15.50   N.blank  : 0   Median :4.000   N.blank  : 0   N.blank  : 0    
+ Mean   :15.50   Min.nchar: 5   Mean   :3.567   Min.nchar: 3   Min.nchar: 2    
+ 3rd Qu.:22.75   Max.nchar: 6   3rd Qu.:4.000   Max.nchar: 5   Max.nchar: 3    
+ Max.   :30.00                  Max.   :5.000                                  </code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Wilcoxon rank sum test with continuity correction
 
 data:  satisfaction by campaign
-W = 156, p-value = 0.06
+W = 156, p-value = 0.05725
 alternative hypothesis: true location shift is not equal to 0</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
@@ -2462,13 +2473,13 @@ alternative hypothesis: true location shift is not equal to 0</code></pre>
     Two Sample t-test
 
 data:  satisfaction by campaign
-t = 1.8, df = 28, p-value = 0.08
+t = 1.8263, df = 28, p-value = 0.07849
 alternative hypothesis: true difference in means between group Email and group Social is not equal to 0
 95 percent confidence interval:
- -0.07298  1.27298
+ -0.07297737  1.27297737
 sample estimates:
  mean in group Email mean in group Social 
-               3.867                3.267 </code></pre>
+            3.866667             3.266667 </code></pre>
 </div>
 </div>
 </div>
@@ -3788,8 +3799,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 1.</span> Which should be reported when documenting a small-sample study?</p>
-<div id="webex-6a0af2211342194b91a56ca40943975b" class="webex-radiogroup" data-answer="bVEcUEoCHgFs">
-<label><input type="radio" autocomplete="off" name="6a0af2211342194b91a56ca40943975b"><span>Only significant results</span></label><label><input type="radio" autocomplete="off" name="6a0af2211342194b91a56ca40943975b"><span>All analyses conducted, including non-significant findings</span></label><label><input type="radio" autocomplete="off" name="6a0af2211342194b91a56ca40943975b"><span>Only the primary analysis</span></label><label><input type="radio" autocomplete="off" name="6a0af2211342194b91a56ca40943975b"><span>Results can be selectively reported</span></label>
+<div id="webex-6427a09cf5e3dd18cd58e2b675a60e09" class="webex-radiogroup" data-answer="bQQeBk0AFVM7">
+<label><input type="radio" autocomplete="off" name="6427a09cf5e3dd18cd58e2b675a60e09"><span>Only significant results</span></label><label><input type="radio" autocomplete="off" name="6427a09cf5e3dd18cd58e2b675a60e09"><span>All analyses conducted, including non-significant findings</span></label><label><input type="radio" autocomplete="off" name="6427a09cf5e3dd18cd58e2b675a60e09"><span>Only the primary analysis</span></label><label><input type="radio" autocomplete="off" name="6427a09cf5e3dd18cd58e2b675a60e09"><span>Results can be selectively reported</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3800,8 +3811,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 2.</span> A study planned to use a t-test but switched to Mann–Whitney after seeing skewed data. How should this be reported?</p>
-<div id="webex-ee3e321b8b5f938ef7eae50564405db6" class="webex-radiogroup" data-answer="PlUfVR8DHVJl">
-<label><input type="radio" autocomplete="off" name="ee3e321b8b5f938ef7eae50564405db6"><span>Do not mention the change</span></label><label><input type="radio" autocomplete="off" name="ee3e321b8b5f938ef7eae50564405db6"><span>Report only the Mann–Whitney result</span></label><label><input type="radio" autocomplete="off" name="ee3e321b8b5f938ef7eae50564405db6"><span>State the planned test, explain the skewness, report the Mann–Whitney result and include a sensitivity analysis</span></label><label><input type="radio" autocomplete="off" name="ee3e321b8b5f938ef7eae50564405db6"><span>Pretend Mann–Whitney was always planned</span></label>
+<div id="webex-670c5ee9e69c45821c09678b825bf307" class="webex-radiogroup" data-answer="bQccUxlUSQk4">
+<label><input type="radio" autocomplete="off" name="670c5ee9e69c45821c09678b825bf307"><span>Do not mention the change</span></label><label><input type="radio" autocomplete="off" name="670c5ee9e69c45821c09678b825bf307"><span>Report only the Mann–Whitney result</span></label><label><input type="radio" autocomplete="off" name="670c5ee9e69c45821c09678b825bf307"><span>State the planned test, explain the skewness, report the Mann–Whitney result and include a sensitivity analysis</span></label><label><input type="radio" autocomplete="off" name="670c5ee9e69c45821c09678b825bf307"><span>Pretend Mann–Whitney was always planned</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3812,8 +3823,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 3.</span> What is “p-hacking”?</p>
-<div id="webex-a92998fd58e1488c6d4623b885515682" class="webex-radiogroup" data-answer="OgkeCBUISlRo">
-<label><input type="radio" autocomplete="off" name="a92998fd58e1488c6d4623b885515682"><span>Illegally accessing data</span></label><label><input type="radio" autocomplete="off" name="a92998fd58e1488c6d4623b885515682"><span>Trying multiple analyses/subgroups until finding p&lt;0.05, then reporting only that result</span></label><label><input type="radio" autocomplete="off" name="a92998fd58e1488c6d4623b885515682"><span>Using permutation tests</span></label><label><input type="radio" autocomplete="off" name="a92998fd58e1488c6d4623b885515682"><span>Adjusting for multiple comparisons</span></label>
+<div id="webex-6edadfb6dc05af13b87e98e3a6d1dca2" class="webex-radiogroup" data-answer="bVVIUEhWTgY5">
+<label><input type="radio" autocomplete="off" name="6edadfb6dc05af13b87e98e3a6d1dca2"><span>Illegally accessing data</span></label><label><input type="radio" autocomplete="off" name="6edadfb6dc05af13b87e98e3a6d1dca2"><span>Trying multiple analyses/subgroups until finding p&lt;0.05, then reporting only that result</span></label><label><input type="radio" autocomplete="off" name="6edadfb6dc05af13b87e98e3a6d1dca2"><span>Using permutation tests</span></label><label><input type="radio" autocomplete="off" name="6edadfb6dc05af13b87e98e3a6d1dca2"><span>Adjusting for multiple comparisons</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3824,8 +3835,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 4.</span> Pre-registration helps prevent:</p>
-<div id="webex-b01a910e828f5079583ad0ea49afd7c9" class="webex-radiogroup" data-answer="OQAdUBUBHFVl">
-<label><input type="radio" autocomplete="off" name="b01a910e828f5079583ad0ea49afd7c9"><span>Sample size limitations</span></label><label><input type="radio" autocomplete="off" name="b01a910e828f5079583ad0ea49afd7c9"><span>Researcher degrees of freedom (flexibility in analysis choices) leading to false positives</span></label><label><input type="radio" autocomplete="off" name="b01a910e828f5079583ad0ea49afd7c9"><span>Missing data</span></label><label><input type="radio" autocomplete="off" name="b01a910e828f5079583ad0ea49afd7c9"><span>Measurement error</span></label>
+<div id="webex-9e1d86680d1300f7d15e71260978c1bc" class="webex-radiogroup" data-answer="YlUdVRQGGght">
+<label><input type="radio" autocomplete="off" name="9e1d86680d1300f7d15e71260978c1bc"><span>Sample size limitations</span></label><label><input type="radio" autocomplete="off" name="9e1d86680d1300f7d15e71260978c1bc"><span>Researcher degrees of freedom (flexibility in analysis choices) leading to false positives</span></label><label><input type="radio" autocomplete="off" name="9e1d86680d1300f7d15e71260978c1bc"><span>Missing data</span></label><label><input type="radio" autocomplete="off" name="9e1d86680d1300f7d15e71260978c1bc"><span>Measurement error</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -3836,8 +3847,8 @@ window.addEventListener("load", function() {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p><span class="smallsamplelab-quiz-number">Question 5.</span> A study with n=15 per group finds p=0.12. The limitation section should state:</p>
-<div id="webex-7d3715cdd884ba7c7a189985e3db1f39" class="webex-radiogroup" data-answer="bFQfBh0FT1Q5">
-<label><input type="radio" autocomplete="off" name="7d3715cdd884ba7c7a189985e3db1f39"><span>“The result is not significant, proving no effect exists”</span></label><label><input type="radio" autocomplete="off" name="7d3715cdd884ba7c7a189985e3db1f39"><span>“The study was underpowered to detect small-to-medium effects; findings are inconclusive”</span></label><label><input type="radio" autocomplete="off" name="7d3715cdd884ba7c7a189985e3db1f39"><span>“The sample size was adequate”</span></label><label><input type="radio" autocomplete="off" name="7d3715cdd884ba7c7a189985e3db1f39"><span>Nothing; non-significant results need no discussion</span></label>
+<div id="webex-959ef7e561c0794b44cde82da7ece7e0" class="webex-radiogroup" data-answer="YgUVVEoHSQVr">
+<label><input type="radio" autocomplete="off" name="959ef7e561c0794b44cde82da7ece7e0"><span>“The result is not significant, proving no effect exists”</span></label><label><input type="radio" autocomplete="off" name="959ef7e561c0794b44cde82da7ece7e0"><span>“The study was underpowered to detect small-to-medium effects; findings are inconclusive”</span></label><label><input type="radio" autocomplete="off" name="959ef7e561c0794b44cde82da7ece7e0"><span>“The sample size was adequate”</span></label><label><input type="radio" autocomplete="off" name="959ef7e561c0794b44cde82da7ece7e0"><span>Nothing; non-significant results need no discussion</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -4157,7 +4168,7 @@ White, Ian R., Patrick Royston, and Angela M. Wood. 2011. <span>‘Multiple Impu
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/mohammedalisharafuddin\.github\.io\/quantitative-analysis-with-small-samples\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
